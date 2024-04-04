@@ -19,8 +19,8 @@ public class Defines
     public static readonly string AssetBundleSceneSourcePath = AssetBundleSourcePath + "/Scenes";
     public static readonly string SpritePackerSourceImagePath = AssetBundleSourcePath + "/Images";
 
-    public static readonly string LuaSourcePath = "Assets/Source/Lua";
-    public static readonly string LuaConfigPath = "Assets/Source/Lua/Config";
+    public static readonly string LuaSourcePath = "Assets/Code/Lua";
+    public static readonly string LuaConfigPath = "Assets/Code/Lua/Config";
     public static readonly string LuaByteCodeOutPath = "./build/luas";
     public static string LuaByteCodeLoadPath = System.IO.Path.Combine(Application.dataPath, string.Format("StreamingAssets/files/"));
     public static string AssetBundleLoadPath = System.IO.Path.Combine(Application.dataPath, string.Format("StreamingAssets/bundle/"));

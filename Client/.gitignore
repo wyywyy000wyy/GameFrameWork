@@ -8,3 +8,4 @@ Assets/StreamingAssets/*
 build/
 Logs/
 *.sln
+*.csproj
