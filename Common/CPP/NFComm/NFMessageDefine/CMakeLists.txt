@@ -8,6 +8,8 @@ add_library(NFMessageDefine STATIC
 	${NFMessageDefine_ROOT_CC}
 	${NFMessageDefine_ROOT_Hpp})
 
+
+# target_include_directories(NFMessageDefine ${CMAKE_SOURCE_DIR}/Common/CPP/Dependencies/vcpkg/installed/x64-windows-static/include)
 if (UNIX)
 	if (CMAKE_BUILD_TYPE MATCHES "Release")
 		target_link_libraries(NFMessageDefine libprotobuf.a)

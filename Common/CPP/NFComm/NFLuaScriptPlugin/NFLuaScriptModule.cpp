@@ -41,10 +41,11 @@
 #define EMMY_CORE_EXPORT    extern
 #endif
 
-extern "C"
-{
-	extern int luaopen_emmy_core1(lua_State* L);
-}
+//extern "C"
+//{
+//	extern int luaopen_emmy_core1(lua_State* L);
+//}
+//extern int luaopen_emmy_core1(lua_State* L);
 
 bool NFLuaScriptModule::Awake()
 {
@@ -63,7 +64,7 @@ bool NFLuaScriptModule::Awake()
 
 	NFLuaPBModule* p = (NFLuaPBModule*)(m_pLuaPBModule);
 	p->SetLuaState(mLuaContext.state());
-	luaopen_emmy_core1(mLuaContext.state());
+	//luaopen_emmy_core1(mLuaContext.state());
 	luaopen_cjson(mLuaContext.state());
     Register();
 

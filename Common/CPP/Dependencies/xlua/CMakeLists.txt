@@ -220,8 +220,9 @@ endif ( )
 
 set(emmy_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 add_definitions(-DEMMY_LUA_53)
+add_definitions(-DEMMY_USE_LUA_SOURCE)
 add_definitions(-DEMMY_CORE_VERSION="1.0.16")
-add_subdirectory(third-party/libuv-1.29.0)
+add_subdirectory(third-party/libuv)
 add_subdirectory(emmy_debugger)
 if(WIN32)
     add_subdirectory(shared)
@@ -230,10 +231,12 @@ if(WIN32)
     add_subdirectory(emmy_hook)
 endif(WIN32)
 
+
 add_dependencies(xlua emmy_debugger)
-option(EMMY_USE_LUA_SOURCE "Build with lua source" OFF)
+option(EMMY_USE_LUA_SOURCE "Build with lua source" ON)
 target_include_directories(xlua PUBLIC 
     ${CMAKE_CURRENT_SOURCE_DIR}/emmy_core/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/lua-5.3.5/src
     PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/emmy_core/src
 )
 
@@ -299,3 +302,9 @@ else ( )
         )
     endif()
 endif ( )
+
+set_target_properties( xlua PROPERTIES
+	# FOLDER "NFComm/NFMessageDefine"
+	ARCHIVE_OUTPUT_DIRECTORY ${NFOutPutDir}
+	RUNTIME_OUTPUT_DIRECTORY ${NFOutPutDir}
+	LIBRARY_OUTPUT_DIRECTORY ${NFOutPutDir} )

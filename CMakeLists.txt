@@ -56,9 +56,9 @@ elseif(UNIX)
 		${CommonCPPDir}/Dependencies/vcpkg/installed/x64-linux/include/google/protobuf/src/
 	)
 else()
-	link_directories(C:/Boost/lib/)
+	link_directories(D:/boost_1_84_0/boost_1_84_0/stage/lib/)
 	include_directories(
-		C:/Boost/include/boost-1_84/
+		D:/boost_1_84_0/boost_1_84_0/
 		${CommonCPPDir}
 		${CommonCPPDir}/Dependencies/
 		${CommonCPPDir}/Dependencies/NFMessageDefine/
@@ -125,8 +125,7 @@ endmacro(add_subdirectory_common)
 
 
 
-include_directories(${CommonCPPDir})
-
+include_directories(${CommonCPPDir} ${CMAKE_SOURCE_DIR}/Common/CPP/Dependencies/vcpkg/installed/x64-windows-static/include)
 
 if(BUILD_CLIENT)
 	add_subdirectory_common(NFPluginLoader)
