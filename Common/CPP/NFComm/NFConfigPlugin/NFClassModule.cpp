@@ -483,6 +483,10 @@ bool NFClassModule::Load()
 	std::string strFile = pPluginManager->GetConfigPath() + mConfigFileName;
 	std::string content;
 	pPluginManager->GetFileContent(strFile, content);
+    if(content.empty())
+	{
+		return false;
+	}
 
 	rapidxml::xml_document<> xDoc;
 	xDoc.parse<0>((char*)content.c_str());

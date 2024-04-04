@@ -7,8 +7,13 @@ add_library(NFLuaScriptPlugin STATIC
 	${NFLuaScriptPlugin_ROOT_Hpp})
 
 # target_link_libraries(NFLuaScriptPlugin liblua.a)
-target_link_libraries(NFLuaScriptPlugin lua)
-add_dependencies(NFLuaScriptPlugin NFCore)
+if(WIN32)
+	target_link_libraries(NFLuaScriptPlugin userenv iphlpapi emmy_debugger uv_a xlua)
+else()
+	target_link_libraries(NFLuaScriptPlugin emmy_debugger uv_a xlua)
+	endif()
+
+add_dependencies(NFLuaScriptPlugin NFCore xlua)
 
 if(UNIX)
 

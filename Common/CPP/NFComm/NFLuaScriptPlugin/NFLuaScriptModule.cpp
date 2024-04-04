@@ -35,6 +35,16 @@
 #define TRY_RUN_GLOBAL_SCRIPT_FUN2(strFuncName, arg1, arg2)  try {LuaIntf::LuaRef func(mLuaContext, strFuncName);  func.call<LuaIntf::LuaRef>(arg1, arg2); }catch (LuaIntf::LuaException& e) { cout << e.what() << endl; }
 
 #define TRY_LOAD_SCRIPT_FLE(fileName)  try{mLuaContext.doFile(fileName);} catch (LuaIntf::LuaException& e) { cout << e.what() << endl; }
+#ifdef _MSC_VER
+#define EMMY_CORE_EXPORT    __declspec(dllexport)
+#else
+#define EMMY_CORE_EXPORT    extern
+#endif
+
+extern "C"
+{
+	extern int luaopen_emmy_core1(lua_State* L);
+}
 
 bool NFLuaScriptModule::Awake()
 {
@@ -45,14 +55,15 @@ bool NFLuaScriptModule::Awake()
 	m_pElementModule = pPluginManager->FindModule<NFIElementModule>();
 	m_pEventModule = pPluginManager->FindModule<NFIEventModule>();
     m_pScheduleModule = pPluginManager->FindModule<NFIScheduleModule>();
-    m_pNetClientModule = pPluginManager->FindModule<NFINetClientModule>();
-    m_pNetModule = pPluginManager->FindModule<NFINetModule>();
+    //m_pNetClientModule = pPluginManager->FindModule<NFINetClientModule>();
+    //m_pNetModule = pPluginManager->FindModule<NFINetModule>();
     m_pLogModule = pPluginManager->FindModule<NFILogModule>();
     m_pLuaPBModule = pPluginManager->FindModule<NFILuaPBModule>();
 	m_pFileSystemModule = pPluginManager->FindModule<NFIFileSystemModule>();
 
 	NFLuaPBModule* p = (NFLuaPBModule*)(m_pLuaPBModule);
 	p->SetLuaState(mLuaContext.state());
+	luaopen_emmy_core1(mLuaContext.state());
 	luaopen_cjson(mLuaContext.state());
     Register();
 

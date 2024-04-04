@@ -114,7 +114,7 @@ bool NFPluginManager::LoadPlugin()
 	}
 
 #ifndef NF_DYNAMIC_PLUGIN
-	CheckStaticPlugin();
+	//CheckStaticPlugin();
 #endif
 
 	return true;
@@ -154,6 +154,15 @@ bool NFPluginManager::LoadPluginConfig()
 	std::string content;
 	std::string strFilePath = GetConfigPath() + configName;
 	GetFileContent(strFilePath, content);
+
+	if(content.empty())
+	{
+		mPluginNameMap["NFKernelPlugin"] = true;
+		mPluginNameMap["NFLuaScriptPlugin"] = true;
+		mPluginNameMap["NFActorPlugin"] = true;
+		//std::cout << "Get config file failed: " << strFilePath << std::endl;
+		return false;
+	}
 
 	rapidxml::xml_document<> xDoc;
 	xDoc.parse<0>((char*)content.c_str());
