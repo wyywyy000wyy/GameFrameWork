@@ -236,12 +236,13 @@ add_dependencies(xlua emmy_debugger)
 option(EMMY_USE_LUA_SOURCE "Build with lua source" ON)
 target_include_directories(xlua PUBLIC 
     ${CMAKE_CURRENT_SOURCE_DIR}/emmy_core/include
-    ${CMAKE_CURRENT_SOURCE_DIR}/lua-5.3.5/src
     PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/emmy_core/src
+    ${CMAKE_CURRENT_SOURCE_DIR}/lua-5.3.5/src
 )
 
 target_sources(xlua PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include/emmy_core/emmy_core.h
+    PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/emmy_core/src/emmy_core.cpp
 )
 # endif(USE_EMMY_LUA_DEBUG)

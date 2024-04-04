@@ -23,19 +23,39 @@
    limitations under the License.
 */
 
-#include "NFClient.h"
+// #include "NFClient.h"
+#include <iostream>
+#include <vector>
+#include <thread>
+#include <chrono>
+
+extern "C" {
+	extern void nfclient_lib_clear();
+
+	extern void nfclient_lib_init(const char* strArgvList);
+
+	extern void nfclient_lib_loop();
+}
 
 int main(int argc, char* argv[])
 {
 	std::cout << "__cplusplus:" << __cplusplus << std::endl;
 
-	std::vector<NF_SHARE_PTR<NFPluginServer>> serverList;
+	// std::vector<NF_SHARE_PTR<NFPluginServer>> serverList;
 
 	std::string strArgvList;
 	for (int i = 0; i < argc; i++)
 	{
 		strArgvList += " ";
 		strArgvList += argv[i];
+	}
+
+	nfclient_lib_init(strArgvList.c_str());
+
+	while (true)
+	{
+		std::this_thread::sleep_for(std::chrono::milliseconds(1));
+		nfclient_lib_loop();
 	}
 
 	//if (argc == 1)
@@ -52,38 +72,38 @@ int main(int argc, char* argv[])
 	//{
 	//	serverList.push_back(NF_SHARE_PTR<NFPluginServer>(NF_NEW NFPluginServer(strArgvList)));
 	//}
-	serverList.push_back(NF_SHARE_PTR<NFPluginServer>(NF_NEW NFPluginServer(strArgvList + " Server=GameServer ID=16001 Plugin=Plugin.xml")));
+	// serverList.push_back(NF_SHARE_PTR<NFPluginServer>(NF_NEW NFPluginServer(strArgvList + " Server=GameServer ID=16001 Plugin=Plugin.xml")));
 
 
-	for (auto item : serverList)
-	{
-		item->SetBasicWareLoader(BasicPluginLoader);
-		item->SetMidWareLoader(MidWareLoader);
-		item->Init();
-	}
+	// for (auto item : serverList)
+	// {
+	// 	item->SetBasicWareLoader(BasicPluginLoader);
+	// 	item->SetMidWareLoader(MidWareLoader);
+	// 	item->Init();
+	// }
 
 
-	////////////////
-	uint64_t nIndex = 0;
-	while (true)
-	{
-		nIndex++;
+	// ////////////////
+	// uint64_t nIndex = 0;
+	// while (true)
+	// {
+	// 	nIndex++;
 
-		std::this_thread::sleep_for(std::chrono::milliseconds(1));
-		for (auto item : serverList)
-		{
-			item->Execute();
-		}
-	}
+	// 	std::this_thread::sleep_for(std::chrono::milliseconds(1));
+	// 	for (auto item : serverList)
+	// 	{
+	// 		item->Execute();
+	// 	}
+	// }
 
-	////////////////
+	// ////////////////
 
-	for (auto item : serverList)
-	{
-		item->Final();
-	}
+	// for (auto item : serverList)
+	// {
+	// 	item->Final();
+	// }
 
-	serverList.clear();
-
+	// serverList.clear();
+	nfclient_lib_clear();
     return 0;
 }

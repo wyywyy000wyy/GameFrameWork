@@ -20,6 +20,7 @@ target_include_directories(emmy_core PUBLIC
 
 target_sources(emmy_core PUBLIC
     ${emmy_SOURCE_DIR}/include/emmy_core/emmy_core.h
+    PRIVATE
     ${emmy_core_SOURCE_DIR}/src/emmy_core.cpp
 )
 

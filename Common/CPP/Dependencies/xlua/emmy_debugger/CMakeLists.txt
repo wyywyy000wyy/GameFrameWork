@@ -16,7 +16,7 @@ target_include_directories(emmy_debugger PUBLIC
     PRIVATE src
 )
 
-target_sources(emmy_debugger PUBLIC
+target_sources(emmy_debugger PRIVATE
 
     ${emmy_SOURCE_DIR}/include/emmy_debugger/emmy_debugger.h
     ${emmy_SOURCE_DIR}/include/emmy_debugger/emmy_debugger_manager.h

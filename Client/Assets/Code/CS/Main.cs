@@ -15,6 +15,7 @@ public class Main : MonoBehaviour
     {
         GameObject.DontDestroyOnLoad(gameObject);
         //XLoader.Initialize(true);
+        GameFrameWorkClientLib.nfclient_lib_init("");
         initLua();
     }
 #if (UNITY_IPHONE || UNITY_TVOS || UNITY_WEBGL || UNITY_SWITCH) && !UNITY_EDITOR
@@ -54,6 +55,7 @@ public class Main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GameFrameWorkClientLib.nfclient_lib_loop();
         if (currentLuaEnv != null)
         {
             currentLuaEnv.Tick();
@@ -65,5 +67,10 @@ public class Main : MonoBehaviour
             HotReload();
         }
 #endif
+    }
+
+    void OnDestroy()
+    {
+        GameFrameWorkClientLib.nfclient_lib_clear();
     }
 }

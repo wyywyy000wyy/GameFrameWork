@@ -2,3 +2,6 @@ _Out/
 BuildClient/*
 BuildServer/*
 /Common/CPP/Dependencies/xlua/build_win64
+/Client/Assets/XLua/x86_64/Debug
+/Client/Assets/XLua/x86_64/Debug.meta
+/.vscode
