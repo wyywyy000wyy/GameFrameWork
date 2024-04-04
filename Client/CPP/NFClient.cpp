@@ -52,7 +52,6 @@ int main(int argc, char* argv[])
 	//{
 	//	serverList.push_back(NF_SHARE_PTR<NFPluginServer>(NF_NEW NFPluginServer(strArgvList)));
 	//}
-
 	serverList.push_back(NF_SHARE_PTR<NFPluginServer>(NF_NEW NFPluginServer(strArgvList + " Server=GameServer ID=16001 Plugin=Plugin.xml")));
 
 
@@ -62,6 +61,7 @@ int main(int argc, char* argv[])
 		item->SetMidWareLoader(MidWareLoader);
 		item->Init();
 	}
+
 
 	////////////////
 	uint64_t nIndex = 0;
