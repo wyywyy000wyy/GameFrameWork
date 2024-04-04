@@ -1,3 +1,4 @@
 _Out/
 BuildClient/*
 BuildServer/*
+/Common/CPP/Dependencies/xlua/build_win64
