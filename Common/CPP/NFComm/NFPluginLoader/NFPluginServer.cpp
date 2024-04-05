@@ -76,6 +76,11 @@ void NFPluginServer::SetMidWareLoader(std::function<void(NFIPluginManager * p)> 
 	externalMidWarePluginLoader = fun;
 }
 
+extern "C"
+{
+	extern char* g_pLuaRootPath;
+}	
+
 void NFPluginServer::Init()
 {
     PrintfLogo();
@@ -85,8 +90,14 @@ void NFPluginServer::Init()
     ProcessParameter();
 
     pPluginManager->SetGetFileContentFunctor(GetFileContent);
-    pPluginManager->SetConfigPath("../");
-
+    if(g_pLuaRootPath != nullptr)
+    {
+        pPluginManager->SetConfigPath(g_pLuaRootPath);
+    }
+    else
+    {
+        pPluginManager->SetConfigPath("./");
+    }
 
 	if (externalBasicWarePluginLoader)
 	{

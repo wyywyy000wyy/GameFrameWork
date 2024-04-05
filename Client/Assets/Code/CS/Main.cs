@@ -15,7 +15,6 @@ public class Main : MonoBehaviour
     {
         GameObject.DontDestroyOnLoad(gameObject);
         //XLoader.Initialize(true);
-        GameFrameWorkClientLib.nfclient_lib_init("");
         initLua();
     }
 #if (UNITY_IPHONE || UNITY_TVOS || UNITY_WEBGL || UNITY_SWITCH) && !UNITY_EDITOR
@@ -28,8 +27,11 @@ public class Main : MonoBehaviour
     void initLua()
     {
         currentLuaEnv = new LuaEnv();
-
         currentLuaEnv.Global.Set<string, bool>("_ANDROID", true);
+        currentLuaEnv.Global.Set<string, bool>("_CLIENT", true);
+
+
+
 
         currentLuaEnv.AddLoader((ref string fn) =>
         {
@@ -38,6 +40,7 @@ public class Main : MonoBehaviour
         currentLuaEnv.AddBuildin("pb", XLua.LuaDLL.Lua.LoadLuaProfobuf);
         luaopen_cmsgpack_safe(currentLuaEnv.L);
         currentLuaEnv.DoString("require '" + Defines.LuaEntryFileName + "'");
+        GameFrameWorkClientLib.nfclient_lib_init("", currentLuaEnv.L);
     }
 
 #if UNITY_EDITOR
@@ -56,11 +59,11 @@ public class Main : MonoBehaviour
     void Update()
     {
         GameFrameWorkClientLib.nfclient_lib_loop();
-        if (currentLuaEnv != null)
-        {
-            currentLuaEnv.Tick();
-            currentLuaEnv.Global.Get<LuaFunction>("update").Call();
-        }
+        //if (currentLuaEnv != null)
+        //{
+        //    currentLuaEnv.Tick();
+        //    currentLuaEnv.Global.Get<LuaFunction>("update").Call();
+        //}
 #if UNITY_EDITOR || UNITY_STANDALONE
         if (Input.GetKeyUp(KeyCode.F5))
         {

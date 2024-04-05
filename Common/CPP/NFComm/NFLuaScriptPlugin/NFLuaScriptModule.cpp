@@ -47,6 +47,18 @@
 //}
 //extern int luaopen_emmy_core1(lua_State* L);
 
+extern "C"
+{
+	extern lua_State *g_pLuaState;
+}	
+
+
+NFLuaScriptModule::NFLuaScriptModule(NFIPluginManager* p):mLuaContext(g_pLuaState)
+{
+    m_bIsExecute = true;
+    pPluginManager = p;
+}
+
 bool NFLuaScriptModule::Awake()
 {
 	mnTime = pPluginManager->GetNowTime();
@@ -68,7 +80,7 @@ bool NFLuaScriptModule::Awake()
 	luaopen_cjson(mLuaContext.state());
     Register();
 
-	std::string luaRootPath = pPluginManager->GetConfigPath() + "NFDataCfg/Lua/";
+	std::string luaRootPath = pPluginManager->GetConfigPath();//-- +"NFDataCfg/Lua/";
 	LuaIntf::LuaBinding(mLuaContext).addFunction("luaRootPath", [luaRootPath]() {
 		return luaRootPath;
 		});

@@ -33,7 +33,7 @@ public class Defines
     public static readonly string AssetArtEffectPrefabSourcePath = AssetBundleSourcePath + "/Effects";
 
 
-    public static readonly string LuaEntryFileName = "main";
+    public static readonly string LuaEntryFileName = "NFScriptSystem";
 
 
     public static readonly string[] LuaFileSearchPath = {

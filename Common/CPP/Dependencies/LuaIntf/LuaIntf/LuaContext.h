@@ -75,8 +75,22 @@ public:
      */
     explicit LuaContext(lua_State* state)
         : L(state)
-        , m_own(false)
-        {}
+        , m_own(state == nullptr)
+        {
+            if(m_own)
+            {
+                L = luaL_newstate();
+                if (!L) throw LuaException("can not allocate new lua state");
+
+                #if LUAINTF_LINK_LUA_COMPILED_IN_CXX
+                        lua_atpanic(L, panic);
+                #endif
+
+                if (true) {
+                    importLibs();
+                }
+            } 
+        }
 
     /**
      * Lua state is closed if it is not wrapper for an existing state

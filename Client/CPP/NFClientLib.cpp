@@ -24,24 +24,32 @@
 */
 
 #include "NFClient.h"
+#include "lua.h"
 #include <iostream>
 
-NFPluginServer* pPluginServer = nullptr;
 
 extern "C" {
+	NFPluginServer* pPluginServer = nullptr;
+	lua_State *g_pLuaState = nullptr;
+	char* g_pLuaRootPath = nullptr;
+
 	__declspec(dllexport) void nfclient_lib_clear()
 	{
 		if (pPluginServer)
 		{
 			pPluginServer->Final();
-			delete pPluginServer;
+			//delete pPluginServer;
+			g_pLuaRootPath = nullptr;
+			g_pLuaState = nullptr;
 			pPluginServer = nullptr;
 		}
 	}
 
-	__declspec(dllexport) void nfclient_lib_init(const char* strArgvList)
+	__declspec(dllexport) void nfclient_lib_init(char* strArgvList, lua_State *L)
 	{
 		std::cout << "nfclient_lib_init:" << std::endl;
+		g_pLuaState = L;
+		g_pLuaRootPath = strArgvList;
 		nfclient_lib_clear();
 		pPluginServer = NF_NEW NFPluginServer(strArgvList);
 		pPluginServer->SetBasicWareLoader(BasicPluginLoader);

@@ -28,11 +28,12 @@
 #include <vector>
 #include <thread>
 #include <chrono>
+#include "lua.h"
 
 extern "C" {
 	extern void nfclient_lib_clear();
 
-	extern void nfclient_lib_init(const char* strArgvList);
+	extern void nfclient_lib_init(const char* strArgvList, lua_State* L);
 
 	extern void nfclient_lib_loop();
 }
@@ -50,7 +51,7 @@ int main(int argc, char* argv[])
 		strArgvList += argv[i];
 	}
 
-	nfclient_lib_init(strArgvList.c_str());
+	nfclient_lib_init("", NULL);
 
 	while (true)
 	{

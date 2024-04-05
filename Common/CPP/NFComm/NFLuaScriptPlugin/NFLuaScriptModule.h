@@ -89,11 +89,7 @@ class NFLuaScriptModule
     : public NFILuaScriptModule
 {
 public:
-    NFLuaScriptModule(NFIPluginManager* p)
-    {
-        m_bIsExecute = true;
-        pPluginManager = p;
-    }
+    NFLuaScriptModule(NFIPluginManager* p);
 
 	virtual bool Awake();
 	virtual bool Init();

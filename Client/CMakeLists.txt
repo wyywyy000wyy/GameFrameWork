@@ -62,8 +62,17 @@ target_link_libraries(GameFrameWorkClient PRIVATE GameFrameWorkClientLib )
 
 set_target_properties( GameFrameWorkClient PROPERTIES
 	FOLDER "GameFrameWorkClient"
+	
 	ARCHIVE_OUTPUT_DIRECTORY ${NFOutPutDir}
 	RUNTIME_OUTPUT_DIRECTORY ${NFOutPutDir}
-	LIBRARY_OUTPUT_DIRECTORY ${NFOutPutDir} )
+	LIBRARY_OUTPUT_DIRECTORY ${NFOutPutDir} 
+)
+
+# set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_DEBUG  ${NFOutPutDir})
+# set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG  ${NFOutPutDir})
+# set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${NFOutPutDir})
+
+# set_property(TARGET GameFrameWorkClient PROPERTY VS_DEBUGGER_WORKING_DIRECTORY ${NFOutPutDir})
+# set_target_properties(GameFrameWorkClient PROPERTIES DEBUG_POSTFIX "")
 
 add_definitions(-D_X64 -D_CONSOLE)
