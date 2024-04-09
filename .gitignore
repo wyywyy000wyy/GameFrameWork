@@ -1,6 +1,8 @@
 _Out/
 BuildClient/*
 BuildServer/*
+/Client/Asset/Code/Lua/common
+/Server/Lua/common
 /Common/CPP/Dependencies/xlua/build_win64
 /Client/Assets/XLua/x86_64/Debug
 /Client/Assets/XLua/x86_64/Debug.meta
