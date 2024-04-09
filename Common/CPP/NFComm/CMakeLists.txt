@@ -10,9 +10,11 @@ add_subdirectory(NFSecurityPlugin)
 add_subdirectory(NFNavigationPlugin)
 add_subdirectory(NFNoSqlPlugin)
 # add_subdirectory(NFTestPlugin)
-add_subdirectory(NFLuaScriptPlugin)
+add_plugin(NFLuaScriptPlugin)
 
 if (APPLE OR WIN32)
     # add_subdirectory(NFRenderPlugin)
     # add_subdirectory(NFBluePrintPlugin)
 endif()
+
+

@@ -1,2 +1,2 @@
-cmake .. -DBUILD_CLIENT=ON
+python ../Build.py CLIENT
 pause

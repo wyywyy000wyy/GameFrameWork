@@ -1,1 +1,0 @@
-local player = object('player')

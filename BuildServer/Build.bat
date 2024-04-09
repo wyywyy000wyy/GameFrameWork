@@ -1,1 +1,2 @@
-cmake .. -DBUILD_CLIENT=OFF
+python ../Build.py
+pause
