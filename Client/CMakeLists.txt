@@ -72,7 +72,7 @@ set_target_properties( GameFrameWorkClient PROPERTIES
 # set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_DEBUG  ${NFOutPutDir})
 # set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${NFOutPutDir})
 
-# set_property(TARGET GameFrameWorkClient PROPERTY VS_DEBUGGER_WORKING_DIRECTORY ${NFOutPutDir})
+set_property(TARGET GameFrameWorkClient PROPERTY VS_DEBUGGER_WORKING_DIRECTORY ${CommonLuaDir})
 # set_target_properties(GameFrameWorkClient PROPERTIES DEBUG_POSTFIX "")
 
 add_definitions(-D_X64 -D_CONSOLE)
