@@ -74,6 +74,7 @@ def get_admin():
     # print("已以管理员权限运行")
     # 在这里执行需要管理员权限的操作
 def link_folder(src_folder, link_folder):
+    print(f"创建链接? {src_folder} -> {link_folder}")
     if not os.path.exists(link_folder):
         print(f"创建链接 {src_folder} -> {link_folder}")
         get_admin()
@@ -110,10 +111,10 @@ def add_plugin(plugin_name):
 # exit(0)
 
 # 设置 CMake 命令和参数
-cmake_command = ["cmake", "..", "BUILD_CLIENT=TRUE", "-DPLUGINS=" + ";".join(plugins)]
+cmake_command = ["cmake", "..", "-DBUILD_CLIENT=TRUE", "-DPLUGINS=" + ";".join(plugins)]
 
 # 执行 CMake 命令
-process = subprocess.Popen(cmake_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+process = subprocess.Popen(cmake_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE,)
 output, error = process.communicate()
 
 # 检查命令执行结果

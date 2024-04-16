@@ -84,13 +84,15 @@ bool NFLuaScriptModule::Awake()
 	LuaIntf::LuaBinding(mLuaContext).addFunction("luaRootPath", [luaRootPath]() {
 		return luaRootPath;
 		});
-	std::string strRootFile = luaRootPath + "NFScriptSystem.lua";
+	std::string strRootFile = luaRootPath + "common/NFScriptSystem.lua";
 
 	TRY_LOAD_SCRIPT_FLE(strRootFile.c_str());
 
 	TRY_RUN_GLOBAL_SCRIPT_FUN1("init_script_system", this);
 
 	TRY_RUN_GLOBAL_SCRIPT_FUN0("module_awake");
+
+	m_pClassModule->InitLuaModuleClass();
 
 	return true;
 }
@@ -1084,6 +1086,8 @@ bool NFLuaScriptModule::Register()
 		.endClass();
 	//for kernel module
 
+
+
 	LuaIntf::LuaBinding(mLuaContext).beginClass<NFLuaScriptModule>("NFLuaScriptModule")
 		.addFunction("register_module", &NFLuaScriptModule::RegisterModule)
 		.addFunction("create_object", &NFLuaScriptModule::CreateObject)
@@ -1178,6 +1182,16 @@ bool NFLuaScriptModule::Register()
 
 	LocalRegisterLuaFunction* pLocalRegisterLuaFunction = new LocalRegisterLuaFunction();
 	pLocalRegisterLuaFunction->p = this;
+
+	lua_State* L = mLuaContext.state();
+
+	//LuaIntf::LuaBinding(mLuaContext).beginClass<NFIClassModule>("NFClassModule")
+	//	.addStaticFunction("AddClass", [L] {
+	//	LuaIntf::LuaRef tmpClassInfo(L, "T_AddClass");
+	//	//string className = tmpClassInfo["ClassName"].value<string>();
+	//	return true;
+	//		})
+	//	.endClass();
 	
 	LuaIntf::LuaBinding(mLuaContext).addFunction("IsFileExist", [this](std::string path) {
 		return m_pFileSystemModule->IsFileExist(path);
@@ -1197,6 +1211,11 @@ bool NFLuaScriptModule::Register()
 		}
 
 		return tbl;
+	})
+.addFunction("GAddClass", [L] {
+		LuaIntf::LuaRef tmpClassInfo(L, "T_AddClass");
+		string className = tmpClassInfo["ClassName"].value<string>();
+		return true;
 	})
  ;
 

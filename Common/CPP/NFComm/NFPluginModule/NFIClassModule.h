@@ -69,6 +69,7 @@ public:
 
     virtual NFIClassModule* GetThreadClassModule() = 0;
     virtual NFIClassModule* GetThreadClassModule(const int index) = 0;
+    virtual void InitLuaModuleClass() = 0;
 
     template<typename BaseType>
     bool AddClassCallBack(const std::string& className, BaseType* pBase, int (BaseType::*handler)(const NFGUID&, const std::string&, const CLASS_OBJECT_EVENT, const NFDataList&))

@@ -113,7 +113,10 @@ end
 
 function module_init(...)
 	LOG("lua module init");
-
+    T_AddClass = {
+        ClassName = "T_AddClass666",
+    }
+    GAddClass();
 end
 
 function module_after_init(...)

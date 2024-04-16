@@ -2,13 +2,13 @@ cmake_minimum_required(VERSION 3.5)
 
 option(BUILD_CLIENT "help string describing option" OFF)
 
-message("***********************************************************")
+message(STATUS "***********************************************************")
 foreach(arg ${PLUGINS})
 	message("ARGV: ${arg}")
 endforeach(arg ${PLUGINS})
 
-message("BUILD_CLIENT__: ${BUILD_CLIENT}")
-message("***********************************************************")
+message(STATUS "BUILD_CLIENT__: ${BUILD_CLIENT}")
+message(STATUS "***********************************************************")
 
 if(BUILD_CLIENT)
     set(ProjectName "GameFrameWorkClient")
@@ -27,6 +27,10 @@ else()
 	set(CommonLuaDir ${PROJECT_SOURCE_DIR}/Server/Lua)
 endif()
 set(CommonLuaPluginDir ${CommonLuaDir}/common/plugins)
+
+message(STATUS "**********************************************")
+
+message(STATUS "CommonLuaDir: ${CommonLuaDir}")
 
 # if( CMAKE_BUILD_TYPE STREQUAL "Debug" )
 #     link_directories(${CommonCPPDir}/Dependencies/lib/Debug/)
@@ -54,7 +58,8 @@ if (APPLE)
 elseif(UNIX)
 	link_directories(/Boost/lib/)
 	include_directories(
-		/Boost/include/boost-1_84/
+		# /Boost/include/boost-1_84/
+		D:/boost_1_84_0/boost_1_84_0/
 		${CommonCPPDir}
 		${CommonCPPDir}/Dependencies/
 		${CommonCPPDir}/Dependencies/NFMessageDefine/
@@ -67,9 +72,11 @@ elseif(UNIX)
 		${CommonCPPDir}/Dependencies/vcpkg/installed/x64-linux/include/google/protobuf/src/
 	)
 else()
-	link_directories(C:/Boost//lib/)
+	# link_directories(C:/Boost//lib/)
+	link_directories(D:/boost_1_84_0/boost_1_84_0/stage/lib/)
 	include_directories(
-		C:/Boost/include/boost-1_84/
+		# C:/Boost/include/boost-1_84/
+		D:/boost_1_84_0/boost_1_84_0/
 		${CommonCPPDir}
 		${CommonCPPDir}/Dependencies/
 		${CommonCPPDir}/Dependencies/NFMessageDefine/

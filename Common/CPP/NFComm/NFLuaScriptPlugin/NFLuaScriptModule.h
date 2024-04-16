@@ -43,6 +43,7 @@
 #include "NFComm/NFPluginModule/NFINetClientModule.h"
 #include "NFComm/NFPluginModule/NFILogModule.h"
 #include "NFComm/NFPluginModule/NFIFileSystemModule.h"
+#include "NFComm/NFPluginModule/NFILuaScriptModule.h"
 #include "NFLuaPBModule.h"
 /*
 void call0(lua_State* lua_state,const char* name)
@@ -78,12 +79,7 @@ void call2(lua_State* lua_state,const char* name, T1 arg1, T2 arg2)
 }
 */
 
-class NFILuaScriptModule
-		: public NFIModule
-{
-public:
 
-};
 
 class NFLuaScriptModule
     : public NFILuaScriptModule
@@ -231,6 +227,8 @@ protected:
 	void OnNetMsgCallBackAsClientForMasterServer(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
 	void OnNetMsgCallBackAsClientForWorldServer(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
 	void OnNetMsgCallBackAsClientForGameServer(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
+
+	void* GetLuaContext() { return &mLuaContext; };
 
 protected:
     bool Register();

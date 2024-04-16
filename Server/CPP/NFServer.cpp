@@ -24,6 +24,13 @@
 */
 
 #include "NFServer.h"
+#include "lua.h"
+
+extern "C" {
+	NFPluginServer* pPluginServer = nullptr;
+	lua_State* g_pLuaState = nullptr;
+	char* g_pLuaRootPath = nullptr;
+}
 
 int main(int argc, char* argv[])
 {

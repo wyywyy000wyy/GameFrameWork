@@ -31,6 +31,8 @@
 #include "NFComm/NFPluginModule/NFIThreadPoolModule.h"
 #include "Dependencies/RapidXML/rapidxml.hpp"
 #include "Dependencies/RapidXML/rapidxml_print.hpp"
+#include "Dependencies/LuaIntf/LuaIntf/LuaIntf.h"
+#include "Dependencies/LuaIntf/LuaIntf/LuaRef.h"
 
 NFClassModule::NFClassModule()
 {
@@ -72,6 +74,7 @@ NFClassModule::~NFClassModule()
 
 bool NFClassModule::Awake()
 {
+
     for (int i = 0; i < mThreadClasses.size(); ++i)
 	{
 		mThreadClasses[i].classModule->Awake();
@@ -83,8 +86,16 @@ bool NFClassModule::Awake()
 	
 }
 
+using namespace LuaIntf;
+
+void NFClassModule::InitLuaModuleClass()
+{
+}
+
 bool NFClassModule::Init()
 {
+    //m_pLuaScriptModule = pPluginManager->FindModule<NFILuaScriptModule>();
+
 	for (int i = 0; i < mThreadClasses.size(); ++i)
 	{
 		mThreadClasses[i].classModule->Init();

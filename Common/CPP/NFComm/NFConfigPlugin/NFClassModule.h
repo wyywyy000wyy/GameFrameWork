@@ -43,6 +43,7 @@
 #include "NFComm/NFPluginModule/NFIClassModule.h"
 #include "NFComm/NFPluginModule/NFIElementModule.h"
 #include "NFComm/NFPluginModule/NFIPluginManager.h"
+#include "NFComm/NFPluginModule/NFILuaScriptModule.h"
 
 class NFClass : public NFIClass
 {
@@ -170,6 +171,7 @@ public:
     virtual bool Load() override ;
     virtual bool Save() override ;
     virtual bool Clear() override ;
+    void InitLuaModuleClass();
 
     virtual NFIClassModule* GetThreadClassModule() override;
 	virtual NFIClassModule* GetThreadClassModule(const int index) override;
@@ -203,6 +205,7 @@ protected:
 
 	std::vector<ThreadClassModule> mThreadClasses;
 
+    NFILuaScriptModule* m_pLuaScriptModule;
 protected:
     std::string mConfigFileName;
     bool mbBackup = false;
