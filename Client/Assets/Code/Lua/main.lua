@@ -1,10 +1,10 @@
 
 require("base/import")
-require("common/framework/class")
+-- require("common/framework/class")
 require("framework/file_system")
 require("base/global_func")
-require("common/framework/hot_require")
-require_folder("framework/type")
+-- require("common/framework/hot_require")
+-- require_folder("framework/type")
 require("base/s_coroutine")
 require("base/behaviour_bridge")
 require("base/game_state/game_state")

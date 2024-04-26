@@ -127,6 +127,7 @@ public:
 
     virtual NF_SHARE_PTR<NFIObject> GetObject(const NFGUID& ident) = 0;
     virtual NF_SHARE_PTR<NFIObject> CreateObject(const NFGUID& self, const int sceneID, const int groupID, const std::string& className, const std::string& configIndex, const NFDataList& arg) = 0;
+    virtual NF_SHARE_PTR<NFIObject> CreateObject(const NFGUID& self) = 0;
 
 	virtual bool DestroySelf(const NFGUID& self) = 0;
     virtual bool DestroyObject(const NFGUID& self) = 0;

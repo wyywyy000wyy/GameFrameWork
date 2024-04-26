@@ -171,6 +171,8 @@ public:
     virtual bool Load() override ;
     virtual bool Save() override ;
     virtual bool Clear() override ;
+
+    virtual void OnRegisterLua() override;
     void InitLuaModuleClass();
 
     virtual NFIClassModule* GetThreadClassModule() override;
@@ -205,7 +207,6 @@ protected:
 
 	std::vector<ThreadClassModule> mThreadClasses;
 
-    NFILuaScriptModule* m_pLuaScriptModule;
 protected:
     std::string mConfigFileName;
     bool mbBackup = false;

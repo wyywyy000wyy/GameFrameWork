@@ -25,6 +25,7 @@
 
 #include "NFPluginServer.h"
 #include "NFComm/NFCore/NFException.hpp"
+#include "NFComm/NFLuaScriptPlugin/NFLuaScriptPlugin.h"
 
 NFPluginServer::NFPluginServer(const std::string& strArgv)
 {
@@ -98,6 +99,10 @@ void NFPluginServer::Init()
     {
         pPluginManager->SetConfigPath("./");
     }
+
+    NFIPlugin* pLuaScriptPlugin = new NFLuaScriptPlugin(pPluginManager.get());
+
+    pPluginManager->Registered(pLuaScriptPlugin);
 
 	if (externalBasicWarePluginLoader)
 	{

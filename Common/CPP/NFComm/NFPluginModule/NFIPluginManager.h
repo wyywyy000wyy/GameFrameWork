@@ -73,6 +73,8 @@ public:
 #define FIND_MODULE(classBaseName, className)  \
 	assert((TIsDerived<classBaseName, NFIModule>::Result));
 
+class NFILuaScriptModule;
+
 class NFIPluginManager
 {
 public:
@@ -247,6 +249,8 @@ public:
 
 	virtual void AddFileReplaceContent(const std::string& fileName, const std::string& content, const std::string& newValue) = 0;
 	virtual std::vector<NFReplaceContent> GetFileReplaceContents(const std::string& fileName) = 0;
+
+	NFILuaScriptModule* m_pLuaScriptModule;
 };
 
 #endif

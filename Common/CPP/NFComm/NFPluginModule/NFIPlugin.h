@@ -122,6 +122,9 @@ public:
 			NFIModule *pModule = it.second;
 
 			pPluginManager->SetCurrentModule(pModule);
+
+			pModule->RegisterLua(pPluginManager->m_pLuaScriptModule);
+
 			bool bRet = pModule->Init();
 			if (!bRet)
 			{

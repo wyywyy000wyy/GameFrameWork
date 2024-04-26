@@ -526,6 +526,22 @@ NF_SHARE_PTR<NFIObject> NFKernelModule::CreateObject(const NFGUID& self, const i
 	return pObject;
 }
 
+NF_SHARE_PTR<NFIObject> NFKernelModule::CreateObject(const NFGUID& self)
+{
+	NFGUID ident = self;
+
+	if (ident.IsNull())
+	{
+		ident = CreateGUID();
+	}
+	NF_SHARE_PTR<NFIObject> pObject;
+
+	pObject = NF_SHARE_PTR<NFIObject>(NF_NEW NFObject(ident, pPluginManager));
+	AddElement(ident, pObject);
+
+	return pObject;
+}
+
 bool NFKernelModule::DestroyObject(const NFGUID& self)
 {
 	if (self == mnCurExeObject

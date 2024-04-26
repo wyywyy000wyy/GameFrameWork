@@ -74,8 +74,8 @@ public:
 	void SetBasicWareLoader(std::function<void(NFIPluginManager * p)> fun);
 	void SetMidWareLoader(std::function<void(NFIPluginManager * p)> fun);
 
-private:
 	NF_SHARE_PTR<NFIPluginManager> pPluginManager;
+private:
 	std::string strArgvList;
 	std::function<void(NFIPluginManager * p)> externalMidWarePluginLoader;
 	std::function<void(NFIPluginManager * p)> externalBasicWarePluginLoader;

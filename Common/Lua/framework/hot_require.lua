@@ -1,7 +1,21 @@
 -- module("hot_require", package.seeall)
 local table_insert = table.insert
 local file_system = T.file_system
-local get_file_path = T.file_system.get_file_path
+
+local function ends_with(str, ending)
+    return ending == "" or str:sub(-#ending) == ending
+end
+local function starts_with(str, start)
+    return str:sub(1, #start) == start
+end
+
+local get_file_path = function(path) 
+    local tp = T.file_system.get_file_path(path)
+    -- if ends_with(tp, ".lua") then
+    --     tp = string.sub(tp, 1, -5)
+    -- end
+    return tp 
+end
 local get_file_time = T.file_system.get_file_time
 local get_files = T.file_system.get_files
 g_require = g_require or require
@@ -31,8 +45,11 @@ local function getCurrentLuaPath(upnum)
     local path = info.source
     -- LOG("getCurrentLuaPath", path, "upnum", upnum, debug.traceback()) 
     local LuaIdx = string.find(path, "Lua")
-    local path2 = string.sub(path, LuaIdx + 4)
-
+    local path2 = path --
+    if LuaIdx then
+        path2 = string.sub(path, LuaIdx + 4)
+    end
+    -- LOG("getCurrentLuaPath", path, "path2", path2, "upnum", upnum, debug.traceback())
     return path2
 end
 
@@ -45,6 +62,7 @@ local require_file = class("require_file", function(self, modname, folder)
     local files = {}
     for _, path in ipairs(search_paths) do
         local filepath = path .. self.path .. ".lua"
+        LOG("**************require_file", self.modname, "path", self.path, "filepath", filepath)
         table_insert(files, filepath)
     end
     self.files = files
@@ -61,8 +79,9 @@ function require_file:dirty()
     end
     for _, path in ipairs(self.files) do
         if file_system.exsit_file(path) then
-            local require_path = get_file_path(string.sub(path, 1, -5))
-            local file_time = file_system.get_file_time(require_path)
+            local require_path = get_file_path(path) --string.sub(path, 1, -5))
+            local file_time = file_system.get_file_time(path)
+            -- LOG("file_time____", path, file_time, self.time)
             if file_time > self.time then
                 return true
             end
@@ -83,6 +102,7 @@ end
 
 
 function require_file:require()
+    -- LOG("require_a?", self.modname, "dirty", self:dirty(), "time", self.time, "file_count", self.file_count, "files", self.files[1], "search_folder", self.search_folder)
     if not self:dirty() then
         return self._ret
     end
@@ -94,14 +114,20 @@ function require_file:require()
             -- if not require_path then
             --     self.filePaths[i] = require_path
             -- end
-            local require_path = get_file_path(string.sub(path, 1, -5))
-            self.time = math.max(self.time, get_file_time(require_path))
+            -- local require_path = get_file_path(string.sub(path, 1, -5))
+            self.time = math.max(self.time, get_file_time(path))
             self.file_count = self.file_count + 1
             if not first then
                 ELOG("GGGGGGGG....... hot reload" .. path)
             end
-            -- LOG("GGGGGGGG....... hot reload file:" .. path)
-            ret = dofile(require_path)
+
+            -- local rp1 = require_path
+            -- if ends_with(rp1, ".lua") then
+            --     rp1 = string.sub(rp1, 1, -5)
+            -- end
+
+            ret = dofile(path)
+            LOG("GGGGGGGG....... hot reload file:" .. path)
             self.search_folder[i] = get_folder(require_path)
 
             -- LOG("require_file", self.modname, "path", path, "require_path", require_path, "folder", self.search_folder[i])
@@ -125,6 +151,12 @@ lrequire = function(modname)
 end
 
 require = function(modname, is_folder)
+    if starts_with(modname, "@") then
+        modname = string.sub(modname, 2)
+    end
+
+    -- LOG("require____", modname, debug.traceback())
+
     local require_info = init_map[modname]
     if not require_info then
         require_info = require_file(modname)
@@ -174,7 +206,7 @@ function hot_require.force_require(modname)
 end
 
 function hot_require.rrquire_all(modname)
-    ELOG("GGGGGGGG....... lua 热更")
+    ELOG("GGGGGGGG....... lua hotreload")
     for _, info in ipairs(init_list) do
         info:require()
     end

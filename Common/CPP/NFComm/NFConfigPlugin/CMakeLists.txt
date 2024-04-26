@@ -14,6 +14,8 @@ set_target_properties( NFConfigPlugin PROPERTIES
 	RUNTIME_OUTPUT_DIRECTORY ${NFOutPutDir}
 	LIBRARY_OUTPUT_DIRECTORY ${NFOutPutDir} )
 
+add_definitions(-DLUAINTF_LINK_LUA_COMPILED_IN_CXX=0)
+
 if(UNIX)
 	add_dependencies(NFConfigPlugin NFCore)
 	if (CMAKE_BUILD_TYPE MATCHES "Release")
@@ -25,6 +27,6 @@ if(UNIX)
 else()
 	message("${ProjectName} ${CMAKE_BUILD_TYPE}")
 	
-	target_link_libraries(NFConfigPlugin  NFCore)
+	target_link_libraries(NFConfigPlugin  NFCore emmy_debugger uv_a xlua)
 	target_link_libraries(NFConfigPlugin -static-libstdc++)
 endif()

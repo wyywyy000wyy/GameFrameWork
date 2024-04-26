@@ -16,5 +16,5 @@ local KeyMt = {
         return init_value or 1
     end
 }
-
-setmetatable(Key, KeyMt)
+ 
+setmetatable(Key, KeyMt) 

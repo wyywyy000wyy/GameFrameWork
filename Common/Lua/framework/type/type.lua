@@ -62,7 +62,7 @@ function PD(Type, Name, DefaultValue, PropertyBit)
 end
 
 lrequire("Struct")
-
+ 
 pre_type = pre_type or type
 local pre_type = pre_type
 function get_type(t)

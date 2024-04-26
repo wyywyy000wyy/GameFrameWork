@@ -38,7 +38,10 @@ std::string NFFileSystemModule::GetFilePath(const std::string& strFileName)
 
 long NFFileSystemModule::FileWriteTime(const std::string& strFileName)
 {
-	return boost::filesystem::last_write_time(strFileName);
+	auto time = boost::filesystem::last_write_time(strFileName);
+
+
+	return time;
 }
 
 std::vector<string> NFFileSystemModule::GetFolderFiles(const std::string& strPath, bool recursive)

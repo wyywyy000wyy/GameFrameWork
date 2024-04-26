@@ -66,3 +66,5 @@ StructDef = function(Name, properties)
 end
 
 setmetatable(Struct, StructMt)
+
+     

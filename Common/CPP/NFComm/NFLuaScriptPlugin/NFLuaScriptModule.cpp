@@ -29,6 +29,7 @@
 #include "NFLuaScriptModule.h"
 #include "NFLuaScriptPlugin.h"
 #include "NFComm/NFPluginModule/NFIKernelModule.h"
+#include "NFComm/NFCore/NFObject.h"
 
 #define TRY_RUN_GLOBAL_SCRIPT_FUN0(strFuncName)   try {LuaIntf::LuaRef func(mLuaContext, strFuncName);  func.call<LuaIntf::LuaRef>(); }   catch (LuaIntf::LuaException& e) { cout << e.what() << endl; }
 #define TRY_RUN_GLOBAL_SCRIPT_FUN1(strFuncName, arg1)  try {LuaIntf::LuaRef func(mLuaContext, strFuncName);  func.call<LuaIntf::LuaRef>(arg1); }catch (LuaIntf::LuaException& e) { cout << e.what() << endl; }
@@ -57,6 +58,7 @@ NFLuaScriptModule::NFLuaScriptModule(NFIPluginManager* p):mLuaContext(g_pLuaStat
 {
     m_bIsExecute = true;
     pPluginManager = p;
+	p->m_pLuaScriptModule = this;
 }
 
 bool NFLuaScriptModule::Awake()
@@ -163,6 +165,19 @@ NFGUID NFLuaScriptModule::CreateObject(const NFGUID & self, const int sceneID, c
 
 	return NFGUID();
 }
+
+NFGUID NFLuaScriptModule::CreateObjectEmpty()
+{
+	NFGUID self = m_pKernelModule->CreateGUID();
+	NF_SHARE_PTR<NFIObject> xObject = m_pKernelModule->CreateObject(self);
+	if (xObject)
+	{
+		return xObject->Self();
+
+	}
+	return self;
+}
+
 
 bool NFLuaScriptModule::ExistObject(const NFGUID & self)
 {
@@ -706,6 +721,12 @@ std::vector<std::string> NFLuaScriptModule::GetEleList(const std::string& classN
     return std::vector<std::string>();
 }
 
+void* NFLuaScriptModule::HotReload()
+{
+	TRY_RUN_GLOBAL_SCRIPT_FUN0("hot_require.force_require");
+	return nullptr;
+}
+
 NFINT64 NFLuaScriptModule::GetElePropertyInt(const std::string & configName, const std::string & propertyName)
 {
 	return m_pElementModule->GetPropertyInt(configName, propertyName);
@@ -1086,11 +1107,33 @@ bool NFLuaScriptModule::Register()
 		.endClass();
 	//for kernel module
 
+	LuaIntf::LuaBinding(mLuaContext).beginClass<NFObject>("NFObject")
+		.addFunction("Self", &NFObject::Self)
+		.addFunction("FindProperty", &NFObject::FindProperty)
+
+
+		.addFunction("GetPropertyInt", &NFObject::GetPropertyInt)
+		.addFunction("GetPropertyFloat", &NFObject::GetPropertyFloat)
+		.addFunction("GetPropertyString", &NFObject::GetPropertyString)
+		.addFunction("GetPropertyObject", &NFObject::GetPropertyObject)
+		.addFunction("GetPropertyVector2", &NFObject::GetPropertyVector2)
+		.addFunction("GetPropertyVector3", &NFObject::GetPropertyVector3)
+
+
+		.addFunction("SetPropertyInt", &NFObject::SetPropertyInt)
+		.addFunction("SetPropertyFloat", &NFObject::SetPropertyFloat)
+		.addFunction("SetPropertyString", &NFObject::SetPropertyString)
+		.addFunction("SetPropertyObject", &NFObject::SetPropertyObject)
+		.addFunction("SetPropertyVector2", &NFObject::SetPropertyVector2)
+		.addFunction("SetPropertyVector3", &NFObject::SetPropertyVector3)
+
+		.endClass();
 
 
 	LuaIntf::LuaBinding(mLuaContext).beginClass<NFLuaScriptModule>("NFLuaScriptModule")
 		.addFunction("register_module", &NFLuaScriptModule::RegisterModule)
 		.addFunction("create_object", &NFLuaScriptModule::CreateObject)
+		.addFunction("create_object_e", &NFLuaScriptModule::CreateObjectEmpty)
 		.addFunction("exist_object", &NFLuaScriptModule::ExistObject)
 		.addFunction("destroy_object", &NFLuaScriptModule::DestroyObject)
 		.addFunction("enter_scene", &NFLuaScriptModule::EnterScene)

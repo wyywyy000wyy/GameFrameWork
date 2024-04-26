@@ -26,7 +26,7 @@
 #include "NFClient.h"
 #include "lua.h"
 #include <iostream>
-
+#include "NFComm/NFPluginModule/NFILuaScriptModule.h"
 
 extern "C" {
 	NFPluginServer* pPluginServer = nullptr;
@@ -65,5 +65,15 @@ extern "C" {
 		}
 	}
 
-	
+	__declspec(dllexport) void nfclient_hot_reload()
+	{
+		if (pPluginServer)
+		{
+			NFILuaScriptModule *pLuaScriptModule = pPluginServer->pPluginManager->FindModule<NFILuaScriptModule>();
+			if (pLuaScriptModule)
+			{
+				pLuaScriptModule->HotReload();
+			}
+		}
+	}
 }

@@ -29,13 +29,24 @@
 #include <thread>
 #include <chrono>
 #include "lua.h"
+//#include "NFClient.h"
+#include "NFComm/NFPluginModule/NFIModule.h"
+#include "NFComm/NFPluginModule/NFILuaScriptModule.h"
+#include "NFComm/NFPluginLoader/NFPluginServer.h"
+#if _WIN32
+#include <windows.h>
+#endif
+
 
 extern "C" {
+	extern NFPluginServer* pPluginServer;
 	extern void nfclient_lib_clear();
 
 	extern void nfclient_lib_init(const char* strArgvList, lua_State* L);
 
 	extern void nfclient_lib_loop();
+	extern void nfclient_hot_reload();
+
 }
 
 int main(int argc, char* argv[])
@@ -53,10 +64,21 @@ int main(int argc, char* argv[])
 
 	nfclient_lib_init("", NULL);
 
+
+	int dt = 0;
 	while (true)
 	{
 		std::this_thread::sleep_for(std::chrono::milliseconds(1));
 		nfclient_lib_loop();
+		if (GetAsyncKeyState(VK_F5) & 0x8000  && dt < 0) {
+			printf("F5 key pressed.\n");
+			dt = 10;
+			nfclient_hot_reload();
+			//pLuaScriptModule->HotReload();
+			// 处理F5键消息
+			// ...
+		}
+		dt--;
 	}
 
 	//if (argc == 1)

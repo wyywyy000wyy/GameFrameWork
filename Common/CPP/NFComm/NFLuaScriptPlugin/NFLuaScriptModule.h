@@ -102,6 +102,7 @@ protected:
 
 	//FOR KERNEL MODULE
 	NFGUID CreateObject(const NFGUID& self, const int sceneID, const int groupID, const std::string& className, const std::string& objectIndex, const NFDataList& arg);
+	NFGUID CreateObjectEmpty();
 	bool ExistObject(const NFGUID& self);
 	bool DestroyObject(const NFGUID & self);
 
@@ -157,6 +158,7 @@ protected:
 	//FOR ELEMENT MODULE
 	bool ExistElementObject(const std::string& configName);
 	std::vector<std::string> GetEleList(const std::string& className);
+	void* HotReload();
 
 	NFINT64 GetElePropertyInt(const std::string& configName, const std::string& propertyName);
 	double GetElePropertyFloat(const std::string& configName, const std::string& propertyName);

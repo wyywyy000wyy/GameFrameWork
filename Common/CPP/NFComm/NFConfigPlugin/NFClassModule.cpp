@@ -22,6 +22,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 */
+//#define LUAINTF_LINK_LUA_COMPILED_IN_CXX 0
 
 
 #include <time.h>
@@ -87,6 +88,14 @@ bool NFClassModule::Awake()
 }
 
 using namespace LuaIntf;
+
+void NFClassModule::OnRegisterLua()
+{
+    LuaIntf::LuaContext* context = (LuaIntf::LuaContext*)m_pLuaScriptModule->GetLuaContext();
+
+    LuaIntf::LuaBinding(*context).beginClass< NFClassModule >("NFClassModule")
+        .endClass();
+}
 
 void NFClassModule::InitLuaModuleClass()
 {

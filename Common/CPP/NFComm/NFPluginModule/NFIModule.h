@@ -33,6 +33,10 @@
 #include "NFComm/NFCore/NFDataList.hpp"
 #include "NFComm/NFCore/NFSmartEnum.hpp"
 
+class NFILuaScriptModule;
+
+
+
 class NFIModule
 {
 
@@ -99,9 +103,22 @@ public:
         return pPluginManager;
     }
 
+    virtual void OnRegisterLua() {};
+
+
+    void RegisterLua(NFILuaScriptModule* p)
+    {
+        m_pLuaScriptModule = p;
+        OnRegisterLua();
+    }
+
     std::string name;
     bool m_bIsExecute;
 protected:
 	NFIPluginManager* pPluginManager;
+    NFILuaScriptModule* m_pLuaScriptModule;
 };
+
+
 #endif
+#include "NFComm/NFPluginModule/NFILuaScriptModule.h"

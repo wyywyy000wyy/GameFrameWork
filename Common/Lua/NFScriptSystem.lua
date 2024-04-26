@@ -1,13 +1,44 @@
 -- package.path = '../NFDataCfg/Lua/?.lua;../NFDataCfg/Lua/json/?.lua;../NFDataCfg/Lua/cfg/?.lua;../NFDataCfg/Lua/game/scenario/?.lua;../NFDataCfg/Lua/game/?.lua;../NFDataCfg/Lua/world/?.lua;../NFDataCfg/Lua/proxy/?.lua;../NFDataCfg/ScriptModule/master/?.lua;../NFDataCfg/ScriptModule/login/?.lua;'
 package.path = '?.lua;../../../Code/Lua/?.lua'
 
+local function _dump_value(v, depth,map)
+    depth = depth or 1
+    map = map or {}
+
+    if type(v) == 'string' then
+        return string.format('%q', v)
+    elseif type(v) == 'number' then
+        return tostring(v)
+    elseif type(v) == 'boolean' then
+        return (v and 'true') or 'false'
+    elseif type(v) == 'table' then
+        if(map[v]) then
+            return map[v];
+        end
+        map[v] = tostring(v);
+        if(depth > 100) then
+            return "too many depth; ignore"
+        end
+        local rt = "";
+        for k, v in pairs(v) do
+            rt = string.format("%s%s[%s] = %s;\n",rt,string.rep('\t', depth),_dump_value(k, depth + 1,map),_dump_value(v, depth + 1,map))
+        end
+        return string.format("{\n%s%s}",rt,string.rep('\t', depth - 1))
+    elseif type(v) == 'userdata' then
+        return "userdata"
+    elseif type(v) == 'function' then
+        return "function"
+    else
+        return "unknown type"
+    end
+end
 -- require("NFScriptEnum");
 local function contact_parm(...)
     local n = select('#',...)
     local tb = table.pack(...)
     local s = ""
     for i = 1,n do
-        s = s .. tostring(tb[i]) .."\t"
+        s = s .. _dump_value(tb[i]) .."\t"
     end
     return s
 end
@@ -39,9 +70,15 @@ script_module = nil;
 function init_script_system(xLuaScriptModule)
 	script_module = xLuaScriptModule;
 	-- require("main")
-	if _CLIENT then
-		require("main")
-	end
+    require("common/framework/global_func")
+    require("common/framework/class")
+    require("common/framework/file_system")
+    require("common/framework/hot_require")
+    -- dofile("common/framework/type.lua")
+    require_folder("framework/type")
+
+
+
 	LOG("Hello Lua, init script_module, " .. tostring(script_module));
 
     -- local dbg =  _G.emmy_core
@@ -117,6 +154,11 @@ function module_init(...)
         ClassName = "T_AddClass666",
     }
     GAddClass();
+
+    require("common/framework/cmain")
+    if _CLIENT then
+		require("main")
+	end
 end
 
 function module_after_init(...)
@@ -135,10 +177,11 @@ function module_before_shut(...)
 end
 
 function module_update(...)
+    -- -- PM:update()
+    -- local a  = 1
+    -- a = 2
+	-- local script_module = script_module;
     -- PM:update()
-    local a  = 1
-    a = 2
-	local script_module = script_module;
 
 	-- LOG("lua module module_update");
 end
