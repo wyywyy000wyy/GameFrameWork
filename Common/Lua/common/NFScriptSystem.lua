@@ -70,16 +70,7 @@ script_module = nil;
 function init_script_system(xLuaScriptModule)
 	script_module = xLuaScriptModule;
 	-- require("main")
-    require("common/framework/global_func")
-    require("common/framework/class")
-    require("common/framework/file_system")
-    require("common/framework/hot_require")
-    -- dofile("common/framework/type.lua")
-    require_folder("framework/type")
 
-
-
-	LOG("Hello Lua, init script_module, " .. tostring(script_module));
 
     -- local dbg =  _G.emmy_core
     -- if dbg then
@@ -114,7 +105,7 @@ function init_script_system(xLuaScriptModule)
 	-- require_folder("framework/type")
 	-- require_folder("data", true)
 	-- require_folder("framework")
-	-- PM:load_plugin("task_manager")
+	-- PM:load_module("task_manager")
 	
 	LOG("~~~~~~~~~~~~~~good")
 end
@@ -126,7 +117,7 @@ end
 function module_awake(...)
 	LOG("lua module awake");
 	
-    -- PM:load(require("plugins/plugin_manifest"))
+    -- PM:load(require("modules/module_manifest"))
     
     -- local PlayerType = StructDef("Player", 
     -- PD(String, "name", "default_name"),
@@ -149,6 +140,19 @@ end
 
 
 function module_init(...)
+
+    require("common/framework/global_func")
+    require("common/framework/class")
+    require("common/framework/file_system")
+    require("common/framework/hot_require")
+    -- dofile("common/framework/type.lua")
+    require_folder("framework/type")
+
+
+
+	LOG("Hello Lua, init script_module, " .. tostring(script_module));
+
+    
 	LOG("lua module init");
     T_AddClass = {
         ClassName = "T_AddClass666",

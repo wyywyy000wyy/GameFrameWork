@@ -25,6 +25,7 @@
 
 #ifndef NFI_MODULE_H
 #define NFI_MODULE_H
+#define LUAINTF_LINK_LUA_COMPILED_IN_CXX 0
 
 #include <string>
 #include "NFIPluginManager.h"
@@ -32,6 +33,8 @@
 #include "NFComm/NFCore/NFList.hpp"
 #include "NFComm/NFCore/NFDataList.hpp"
 #include "NFComm/NFCore/NFSmartEnum.hpp"
+#include "Dependencies/LuaIntf/LuaIntf/LuaIntf.h"
+#include "Dependencies/LuaIntf/LuaIntf/LuaRef.h"
 
 class NFILuaScriptModule;
 

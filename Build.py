@@ -43,7 +43,7 @@ else:
 
 SolutionDir = (os.path.dirname(os.path.abspath(__file__)))
 
-CommonLuaDir = os.path.join(SolutionDir, "Common", "Lua")
+CommonLuaDir = os.path.join(SolutionDir, "Common", "Lua", "common")
 
 if CLIENT:
     TargetCommonLuaDir = os.path.join(SolutionDir, "Client","Assets","Code","Lua", "common")

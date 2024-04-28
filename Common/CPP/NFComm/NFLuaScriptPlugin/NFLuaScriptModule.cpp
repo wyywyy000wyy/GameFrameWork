@@ -87,6 +87,10 @@ bool NFLuaScriptModule::Awake()
 		return luaRootPath;
 		});
 	std::string strRootFile = luaRootPath + "common/NFScriptSystem.lua";
+	//if (!m_pFileSystemModule->IsFileExist(strRootFile))
+	//{
+	//	strRootFile = luaRootPath + "NFScriptSystem.lua";
+	//}
 
 	TRY_LOAD_SCRIPT_FLE(strRootFile.c_str());
 

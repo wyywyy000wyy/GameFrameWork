@@ -1,7 +1,7 @@
-local service_persistent = plugin_service_def("service_persistent")
+local service_persistent = module_service_def("service_persistent")
 
 function service_persistent:init()
-    -- require("plugins/persistent/service/service_persistent_impl_filesystem")
+    -- require("modules/persistent/service/service_persistent_impl_filesystem")
     lrequire("service_persistent_impl_filesystem")
     self._impl = T.service_persistent_impl_filesystem()
     self._impl:init()

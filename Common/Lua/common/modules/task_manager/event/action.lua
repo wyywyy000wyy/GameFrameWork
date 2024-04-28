@@ -8,8 +8,8 @@ function action_def(name, ...)
     end
 
     local action_class = task_def(name, function(action, ...)
-        local plugin = TM.actions[name]
-        return plugin[name](plugin, action, ...)
+        local module = TM.actions[name]
+        return module[name](module, action, ...)
     end, params)
     return action_class
 end

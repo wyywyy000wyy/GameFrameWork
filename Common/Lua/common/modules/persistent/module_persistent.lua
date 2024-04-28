@@ -1,0 +1,1 @@
+local module_peristent = module_def("module_persistent")

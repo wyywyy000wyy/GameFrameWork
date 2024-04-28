@@ -1,0 +1,82 @@
+2024-04-28 19:05:54,869 INFO [default] 1 | 0 | "lua module awake"	
+
+2024-04-28 19:05:54,871 INFO [default] 2 | 0 | "lua module awake ~~~~~~~~~~~~~~~~~"	
+
+2024-04-28 19:05:54,879 INFO [default] 3 | 0 | "lua module init"	
+
+2024-04-28 19:05:54,883 INFO [default] 4 | 0 | "lua module after init"	
+
+2024-04-28 19:05:54,884 INFO [default] 5 | 0 | "lua module execute"	
+
+2024-04-28 19:08:06,769 INFO [default] 1 | 0 | "**************require_file"	"framework/type/Bool"	"path"	"framework/type/Bool"	"filepath"	"common/framework/type/Bool.lua"	
+
+2024-04-28 19:08:06,772 INFO [default] 2 | 0 | "**************require_file"	"framework/type/Bool"	"path"	"framework/type/Bool"	"filepath"	"framework/type/Bool.lua"	
+
+2024-04-28 19:08:06,774 INFO [default] 3 | 0 | "GGGGGGGG....... hot reload file:framework/type/Bool.lua"	
+
+2024-04-28 19:08:06,775 INFO [default] 4 | 0 | "**************require_file"	"framework/type/Double"	"path"	"framework/type/Double"	"filepath"	"common/framework/type/Double.lua"	
+
+2024-04-28 19:08:06,775 INFO [default] 5 | 0 | "**************require_file"	"framework/type/Double"	"path"	"framework/type/Double"	"filepath"	"framework/type/Double.lua"	
+
+2024-04-28 19:08:06,776 INFO [default] 6 | 0 | "GGGGGGGG....... hot reload file:framework/type/Double.lua"	
+
+2024-04-28 19:08:06,777 INFO [default] 7 | 0 | "**************require_file"	"framework/type/Float"	"path"	"framework/type/Float"	"filepath"	"common/framework/type/Float.lua"	
+
+2024-04-28 19:08:06,777 INFO [default] 8 | 0 | "**************require_file"	"framework/type/Float"	"path"	"framework/type/Float"	"filepath"	"framework/type/Float.lua"	
+
+2024-04-28 19:08:06,778 INFO [default] 9 | 0 | "GGGGGGGG....... hot reload file:framework/type/Float.lua"	
+
+2024-04-28 19:08:06,779 INFO [default] 10 | 0 | "**************require_file"	"framework/type/Int"	"path"	"framework/type/Int"	"filepath"	"common/framework/type/Int.lua"	
+
+2024-04-28 19:08:06,779 INFO [default] 11 | 0 | "**************require_file"	"framework/type/Int"	"path"	"framework/type/Int"	"filepath"	"framework/type/Int.lua"	
+
+2024-04-28 19:08:06,780 INFO [default] 12 | 0 | "GGGGGGGG....... hot reload file:framework/type/Int.lua"	
+
+2024-04-28 19:08:06,782 INFO [default] 13 | 0 | "**************require_file"	"framework/type/Key"	"path"	"framework/type/Key"	"filepath"	"common/framework/type/Key.lua"	
+
+2024-04-28 19:08:06,782 INFO [default] 14 | 0 | "**************require_file"	"framework/type/Key"	"path"	"framework/type/Key"	"filepath"	"framework/type/Key.lua"	
+
+2024-04-28 19:08:06,784 INFO [default] 15 | 0 | "GGGGGGGG....... hot reload file:framework/type/Key.lua"	
+
+2024-04-28 19:08:06,785 INFO [default] 16 | 0 | "**************require_file"	"framework/type/Long"	"path"	"framework/type/Long"	"filepath"	"common/framework/type/Long.lua"	
+
+2024-04-28 19:08:06,786 INFO [default] 17 | 0 | "**************require_file"	"framework/type/Long"	"path"	"framework/type/Long"	"filepath"	"framework/type/Long.lua"	
+
+2024-04-28 19:08:06,788 INFO [default] 18 | 0 | "GGGGGGGG....... hot reload file:framework/type/Long.lua"	
+
+2024-04-28 19:08:06,789 INFO [default] 19 | 0 | "**************require_file"	"framework/type/String"	"path"	"framework/type/String"	"filepath"	"common/framework/type/String.lua"	
+
+2024-04-28 19:08:06,790 INFO [default] 20 | 0 | "**************require_file"	"framework/type/String"	"path"	"framework/type/String"	"filepath"	"framework/type/String.lua"	
+
+2024-04-28 19:08:06,790 INFO [default] 21 | 0 | "GGGGGGGG....... hot reload file:framework/type/String.lua"	
+
+2024-04-28 19:08:06,792 INFO [default] 22 | 0 | "**************require_file"	"framework/type/Struct"	"path"	"framework/type/Struct"	"filepath"	"common/framework/type/Struct.lua"	
+
+2024-04-28 19:08:06,792 INFO [default] 23 | 0 | "**************require_file"	"framework/type/Struct"	"path"	"framework/type/Struct"	"filepath"	"framework/type/Struct.lua"	
+
+2024-04-28 19:08:06,794 INFO [default] 24 | 0 | "GGGGGGGG....... hot reload file:framework/type/Struct.lua"	
+
+2024-04-28 19:08:06,794 INFO [default] 25 | 0 | "**************require_file"	"framework/type/type"	"path"	"framework/type/type"	"filepath"	"common/framework/type/type.lua"	
+
+2024-04-28 19:08:06,795 INFO [default] 26 | 0 | "**************require_file"	"framework/type/type"	"path"	"framework/type/type"	"filepath"	"framework/type/type.lua"	
+
+2024-04-28 19:08:06,799 INFO [default] 27 | 0 | "GGGGGGGG....... hot reload file:framework/type/type.lua"	
+
+2024-04-28 19:08:06,801 INFO [default] 28 | 0 | "Hello Lua, init script_module, userdata: 00000227885563C8"	
+
+2024-04-28 19:08:06,803 INFO [default] 29 | 0 | "~~~~~~~~~~~~~~good"	
+
+2024-04-28 19:08:06,804 INFO [default] 30 | 0 | "lua module awake"	
+
+2024-04-28 19:08:06,806 INFO [default] 31 | 0 | "lua module awake ~~~~~~~~~~~~~~~~~"	
+
+2024-04-28 19:08:06,812 INFO [default] 32 | 0 | "lua module init"	
+
+2024-04-28 19:08:06,813 INFO [default] 33 | 0 | "**************require_file"	"common/framework/cmain"	"path"	"common/framework/cmain"	"filepath"	"common/common/framework/cmain.lua"	
+
+2024-04-28 19:08:06,813 INFO [default] 34 | 0 | "**************require_file"	"common/framework/cmain"	"path"	"common/framework/cmain"	"filepath"	"common/framework/cmain.lua"	
+
+2024-04-28 19:08:06,815 INFO [default] 35 | 0 | "lua module after init"	
+
+2024-04-28 19:08:06,816 INFO [default] 36 | 0 | "lua module execute"	
+

@@ -1,4 +1,4 @@
-local service_data = plugin_service_def("service_data")
+local service_data = module_service_def("service_data")
 
 -- service_data.actiion.get_proxy = function(self, data_type, key)
 --     local proxy = self._proxy[data_type]
@@ -12,7 +12,7 @@ local service_data = plugin_service_def("service_data")
 function service_data:init()
     self._data_lists = {}
     self._proxy = {}
-    -- self._plugin_persistent = PM:find_plugin("plugin_persistent")
+    -- self._module_persistent = PM:find_module("module_persistent")
 end
 
 function service_data:load(action)
