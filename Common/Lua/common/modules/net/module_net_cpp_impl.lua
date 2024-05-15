@@ -8,3 +8,4 @@ function module_net_cpp_impl:connet(ip, port)
     _net:InitializationC(ip, port)
     return _net
 end
+

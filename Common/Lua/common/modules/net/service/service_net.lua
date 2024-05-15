@@ -10,6 +10,20 @@ end
 function service_net:listen(port)
     LOG("service_net:listen()", port)
     self._net = self._impl:listen(port)
+    self._net:AddEventCallBack(function(sockIndex,eventId, pNet)
+        self:on_receive_event(sockIndex,eventId, pNet)
+    end)
+    self._net:AddReceiveCallBack(function(sockIndex,msgID, msg, len)
+        self:on_receive_msg(sockIndex,msgID, msg, len)
+    end)
+end
+
+function service_net:on_receive_event(sockIndex,eventId, pNet)
+    LOG("service_net:on_receive_event()", sockIndex, eventId, pNet)
+end
+
+function service_net:on_receive_msg(sockIndex,msgID, msg, len)
+    LOG("service_net:on_receive_msg()", sockIndex, msgID, msg, len)
 end
 
 function service_net:update()

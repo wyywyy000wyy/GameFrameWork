@@ -71,11 +71,13 @@ public:
 
     virtual void RemoveReceiveCallBack(const int msgID);
 
-    virtual bool AddReceiveCallBack(const int msgID, const NET_RECEIVE_FUNCTOR_PTR& cb);
+    virtual bool AddReceiveCallBackMsgId(const int msgID, const NET_RECEIVE_FUNCTOR_PTR& cb);
 
     virtual bool AddReceiveCallBack(const NET_RECEIVE_FUNCTOR_PTR& cb);
+    virtual bool AddReceiveCallBackLua(LuaIntf::LuaRef cb);
 
     virtual bool AddEventCallBack(const NET_EVENT_FUNCTOR_PTR& cb);
+    virtual bool AddEventCallBackLua(LuaIntf::LuaRef cb);
 
     virtual bool Execute();
 

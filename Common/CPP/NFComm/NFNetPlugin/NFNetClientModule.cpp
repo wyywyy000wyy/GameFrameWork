@@ -679,7 +679,7 @@ void NFNetClientModule::InitCallBacks(NF_SHARE_PTR<ConnectData> pServerData)
 		std::list<NET_RECEIVE_FUNCTOR_PTR>& xList = itReciveCB->second;
 		for (std::list<NET_RECEIVE_FUNCTOR_PTR>::iterator itList = xList.begin(); itList != xList.end(); ++itList)
 		{
-			pServerData->mxNetModule->AddReceiveCallBack(itReciveCB->first, *itList);
+			pServerData->mxNetModule->AddReceiveCallBackMsgId(itReciveCB->first, *itList);
 		}
     }
 
