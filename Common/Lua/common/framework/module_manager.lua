@@ -29,7 +29,7 @@ function module_manager:load(config)
     end
 end
 
-function module_manager:load_module(name, is_service)
+function module_manager:load_module(name, is_service, args)
     local path 
     local module_root 
     local module_name
@@ -54,6 +54,7 @@ function module_manager:load_module(name, is_service)
         end
 
         local module = module_class(module_name)
+        module.args = args or {}
         module.is_s = is_service
         self._modules[module_name] = module
         if module_name == "task_manager" then
@@ -83,10 +84,10 @@ function module_manager:_load_module(config)
         return
     end
     if config.service then
-        self:load_module(config.name, config.service)
+        self:load_module(config.name, config.service,config.args)
         -- self:load_module(config.name)
     else
-        self:load_module(config.name)
+        self:load_module(config.name, nil, config.args)
     end
 end
 

@@ -54,16 +54,26 @@ struct ConnectData
 		nWorkLoad = 0;
 	}
 
-	int nGameID;
-	NF_SERVER_TYPES eServerType;
-	std::string ip;
-	int nPort;
-	int nWorkLoad;
-	std::string name;
-	ConnectDataState eState;
-	NFINT64 mnLastActionTime;
+	NF_PROPERTY(int, nGameID);
+	NF_PROPERTY(NF_SERVER_TYPES, eServerType);
+	NF_PROPERTY(std::string, ip);
+	NF_PROPERTY(int, nPort);
+	NF_PROPERTY(int, nWorkLoad);
+	NF_PROPERTY(std::string, name);
+	NF_PROPERTY(ConnectDataState, eState);
+	NF_PROPERTY(NFINT64, mnLastActionTime);
+	NF_PROPERTY(NF_SHARE_PTR<NFINetModule>, mxNetModule);
 
-	NF_SHARE_PTR<NFINetModule> mxNetModule;
+
+	//NF_SERVER_TYPES eServerType;
+	//std::string ip;
+	//int nPort;
+	//int nWorkLoad;
+	//std::string name;
+	//ConnectDataState eState;
+	//NFINT64 mnLastActionTime;
+
+	//NF_SHARE_PTR<NFINetModule> mxNetModule;
 };
 
 class NFINetClientModule : public NFIModule

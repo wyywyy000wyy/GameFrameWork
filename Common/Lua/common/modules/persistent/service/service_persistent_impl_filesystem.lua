@@ -5,7 +5,7 @@ local db_file_name = "persistent.db"
 function service_persistent_impl_filesystem:init()
     local db_str = T.file_system.read_file(db_file_name)
     local db
-    if db_str then
+    if db_str and #db_str > 0 then
         db = cjson.decode(db_str)
     end
     db = db or {}

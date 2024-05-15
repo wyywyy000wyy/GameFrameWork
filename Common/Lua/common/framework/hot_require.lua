@@ -62,7 +62,7 @@ local require_file = class("require_file", function(self, modname, folder)
     local files = {}
     for _, path in ipairs(search_paths) do
         local filepath = path .. self.path .. ".lua"
-        LOG("**************require_file", self.modname, "path", self.path, "filepath", filepath)
+        -- LOG("**************require_file", self.modname, "path", self.path, "filepath", filepath)
         table_insert(files, filepath)
     end
     self.files = files
@@ -127,7 +127,7 @@ function require_file:require()
             -- end
 
             ret = dofile(path)
-            LOG("GGGGGGGG....... hot reload file:" .. path)
+            -- LOG("GGGGGGGG....... hot reload file:" .. path)
             self.search_folder[i] = get_folder(require_path)
 
             -- LOG("require_file", self.modname, "path", path, "require_path", require_path, "folder", self.search_folder[i])

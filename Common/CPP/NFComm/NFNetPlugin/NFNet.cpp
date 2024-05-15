@@ -345,7 +345,7 @@ bool NFNet::SendMsg(const char* msg, const size_t len, const NFSOCK sockIndex)
     return false;
 }
 
-bool NFNet::SendMsg(const char* msg, const size_t len, const std::list<NFSOCK>& fdList)
+bool NFNet::_SendMsg(const char* msg, const size_t len, const std::list<NFSOCK>& fdList)
 {
 	auto it = fdList.begin();
     for (; it != fdList.end(); ++it)
@@ -689,7 +689,7 @@ bool NFNet::SendMsgWithOutHead(const int16_t msgID, const char* msg, const size_
     int nAllLen = EnCode(msgID, msg, len, strOutData);
     if (nAllLen == len + NFIMsgHead::NF_Head::NF_HEAD_LENGTH)
     {
-        return SendMsg(strOutData.c_str(), strOutData.length(), fdList);
+        return _SendMsg(strOutData.c_str(), strOutData.length(), fdList);
     }
 
     return false;

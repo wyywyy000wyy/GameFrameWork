@@ -58,7 +58,7 @@ bool NFNetModule::AfterInit()
 	return true;
 }
 
-void NFNetModule::Initialization(const char* ip, const unsigned short nPort)
+void NFNetModule::InitializationC(const char* ip, const unsigned short nPort)
 {
     m_pNet = NF_NEW NFNet(this, &NFNetModule::OnReceiveNetPack, &NFNetModule::OnSocketNetEvent);
     m_pNet->ExpandBufferSize(mnBufferSize);
@@ -386,6 +386,29 @@ bool NFNetModule::SendMsgPB(const uint16_t msgID, const std::string& strData, co
 NFINet* NFNetModule::GetNet()
 {
     return m_pNet;
+}
+
+void NFNetModule::OnRegisterLua()
+{
+    LuaIntf::LuaContext* context = (LuaIntf::LuaContext*)m_pLuaScriptModule->GetLuaContext();
+
+    //LuaIntf::LuaBinding(*context).beginClass<NFNet>("NFNet")
+    //    .addFunction("SendMsg", &NFNet::SendMsg)
+    //    .endClass();
+
+    LuaIntf::LuaBinding(*context).beginClass<NFNetModule>("NFNetModule")
+        .addStaticVariable("ins", this)
+        .addStaticFunction("New", [](NFNetModule* t) { 
+        int a = 1;
+
+        return std::make_shared<NFNetModule>(t->GetPluginManager()); 
+            })
+        //.addStaticFunction("New", [this]() { return std::make_shared<NFNetModule>(this->GetPluginManager()); })
+                .addFunction("Initialization", &NFNetModule::Initialization)
+                .addFunction("InitializationC", &NFNetModule::InitializationC)
+        .addFunction("Execute", &NFNetModule::Execute)
+        //.addFunction("Initialization", &NFNetModule::Initialization)
+        .endClass();
 }
 
 void NFNetModule::OnReceiveNetPack(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len)

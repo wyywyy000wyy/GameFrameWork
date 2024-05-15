@@ -51,6 +51,8 @@
 extern "C"
 {
 	extern lua_State *g_pLuaState;
+
+	extern int luaopen_cmsgpack_safe(lua_State* L);
 }	
 
 
@@ -78,6 +80,7 @@ bool NFLuaScriptModule::Awake()
 
 	NFLuaPBModule* p = (NFLuaPBModule*)(m_pLuaPBModule);
 	p->SetLuaState(mLuaContext.state());
+	luaopen_cmsgpack_safe(mLuaContext.state());
 	//luaopen_emmy_core1(mLuaContext.state());
 	luaopen_cjson(mLuaContext.state());
     Register();

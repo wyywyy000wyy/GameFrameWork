@@ -113,6 +113,7 @@ public:
     virtual NF_SHARE_PTR<ConnectData> GetServerNetInfo(const int serverID);
 
     virtual NF_SHARE_PTR<ConnectData> GetServerNetInfo(const NFINet* pNet);
+    void OnRegisterLua() override;
 
 protected:
 

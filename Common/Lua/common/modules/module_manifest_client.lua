@@ -1,7 +1,7 @@
 return {
     {
         name = "net",
-        service = true,
+        -- service = true,
         args = {
             cpp = true,
         }

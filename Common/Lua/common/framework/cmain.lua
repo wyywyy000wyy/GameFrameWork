@@ -30,3 +30,4 @@ LOG("lua cmain awake ~~~~~~~~~~~~~~~~~", PM);
 -- LOG("a=", empty_guid.head, empty_guid.data)
 -- LOG("a=", obj._guid.head, obj._guid.data, obj:get_prop_int("aa"))
  
+

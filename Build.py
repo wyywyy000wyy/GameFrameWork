@@ -21,6 +21,7 @@ if CLIENT:
         "NFKernelPlugin", 
         "NFLogPlugin", 
         "NFMessageDefine", 
+        "NFNetPlugin", 
         "NFLuaScriptPlugin", 
         ]
 else:   
@@ -34,7 +35,7 @@ else:
         "NFMessageDefine", 
         "NFNetPlugin", 
         "NFSecurityPlugin", 
-        "NFNavigationPlugin", 
+        # "NFNavigationPlugin", 
         "NFNoSqlPlugin", 
         "NFLuaScriptPlugin", 
         ]
@@ -111,7 +112,13 @@ def add_plugin(plugin_name):
 # exit(0)
 
 # 设置 CMake 命令和参数
-cmake_command = ["cmake", "..", "-DBUILD_CLIENT=TRUE", "-DPLUGINS=" + ";".join(plugins)]
+
+if CLIENT:
+    cmake_command = ["cmake", "..", "-DBUILD_CLIENT=TRUE", "-DPLUGINS=" + ";".join(plugins)]
+else:
+    cmake_command = ["cmake", "..", "-DBUILD_CLIENT=FALSE", "-DPLUGINS=" + ";".join(plugins)]
+    
+
 
 # 执行 CMake 命令
 process = subprocess.Popen(cmake_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE,)

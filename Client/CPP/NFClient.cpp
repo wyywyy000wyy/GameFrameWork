@@ -70,6 +70,7 @@ int main(int argc, char* argv[])
 	{
 		std::this_thread::sleep_for(std::chrono::milliseconds(1));
 		nfclient_lib_loop();
+#if _WIN32
 		if (GetAsyncKeyState(VK_F5) & 0x8000  && dt < 0) {
 			printf("F5 key pressed.\n");
 			dt = 10;
@@ -78,6 +79,7 @@ int main(int argc, char* argv[])
 			// 处理F5键消息
 			// ...
 		}
+#endif
 		dt--;
 	}
 

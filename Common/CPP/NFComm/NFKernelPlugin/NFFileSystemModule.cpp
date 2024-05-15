@@ -1,5 +1,11 @@
 #include "NFFileSystemModule.h"
 #include <boost/filesystem.hpp>
+namespace LuaIntf
+{
+	LUA_USING_LIST_TYPE(std::vector)
+}
+
+
 
 bool NFFileSystemModule::Init()
 {
@@ -32,26 +38,30 @@ void NFFileSystemModule::OnRegisterLua()
 
 
 
-	LuaIntf::LuaBinding(*context).beginClass< NFFileSystemModule >("NFFileSystemModule")
-		.addStaticVariable("ins", this)
-		.addFunction("IsFileExist", &NFFileSystemModule::IsFileExist)
-		.addFunction("GetFilePath", &NFFileSystemModule::GetFilePath)
-		.addFunction("FileWriteTime", &NFFileSystemModule::FileWriteTime)
+	//LuaIntf::LuaBinding(*context).beginClass< NFFileSystemModule >("NFFileSystemModule")
+	//	.addStaticVariable("ins", this)
+	//	.addFunction("IsFileExist", &NFFileSystemModule::IsFileExist)
+	//	.addFunction("GetFilePath", &NFFileSystemModule::GetFilePath)
+	//	.addFunction("FileWriteTime", &NFFileSystemModule::FileWriteTime)
+	//	.addFunction("GetFolderFiles", &NFFileSystemModule::GetFolderFiles)
+	//	.addFunction("ReadFile", &NFFileSystemModule::ReadFile2)
+	//	.addFunction("WriteFile", &NFFileSystemModule::WriteFile2)
+	//	.endClass();
+
+
+	LuaIntf::LuaBinding(*context).beginModule("NFFileSystemModule")
+		.addFunction("IsFileExist", [this](const std::string& strFileName) -> bool { return this->IsFileExist(strFileName); })
+.addFunction("GetFilePath", [this](const std::string& strFileName) -> std::string { return this->GetFilePath(strFileName); })
+.addFunction("FileWriteTime", [this](const std::string& strFileName) -> long { return this->FileWriteTime(strFileName); })
+.addFunction("GetFolderFiles", [this](const std::string& strPath, bool recursive) -> std::vector<string> { return this->GetFolderFiles(strPath, recursive); })
+.addFunction("ReadFile", [this](const std::string& strFileName) -> std::string { return this->ReadFile2(strFileName); })
+.addFunction("WriteFile", [this](const std::string& strFileName, string content) -> bool { return this->WriteFile2(strFileName, content); })
+		//.addFunction("GetFilePath", &NFFileSystemModule::GetFilePath)
+		//.addFunction("FileWriteTime", &NFFileSystemModule::FileWriteTime)
 		//.addFunction("GetFolderFiles", &NFFileSystemModule::GetFolderFiles)
-		.addStaticFunction("GetFolderFiles",[this, context](const std::string& path, bool recursive) {
-		auto list = this->GetFolderFiles(path, recursive);
-		LuaIntf::LuaRef tbl = LuaIntf::LuaRef::createTable(context->state());
-		for (int i = 0; i < list.size(); ++i)
-		{
-			tbl.set(i + 1, list[i]);
-		}
-
-		return tbl;
-			})
-
-		.addFunction("ReadFile", &NFFileSystemModule::ReadFile2)
-		.addFunction("WriteFile", &NFFileSystemModule::WriteFile)
-		.endClass();
+		//.addFunction("ReadFile", &NFFileSystemModule::ReadFile2)
+		//.addFunction("WriteFile", &NFFileSystemModule::WriteFile2)
+		.endModule();
 }
 
 bool NFFileSystemModule::IsFileExist(const std::string& strFileName)
@@ -139,6 +149,18 @@ std::string NFFileSystemModule::ReadFile2(const std::string& strFileName)
 		return std::string(data.begin(), data.end());
 	}
 	return "";
+}
+
+bool NFFileSystemModule::WriteFile2(const std::string& strFileName, string content)
+{
+	std::ofstream file(strFileName, std::ios::binary);
+	if (file)
+	{
+		file.write(content.c_str(), content.length());
+		file.close();
+		return true;
+	}
+	return false;
 }
 
 bool NFFileSystemModule::WriteFile(const std::string& strFileName, const char* data, const unsigned int size)

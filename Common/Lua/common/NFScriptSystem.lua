@@ -154,20 +154,29 @@ function module_init(...)
 
     
 	LOG("lua module init");
-    T_AddClass = {
-        ClassName = "T_AddClass666",
-    }
-    GAddClass();
+    -- T_AddClass = {
+    --     ClassName = "T_AddClass666",
+    -- }
+    -- GAddClass();
 
+
+end
+
+function module_after_init(...)
+    require("define")
+	LOG("lua module after init", SERVER);
     require("common/framework/cmain")
     if _CLIENT then
 		require("main")
 	end
-end
-
-function module_after_init(...)
-	LOG("lua module after init");
-
+    -- require("test")
+    if SERVER then
+        PM:load(require("modules/module_manifest_server"))
+        require("test_main_server")
+    else
+        PM:load(require("modules/module_manifest_client"))
+        require("test_main_client")
+    end
 end
 
 function module_ready_execute(...)
@@ -185,7 +194,7 @@ function module_update(...)
     -- local a  = 1
     -- a = 2
 	-- local script_module = script_module;
-    -- PM:update()
+    PM:update()
 
 	-- LOG("lua module module_update");
 end

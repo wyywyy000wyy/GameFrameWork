@@ -33,6 +33,7 @@ public:
     std::vector<char> ReadFile(const std::string& strFileName) override;
     std::string ReadFile2(const std::string& strFileName);
 
+    bool WriteFile2(const std::string& strFileName, string content);
     bool WriteFile(const std::string& strFileName, const char* data, const unsigned int size) override;
 
     virtual ~NFFileSystemModule()
