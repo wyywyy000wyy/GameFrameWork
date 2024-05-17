@@ -21,6 +21,7 @@ if CLIENT:
         "NFKernelPlugin", 
         "NFLogPlugin", 
         "NFMessageDefine", 
+        "NFNetPlugin", 
         "NFLuaScriptPlugin", 
         ]
 else:   
@@ -34,7 +35,7 @@ else:
         "NFMessageDefine", 
         "NFNetPlugin", 
         "NFSecurityPlugin", 
-        "NFNavigationPlugin", 
+        # "NFNavigationPlugin", 
         "NFNoSqlPlugin", 
         "NFLuaScriptPlugin", 
         ]
@@ -43,7 +44,7 @@ else:
 
 SolutionDir = (os.path.dirname(os.path.abspath(__file__)))
 
-CommonLuaDir = os.path.join(SolutionDir, "Common", "Lua")
+CommonLuaDir = os.path.join(SolutionDir, "Common", "Lua", "common")
 
 if CLIENT:
     TargetCommonLuaDir = os.path.join(SolutionDir, "Client","Assets","Code","Lua", "common")
@@ -107,9 +108,10 @@ def add_plugin(plugin_name):
 #     add_plugin(plugin)
 # exit(0)
 
-
-cmake_command = ["cmake", "..", "-DBUILD_CLIENT=TRUE", "-DPLUGINS=" + ";".join(plugins)]
-
+if CLIENT:
+    cmake_command = ["cmake", "..", "-DBUILD_CLIENT=TRUE", "-DPLUGINS=" + ";".join(plugins)]
+else:
+    cmake_command = ["cmake", "..", "-DBUILD_CLIENT=FALSE", "-DPLUGINS=" + ";".join(plugins)]
 
 process = subprocess.Popen(cmake_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE,)
 output, error = process.communicate()

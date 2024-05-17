@@ -58,7 +58,7 @@ bool NFNetModule::AfterInit()
 	return true;
 }
 
-void NFNetModule::Initialization(const char* ip, const unsigned short nPort)
+void NFNetModule::InitializationC(const char* ip, const unsigned short nPort)
 {
     m_pNet = NF_NEW NFNet(this, &NFNetModule::OnReceiveNetPack, &NFNetModule::OnSocketNetEvent);
     m_pNet->ExpandBufferSize(mnBufferSize);
@@ -95,7 +95,7 @@ void NFNetModule::RemoveReceiveCallBack(const int msgID)
     }
 }
 
-bool NFNetModule::AddReceiveCallBack(const int msgID, const NET_RECEIVE_FUNCTOR_PTR& cb)
+bool NFNetModule::AddReceiveCallBackMsgId(const int msgID, const NET_RECEIVE_FUNCTOR_PTR& cb)
 {
     if (mxReceiveCallBack.find(msgID) == mxReceiveCallBack.end())
     {
@@ -117,6 +117,26 @@ bool NFNetModule::AddReceiveCallBack(const NET_RECEIVE_FUNCTOR_PTR& cb)
 
     return true;
 }
+
+bool NFNetModule::AddReceiveCallBackLua(LuaIntf::LuaRef cb)
+{
+    NET_RECEIVE_FUNCTOR_PTR xFunPtr(new NET_RECEIVE_FUNCTOR([cb](const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len) {
+		cb(sockIndex, msgID, msg, len);
+		int a = 1;
+		a = 2;
+	}));
+	return this->AddReceiveCallBack(xFunPtr);
+}
+bool NFNetModule::AddEventCallBackLua(LuaIntf::LuaRef cb)
+{
+    NET_EVENT_FUNCTOR_PTR xFunPtr(new NET_EVENT_FUNCTOR([cb](const NFSOCK sockIndex, const NF_NET_EVENT nEvent, NFINet* pNet){
+            cb(sockIndex, nEvent, 1);
+            int a = 1;
+            a = 2;
+        }));
+    return this->AddEventCallBack(xFunPtr);
+}
+
 
 bool NFNetModule::AddEventCallBack(const NET_EVENT_FUNCTOR_PTR& cb)
 {
@@ -386,6 +406,38 @@ bool NFNetModule::SendMsgPB(const uint16_t msgID, const std::string& strData, co
 NFINet* NFNetModule::GetNet()
 {
     return m_pNet;
+}
+
+void NFNetModule::OnRegisterLua()
+{
+    LuaIntf::LuaContext* context = (LuaIntf::LuaContext*)m_pLuaScriptModule->GetLuaContext();
+
+    //LuaIntf::LuaBinding(*context).beginClass<NFNet>("NFNet")
+    //    .addFunction("SendMsg", &NFNet::SendMsg)
+    //    .endClass();
+
+    LuaIntf::LuaBinding(*context).beginModule("NF_NET_EVENT")
+        .addConstant("NF_NET_EVENT_EOF", NF_NET_EVENT::NF_NET_EVENT_EOF)
+        .addConstant("NF_NET_EVENT_ERROR", NF_NET_EVENT::NF_NET_EVENT_ERROR)
+        .addConstant("NF_NET_EVENT_TIMEOUT", NF_NET_EVENT::NF_NET_EVENT_TIMEOUT)
+        .addConstant("NF_NET_EVENT_CONNECTED", NF_NET_EVENT::NF_NET_EVENT_CONNECTED)
+		.endModule();
+
+    LuaIntf::LuaBinding(*context).beginClass<NFNetModule>("NFNetModule")
+        .addStaticVariable("ins", this)
+        .addStaticFunction("New", [](NFNetModule* t) { 
+        int a = 1;
+
+        return std::make_shared<NFNetModule>(t->GetPluginManager()); 
+            })
+        .addFunction("Initialization", &NFNetModule::Initialization)
+        .addFunction("InitializationC", &NFNetModule::InitializationC)
+        .addFunction("Execute", &NFNetModule::Execute)
+        .addFunction("AddEventCallBack", &NFNetModule::AddEventCallBackLua)
+        .addFunction("AddReceiveCallBack", &NFNetModule::AddReceiveCallBackLua)
+        .addFunction("SendMsgWithOutHead", &NFNetModule::SendMsgWithOutHead)
+        //.addFunction("Initialization", &NFNetModule::Initialization)
+        .endClass();
 }
 
 void NFNetModule::OnReceiveNetPack(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len)

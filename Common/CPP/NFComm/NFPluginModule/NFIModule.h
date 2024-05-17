@@ -25,6 +25,7 @@
 
 #ifndef NFI_MODULE_H
 #define NFI_MODULE_H
+#define LUAINTF_LINK_LUA_COMPILED_IN_CXX 0
 
 #include <string>
 #include "NFIPluginManager.h"
@@ -33,9 +34,23 @@
 #include "NFComm/NFCore/NFDataList.hpp"
 #include "NFComm/NFCore/NFSmartEnum.hpp"
 
+
+#include "Dependencies/LuaIntf/LuaIntf/LuaIntf.h"
+#include "Dependencies/LuaIntf/LuaIntf/LuaRef.h"
+namespace LuaIntf
+{
+    LUA_USING_SHARED_PTR_TYPE(std::shared_ptr)
+}
+
 class NFILuaScriptModule;
 
+#define NF_PROPERTY(TYPE, PN) \
+	TYPE Get##PN() const { return PN; } \
+	void Set##PN(const TYPE& value) { PN = value; } \
+	TYPE PN;
 
+
+#define NF_LUA_PROPERTY(TYPE, __PN) addProperty(#__PN, &TYPE::Get##__PN, &TYPE::Set##__PN)
 
 class NFIModule
 {

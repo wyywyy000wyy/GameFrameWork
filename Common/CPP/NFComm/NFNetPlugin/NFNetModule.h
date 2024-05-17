@@ -62,7 +62,7 @@ public:
 	virtual bool AfterInit();
 
     //as client
-    virtual void Initialization(const char* ip, const unsigned short nPort);
+    virtual void InitializationC(const char* ip, const unsigned short nPort);
 
     //as server
     virtual int Initialization(const unsigned int nMaxClient, const unsigned short nPort, const int nCpuCount = 4);
@@ -71,11 +71,13 @@ public:
 
     virtual void RemoveReceiveCallBack(const int msgID);
 
-    virtual bool AddReceiveCallBack(const int msgID, const NET_RECEIVE_FUNCTOR_PTR& cb);
+    virtual bool AddReceiveCallBackMsgId(const int msgID, const NET_RECEIVE_FUNCTOR_PTR& cb);
 
     virtual bool AddReceiveCallBack(const NET_RECEIVE_FUNCTOR_PTR& cb);
+    virtual bool AddReceiveCallBackLua(LuaIntf::LuaRef cb);
 
     virtual bool AddEventCallBack(const NET_EVENT_FUNCTOR_PTR& cb);
+    virtual bool AddEventCallBackLua(LuaIntf::LuaRef cb);
 
     virtual bool Execute();
 
@@ -95,6 +97,7 @@ public:
 
     virtual NFINet* GetNet();
 
+    void OnRegisterLua() override;
 protected:
     void OnReceiveNetPack(const NFSOCK sockIndex, const int msgID, const char* msg, const uint32_t len);
 

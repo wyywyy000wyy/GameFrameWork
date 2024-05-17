@@ -173,7 +173,7 @@ public:
 		NET_RECEIVE_FUNCTOR functor = std::bind(handleReceiver, pBase, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4);
 		NET_RECEIVE_FUNCTOR_PTR functorPtr(new NET_RECEIVE_FUNCTOR(functor));
 
-		return AddReceiveCallBack(msgID, functorPtr);
+		return AddReceiveCallBackMsgId(msgID, functorPtr);
 	}
 
 	template<typename BaseType>
@@ -271,7 +271,7 @@ public:
 
 	/////////////////
 	//as client
-	virtual void Initialization(const char* ip, const unsigned short nPort) = 0;
+	virtual void InitializationC(const char* ip, const unsigned short nPort) = 0;
 
 	//as server
 	virtual int Initialization(const unsigned int nMaxClient, const unsigned short nPort, const int nCpuCount = 4) = 0;
@@ -279,7 +279,7 @@ public:
 
 	virtual void RemoveReceiveCallBack(const int msgID) = 0;
 
-	virtual bool AddReceiveCallBack(const int msgID, const NET_RECEIVE_FUNCTOR_PTR& cb) = 0;
+	virtual bool AddReceiveCallBackMsgId(const int msgID, const NET_RECEIVE_FUNCTOR_PTR& cb) = 0;
 
 	virtual bool AddReceiveCallBack(const NET_RECEIVE_FUNCTOR_PTR& cb) = 0;
 

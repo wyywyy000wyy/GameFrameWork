@@ -112,7 +112,7 @@ public:
 private:
 	bool SendMsgWithOutHead(const int16_t msgID, const char* msg, const size_t len, const std::list<NFSOCK>& fdList);
 
-    bool SendMsg(const char* msg, const size_t len, const std::list<NFSOCK>& fdList);
+    bool _SendMsg(const char* msg, const size_t len, const std::list<NFSOCK>& fdList);
 
 
 private:

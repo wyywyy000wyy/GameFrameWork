@@ -70,14 +70,16 @@ int main(int argc, char* argv[])
 	{
 		std::this_thread::sleep_for(std::chrono::milliseconds(1));
 		nfclient_lib_loop();
-		if (GetAsyncKeyState(VK_F5) & 0x8000  && dt < 0) {
-			printf("F5 key pressed.\n");
+#if _WIN32
+		if (GetAsyncKeyState(VK_F6) & 0x8000  && dt < 0) {
+			printf("F6 key pressed.\n");
 			dt = 10;
 			nfclient_hot_reload();
 			//pLuaScriptModule->HotReload();
 			// 处理F5键消息
 			// ...
 		}
+#endif
 		dt--;
 	}
 

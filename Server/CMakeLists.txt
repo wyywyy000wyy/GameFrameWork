@@ -36,5 +36,8 @@ set_target_properties( GameFrameWorkServer PROPERTIES
 	LIBRARY_OUTPUT_DIRECTORY ${NFOutPutDir} )
 
 
+set_property(TARGET GameFrameWorkServer PROPERTY VS_DEBUGGER_WORKING_DIRECTORY ${CommonLuaDir})
+
+
 add_definitions(-D_X64 -D_CONSOLE)
 #add_definitions(-D_X64 -D_CONSOLE -DNF_DYNAMIC_PLUGIN)

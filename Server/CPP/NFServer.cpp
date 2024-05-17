@@ -25,6 +25,9 @@
 
 #include "NFServer.h"
 #include "lua.h"
+#if _WIN32
+#include <windows.h>
+#endif
 
 extern "C" {
 	NFPluginServer* pPluginServer = nullptr;
@@ -72,6 +75,7 @@ int main(int argc, char* argv[])
 
 	////////////////
 	uint64_t nIndex = 0;
+	int dt = 0;
 	while (true)
 	{
 		nIndex++;
@@ -81,6 +85,24 @@ int main(int argc, char* argv[])
 		{
 			item->Execute();
 		}
+#if _WIN32
+		if (GetAsyncKeyState(VK_F5) & 0x8000 && dt < 0) {
+			printf("F5 key pressed.\n");
+			dt = 10;
+			//pLuaScriptModule->HotReload();
+			// 处理F5键消息
+			// ...
+			for (auto item : serverList)
+			{
+				NFILuaScriptModule* pLuaScriptModule = item->pPluginManager->FindModule<NFILuaScriptModule>();
+				if (pLuaScriptModule)
+				{
+					pLuaScriptModule->HotReload();
+				}
+			}
+		}
+#endif
+		dt--;
 	}
 
 	////////////////

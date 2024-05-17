@@ -613,6 +613,50 @@ NF_SHARE_PTR<ConnectData> NFNetClientModule::GetServerNetInfo(const NFINet* pNet
     return NF_SHARE_PTR<ConnectData>(NULL);
 }
 
+#define NF_PROPERTY_2(TYPE, PN) \
+	TYPE Get##PN() const { return PN; } \
+	void Set##PN(const TYPE& value) { PN = value; }\
+	TYPE PN;
+
+
+#define NF_STRUCT_BEGIN(STRUCT_NAME) struct STRUCT_NAME{
+#define NF_STRUCT_END() };
+
+NF_STRUCT_BEGIN(ConnectData2)
+NF_PROPERTY_2(int, nGameID)
+NF_PROPERTY_2(NF_SERVER_TYPES, eServerType)
+NF_STRUCT_END();
+
+#define NF_STRUCT_DEFINE(STRUCT_NAME) \
+NF_STRUCT_BEGIN(STRUCT_NAME)\
+NF_PROPERTY_2(int, nGameID)\
+NF_PROPERTY_2(NF_SERVER_TYPES, eServerType)\
+NF_STRUCT_END()
+
+NF_STRUCT_DEFINE(ConnectData3)
+
+void NFNetClientModule::OnRegisterLua()
+{
+	LuaIntf::LuaContext* context = (LuaIntf::LuaContext*)m_pLuaScriptModule->GetLuaContext();
+	LuaIntf::LuaBinding(*context).beginClass<ConnectData>("ConnectData")
+	.addConstructor(LUA_ARGS())
+		//.addProperty("nGameID", &ConnectData::GetnGameID, &ConnectData::SetnGameID)
+		.NF_LUA_PROPERTY(ConnectData, nGameID)
+		.NF_LUA_PROPERTY(ConnectData, eServerType)
+		.NF_LUA_PROPERTY(ConnectData, ip)
+		.NF_LUA_PROPERTY(ConnectData, nPort)
+		.NF_LUA_PROPERTY(ConnectData, nWorkLoad)
+		.NF_LUA_PROPERTY(ConnectData, name)
+		.NF_LUA_PROPERTY(ConnectData, eState)
+		.NF_LUA_PROPERTY(ConnectData, mnLastActionTime)
+		.NF_LUA_PROPERTY(ConnectData, mxNetModule)
+    .endClass();
+
+	LuaIntf::LuaBinding(*context).beginModule("NFNetClientModule")
+		//.addFunction("AddServer", &NFNetClientModule::AddServer)
+		.endModule();
+}
+
 void NFNetClientModule::InitCallBacks(NF_SHARE_PTR<ConnectData> pServerData)
 {
 	std::ostringstream stream;
@@ -635,7 +679,7 @@ void NFNetClientModule::InitCallBacks(NF_SHARE_PTR<ConnectData> pServerData)
 		std::list<NET_RECEIVE_FUNCTOR_PTR>& xList = itReciveCB->second;
 		for (std::list<NET_RECEIVE_FUNCTOR_PTR>::iterator itList = xList.begin(); itList != xList.end(); ++itList)
 		{
-			pServerData->mxNetModule->AddReceiveCallBack(itReciveCB->first, *itList);
+			pServerData->mxNetModule->AddReceiveCallBackMsgId(itReciveCB->first, *itList);
 		}
     }
 
@@ -707,7 +751,7 @@ void NFNetClientModule::ProcessExecute()
 				pServerData->mxNetModule->AfterInit();
 				pServerData->mxNetModule->ReadyExecute();
 
-                pServerData->mxNetModule->Initialization(pServerData->ip.c_str(), pServerData->nPort);
+                pServerData->mxNetModule->InitializationC(pServerData->ip.c_str(), pServerData->nPort);
 
                 InitCallBacks(pServerData);
             }
@@ -845,7 +889,7 @@ void NFNetClientModule::ProcessAddNetConnect()
 			xServerData->mxNetModule->AfterInit();
 			xServerData->mxNetModule->ReadyExecute();
 
-            xServerData->mxNetModule->Initialization(xServerData->ip.c_str(), xServerData->nPort);
+            xServerData->mxNetModule->InitializationC(xServerData->ip.c_str(), xServerData->nPort);
             xServerData->mxNetModule->ExpandBufferSize((unsigned int)mnBufferSize);
 
             InitCallBacks(xServerData);

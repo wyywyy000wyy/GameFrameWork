@@ -32,8 +32,7 @@
 #include "NFComm/NFPluginModule/NFIThreadPoolModule.h"
 #include "Dependencies/RapidXML/rapidxml.hpp"
 #include "Dependencies/RapidXML/rapidxml_print.hpp"
-#include "Dependencies/LuaIntf/LuaIntf/LuaIntf.h"
-#include "Dependencies/LuaIntf/LuaIntf/LuaRef.h"
+
 
 NFClassModule::NFClassModule()
 {
