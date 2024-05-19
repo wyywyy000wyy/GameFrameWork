@@ -8,3 +8,4 @@ BuildServer/*
 /Client/Assets/XLua/x86_64/Debug.meta
 /.vscode
 /Common/Lua/mysassylog.log
+*.DS_Store
