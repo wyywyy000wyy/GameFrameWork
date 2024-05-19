@@ -40,11 +40,13 @@ message(STATUS "CommonLuaDir: ${CommonLuaDir}")
 # endif()
 link_directories(${CommonCPPDir}/Dependencies/lib/Debug/)
 
+set(PROTOBUF_OUTPUT_DIR ${CommonCPPDir}/Dependencies/lib)
 
 if (APPLE)
-	link_directories(/Boost/lib/)
+
+	link_directories(/Users/yiyiwang/develop/boost_1_84_0/stage/lib)
 	include_directories(
-		/Boost/include/boost-1_84/
+		/Users/yiyiwang/develop/boost_1_84_0
 		${CommonCPPDir}
 		${CommonCPPDir}/Dependencies/
 		${CommonCPPDir}/Dependencies/NFMessageDefine/
@@ -55,12 +57,18 @@ if (APPLE)
 		${CommonCPPDir}/Dependencies/vcpkg/installed/x64-osx/include/SDL2
 		${CommonCPPDir}/Dependencies/vcpkg/installed/x64-osx/include/google/protobuf/ 
 		${CommonCPPDir}/Dependencies/vcpkg/installed/x64-osx/include/google/protobuf/src/
+		${CommonCPPDir}/Dependencies/xlua/lua-5.3.5/src/
+		${CommonCPPDir}/Dependencies/xlua/build_mac/
+		${CommonCPPDir}/Dependencies/libevent/include/
+		${CommonCPPDir}/Dependencies/protobuf/
+		${CommonCPPDir}/Dependencies/protobuf/src/
+		${CommonCPPDir}/Dependencies/protobuf/third_party/abseil-cpp/
 	)
-elseif(UNIX)
-	link_directories(/Boost/lib/)
+elseif(UNIX)	
+	link_directories(/Users/yiyiwang/develop/boost_1_84_0/stage/lib)
 	include_directories(
 		# /Boost/include/boost-1_84/
-		D:/boost_1_84_0/boost_1_84_0/
+		/Users/yiyiwang/develop/boost_1_84_0
 		${CommonCPPDir}
 		${CommonCPPDir}/Dependencies/
 		${CommonCPPDir}/Dependencies/NFMessageDefine/
@@ -71,13 +79,19 @@ elseif(UNIX)
 		${CommonCPPDir}/Dependencies/vcpkg/installed/x64-linux/include/SDL2
 		${CommonCPPDir}/Dependencies/vcpkg/installed/x64-linux/include/google/protobuf/ 
 		${CommonCPPDir}/Dependencies/vcpkg/installed/x64-linux/include/google/protobuf/src/
+		${CommonCPPDir}/Dependencies/xlua/lua-5.3.5/src/
+		${CommonCPPDir}/Dependencies/xlua/build_mac/
+		${CommonCPPDir}/Dependencies/libevent/include/
+		${CommonCPPDir}/Dependencies/protobuf/
+		${CommonCPPDir}/Dependencies/protobuf/src/
+		${CommonCPPDir}/Dependencies/protobuf/third_party/abseil-cpp/
 	)
 else()
 	# link_directories(C:/Boost//lib/)
-	link_directories(D:/boost_1_84_0/boost_1_84_0/stage/lib/)
+	link_directories(/Users/yiyiwang/develop/boost_1_84_0/stage/lib)
 	include_directories(
 		# C:/Boost/include/boost-1_84/
-		D:/boost_1_84_0/boost_1_84_0/
+		/Users/yiyiwang/develop/boost_1_84_0
 		${CommonCPPDir}
 		${CommonCPPDir}/Dependencies/
 		${CommonCPPDir}/Dependencies/NFMessageDefine/
@@ -86,8 +100,14 @@ else()
 		${CommonCPPDir}/Dependencies/hiredis/hiredis_win
 		${CommonCPPDir}/Dependencies/vcpkg/installed/x64-windows-static/include/
 		${CommonCPPDir}/Dependencies/vcpkg/installed/x64-windows-static/include/SDL2
+		${CommonCPPDir}/Dependencies/xlua/lua-5.3.5/src/
+		${CommonCPPDir}/Dependencies/xlua/build_mac/
+		${CommonCPPDir}/Dependencies/libevent/include/
+		${CommonCPPDir}/Dependencies/protobuf/
+		${CommonCPPDir}/Dependencies/protobuf/src/
 		${CommonCPPDir}/Dependencies/vcpkg/installed/x64-windows-static/include/google/protobuf/ 
 		${CommonCPPDir}/Dependencies/vcpkg/installed/x64-windows-static/include/google/protobuf/src/
+		${CommonCPPDir}/Dependencies/protobuf/third_party/abseil-cpp/
 	)
 endif()
 
@@ -121,6 +141,10 @@ if(UNIX)
 	if (NOT APPLE)
 		add_definitions(-std=c++17)
 	endif()
+elseif(CMAKE_HOST_APPLE)
+	set(CMAKE_CXX_STANDARD 17)
+	SET ( CMAKE_CXX_FLAGS "-D_X64 -D_MAC -D_UNIX /EHsc /MT" )
+	include_directories(${SolutionDir}/Dependencies/libevent/include)
 else()
 	set(CMAKE_CXX_STANDARD 17)
 	SET ( CMAKE_CXX_FLAGS "-D_X64 -D_WINDOWS /EHsc /MT" )

@@ -20,7 +20,7 @@ local get_file_time = T.file_system.get_file_time
 local get_files = T.file_system.get_files
 g_require = g_require or require
 local prequire = g_require
-hot_require = {}
+hot_require = hot_require or{}
 
 local search_paths = {
     "common/",
@@ -139,8 +139,10 @@ function require_file:require()
     return ret
 end
 
-local init_map = {}
-local init_list = {}
+hot_require.init_map = hot_require.init_map or {}
+local init_map = hot_require.init_map
+hot_require.init_list = hot_require.init_list or {}
+local init_list = hot_require.init_list
 
 lrequire = function(modname)
     local path = getCurrentLuaPath(3)
@@ -167,16 +169,14 @@ require = function(modname, is_folder)
 end
 
 function require_folder(folder, recursive)
-
     for _, path in ipairs(search_paths) do
         local filepath = path .. folder
         local files = get_files(filepath, recursive)
         local len = files.Count
-        if files.Count then
+        if false and files.Count then
             for i = 0, len - 1 do
                 -- LOG("path", len, i, filepath, files and files[i])
                 local filepath = filepath .. "/" .. files[i]
-                -- ELOG("require_folder", filepath)
                 require(filepath, true)
             end
         else
@@ -184,7 +184,6 @@ function require_folder(folder, recursive)
             for i = 1, len do
                 -- LOG("path_2", len, i, filepath, files and files[i])
                 local filepath = filepath .. "/" .. files[i]
-                -- ELOG("require_folder", filepath)
                 require(filepath, true)
             end
         end

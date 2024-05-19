@@ -46,7 +46,6 @@ class NFMultiFileErrorCollector : public google::protobuf::compiler::MultiFileEr
 public:
 	NFMultiFileErrorCollector() {}
 	virtual ~NFMultiFileErrorCollector() {};
-
 	// Line and column numbers are zero-based.  A line number of -1 indicates
 	// an error with the entire file (e.g. "not found").
 	virtual void AddError(const string& filename, int line, int column, const string& message)

@@ -107,6 +107,7 @@ std::vector<string> NFFileSystemModule::GetFolderFiles(const std::string& strPat
 				fileList.insert(fileList.end(), subList.begin(), subList.end());
 			}
 		}
+
 	}
 	catch (const std::exception& e)
 	{

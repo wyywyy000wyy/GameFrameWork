@@ -41,7 +41,7 @@ static void udp_cb(intptr_t sock, short int which, void *arg)
 	std::cout << std::this_thread::get_id() << " received:" << data.length() << std::endl;
 
 	/* Recv the data, store the address of the sender in server_sin */
-	if (recvfrom(sock, buf, sizeof(buf) - 1, 0, (struct sockaddr *) &client_addr, &size) == -1)
+	if (recvfrom(sock, buf, sizeof(buf) - 1, 0, (struct sockaddr *) &client_addr, (socklen_t *)&size) == -1)
 	{
 		perror("recvfrom()");
 		//event_loopbreak();
@@ -88,7 +88,7 @@ int bind_socket(struct event *ev, int port, void* p)
 		printf("bind() success - [%u]\n", port);
 	}
 
-	event_set(ev, sock_fd, EV_READ | EV_PERSIST, &udp_cb, p);
+	event_set(ev, sock_fd, EV_READ | EV_PERSIST, (void (*)(evutil_socket_t, short, void *))&udp_cb, p);
 	if (event_add(ev, NULL) == -1)
 	{
 		printf("event_add() failed\n");

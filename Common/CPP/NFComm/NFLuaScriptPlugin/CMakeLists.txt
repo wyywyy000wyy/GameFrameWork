@@ -17,6 +17,7 @@ add_dependencies(NFLuaScriptPlugin NFCore xlua)
 
 if(UNIX)
 
+	target_link_libraries(NFLuaScriptPlugin libprotobuf.a libprotobuf-lite.a) 
 	target_link_libraries(NFLuaScriptPlugin -static-libstdc++)
 else()
 

@@ -1,0 +1,280 @@
+Determining if the function epoll_create exists failed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4598a/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_4598a.dir/build.make CMakeFiles/cmTC_4598a.dir/build
+Building C object CMakeFiles/cmTC_4598a.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=epoll_create -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_4598a.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_4598a.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_4598a.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_4598a
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4598a.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=epoll_create -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_4598a.dir/CheckFunctionExistsEx.c.o -o cmTC_4598a 
+Undefined symbols for architecture arm64:
+  "_epoll_create", referenced from:
+      _main in CheckFunctionExistsEx.c.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_4598a] Error 1
+make: *** [cmTC_4598a/fast] Error 2
+
+
+
+Determining if the function epoll_ctl exists failed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_dc4fb/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_dc4fb.dir/build.make CMakeFiles/cmTC_dc4fb.dir/build
+Building C object CMakeFiles/cmTC_dc4fb.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=epoll_ctl -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_dc4fb.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_dc4fb.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_dc4fb.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_dc4fb
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dc4fb.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=epoll_ctl -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_dc4fb.dir/CheckFunctionExistsEx.c.o -o cmTC_dc4fb 
+Undefined symbols for architecture arm64:
+  "_epoll_ctl", referenced from:
+      _main in CheckFunctionExistsEx.c.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_dc4fb] Error 1
+make: *** [cmTC_dc4fb/fast] Error 2
+
+
+
+Determining if the function eventfd exists failed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1fd63/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_1fd63.dir/build.make CMakeFiles/cmTC_1fd63.dir/build
+Building C object CMakeFiles/cmTC_1fd63.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=eventfd -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_1fd63.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_1fd63.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_1fd63.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_1fd63
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1fd63.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=eventfd -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_1fd63.dir/CheckFunctionExistsEx.c.o -o cmTC_1fd63 
+Undefined symbols for architecture arm64:
+  "_eventfd", referenced from:
+      _main in CheckFunctionExistsEx.c.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_1fd63] Error 1
+make: *** [cmTC_1fd63/fast] Error 2
+
+
+
+Determining if the function pipe2 exists failed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e45b5/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_e45b5.dir/build.make CMakeFiles/cmTC_e45b5.dir/build
+Building C object CMakeFiles/cmTC_e45b5.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=pipe2 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_e45b5.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_e45b5.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_e45b5.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_e45b5
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e45b5.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=pipe2 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_e45b5.dir/CheckFunctionExistsEx.c.o -o cmTC_e45b5 
+Undefined symbols for architecture arm64:
+  "_pipe2", referenced from:
+      _main in CheckFunctionExistsEx.c.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_e45b5] Error 1
+make: *** [cmTC_e45b5/fast] Error 2
+
+
+
+Determining if the function port_create exists failed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c89c4/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_c89c4.dir/build.make CMakeFiles/cmTC_c89c4.dir/build
+Building C object CMakeFiles/cmTC_c89c4.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=port_create -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_c89c4.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_c89c4.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_c89c4.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_c89c4
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c89c4.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=port_create -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_c89c4.dir/CheckFunctionExistsEx.c.o -o cmTC_c89c4 
+Undefined symbols for architecture arm64:
+  "_port_create", referenced from:
+      _main in CheckFunctionExistsEx.c.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_c89c4] Error 1
+make: *** [cmTC_c89c4/fast] Error 2
+
+
+
+Determining if the function splice exists failed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b8c74/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_b8c74.dir/build.make CMakeFiles/cmTC_b8c74.dir/build
+Building C object CMakeFiles/cmTC_b8c74.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=splice -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_b8c74.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_b8c74.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_b8c74.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_b8c74
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b8c74.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=splice -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_b8c74.dir/CheckFunctionExistsEx.c.o -o cmTC_b8c74 
+Undefined symbols for architecture arm64:
+  "_splice", referenced from:
+      _main in CheckFunctionExistsEx.c.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_b8c74] Error 1
+make: *** [cmTC_b8c74/fast] Error 2
+
+
+
+Determining if the function accept4 exists failed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b54be/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_b54be.dir/build.make CMakeFiles/cmTC_b54be.dir/build
+Building C object CMakeFiles/cmTC_b54be.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=accept4 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_b54be.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_b54be.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_b54be.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_b54be
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b54be.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=accept4 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_b54be.dir/CheckFunctionExistsEx.c.o -o cmTC_b54be 
+Undefined symbols for architecture arm64:
+  "_accept4", referenced from:
+      _main in CheckFunctionExistsEx.c.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_b54be] Error 1
+make: *** [cmTC_b54be/fast] Error 2
+
+
+
+Determining if the function epoll_create1 exists failed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2b740/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_2b740.dir/build.make CMakeFiles/cmTC_2b740.dir/build
+Building C object CMakeFiles/cmTC_2b740.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=epoll_create1 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_2b740.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_2b740.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_2b740.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_2b740
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2b740.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=epoll_create1 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_2b740.dir/CheckFunctionExistsEx.c.o -o cmTC_2b740 
+Undefined symbols for architecture arm64:
+  "_epoll_create1", referenced from:
+      _main in CheckFunctionExistsEx.c.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_2b740] Error 1
+make: *** [cmTC_2b740/fast] Error 2
+
+
+
+Determining if the function timeradd exists failed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_20241/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_20241.dir/build.make CMakeFiles/cmTC_20241.dir/build
+Building C object CMakeFiles/cmTC_20241.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=timeradd -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_20241.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_20241.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_20241.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_20241
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_20241.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=timeradd -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_20241.dir/CheckFunctionExistsEx.c.o -o cmTC_20241 
+Undefined symbols for architecture arm64:
+  "_timeradd", referenced from:
+      _main in CheckFunctionExistsEx.c.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_20241] Error 1
+make: *** [cmTC_20241/fast] Error 2
+
+
+
+Determining if the function timerclear exists failed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0e413/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_0e413.dir/build.make CMakeFiles/cmTC_0e413.dir/build
+Building C object CMakeFiles/cmTC_0e413.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=timerclear -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_0e413.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_0e413.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_0e413.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_0e413
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0e413.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=timerclear -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_0e413.dir/CheckFunctionExistsEx.c.o -o cmTC_0e413 
+Undefined symbols for architecture arm64:
+  "_timerclear", referenced from:
+      _main in CheckFunctionExistsEx.c.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_0e413] Error 1
+make: *** [cmTC_0e413/fast] Error 2
+
+
+
+Determining if the function timercmp exists failed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_cf17a/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_cf17a.dir/build.make CMakeFiles/cmTC_cf17a.dir/build
+Building C object CMakeFiles/cmTC_cf17a.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=timercmp -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_cf17a.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_cf17a.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_cf17a.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_cf17a
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cf17a.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=timercmp -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_cf17a.dir/CheckFunctionExistsEx.c.o -o cmTC_cf17a 
+Undefined symbols for architecture arm64:
+  "_timercmp", referenced from:
+      _main in CheckFunctionExistsEx.c.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_cf17a] Error 1
+make: *** [cmTC_cf17a/fast] Error 2
+
+
+
+Determining if the function timerfd_create exists failed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d3dd8/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_d3dd8.dir/build.make CMakeFiles/cmTC_d3dd8.dir/build
+Building C object CMakeFiles/cmTC_d3dd8.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=timerfd_create -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_d3dd8.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_d3dd8.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_d3dd8.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_d3dd8
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d3dd8.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=timerfd_create -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_d3dd8.dir/CheckFunctionExistsEx.c.o -o cmTC_d3dd8 
+Undefined symbols for architecture arm64:
+  "_timerfd_create", referenced from:
+      _main in CheckFunctionExistsEx.c.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_d3dd8] Error 1
+make: *** [cmTC_d3dd8/fast] Error 2
+
+
+
+Determining if the function timerisset exists failed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_e5c62/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_e5c62.dir/build.make CMakeFiles/cmTC_e5c62.dir/build
+Building C object CMakeFiles/cmTC_e5c62.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=timerisset -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_e5c62.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_e5c62.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_e5c62.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_e5c62
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e5c62.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=timerisset -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_e5c62.dir/CheckFunctionExistsEx.c.o -o cmTC_e5c62 
+Undefined symbols for architecture arm64:
+  "_timerisset", referenced from:
+      _main in CheckFunctionExistsEx.c.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_e5c62] Error 1
+make: *** [cmTC_e5c62/fast] Error 2
+
+
+
+Determining if the function gethostbyname_r exists failed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b5e41/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_b5e41.dir/build.make CMakeFiles/cmTC_b5e41.dir/build
+Building C object CMakeFiles/cmTC_b5e41.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=gethostbyname_r -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_b5e41.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_b5e41.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_b5e41.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_b5e41
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b5e41.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=gethostbyname_r -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_b5e41.dir/CheckFunctionExistsEx.c.o -o cmTC_b5e41 
+Undefined symbols for architecture arm64:
+  "_gethostbyname_r", referenced from:
+      _main in CheckFunctionExistsEx.c.o
+ld: symbol(s) not found for architecture arm64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_b5e41] Error 1
+make: *** [cmTC_b5e41/fast] Error 2
+
+
+
