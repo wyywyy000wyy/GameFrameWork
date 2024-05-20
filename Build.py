@@ -35,7 +35,7 @@ else:
         "NFMessageDefine", 
         "NFNetPlugin", 
         "NFSecurityPlugin", 
-        # "NFNavigationPlugin", 
+        "NFNavigationPlugin", 
         "NFNoSqlPlugin", 
         "NFLuaScriptPlugin", 
         ]
