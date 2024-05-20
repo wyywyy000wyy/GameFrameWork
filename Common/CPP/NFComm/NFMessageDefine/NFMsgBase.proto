@@ -7,7 +7,7 @@ message MsgBaseI
 
 }
 
-message Ident : MsgBaseI//The base protocol can not be transfer directly
+message Ident//The base protocol can not be transfer directly
 { 
     int64		svrid = 1;
     int64      index = 2;

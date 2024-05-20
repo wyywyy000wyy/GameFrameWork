@@ -53,6 +53,7 @@ extern "C"
 	extern lua_State *g_pLuaState;
 
 	extern int luaopen_cmsgpack_safe(lua_State* L);
+	extern int luaopen_cjson(lua_State* L);
 }	
 
 
@@ -143,8 +144,7 @@ bool NFLuaScriptModule::Execute()
         OnScriptReload();
     }
 
-	TRY_RUN_GLOBAL_SCRIPT_FUN0("module_update");
-
+	// TRY_RUN_GLOBAL_SCRIPT_FUN0("module_update");
 
     return true;
 }

@@ -33,30 +33,31 @@ bool NFNavigationModule::Init()
 	m_pClassModule = pPluginManager->FindModule<NFIClassModule>();
 	m_pElementModule = pPluginManager->FindModule<NFIElementModule>();
 
-	NF_SHARE_PTR<NFIClass> xLogicClass = m_pClassModule->GetElement(NFrame::Scene::ThisName());
-	if (xLogicClass)
-	{
-		const std::vector<std::string>& strIdList = xLogicClass->GetIDList();
+	//NF_SHARE_PTR<NFIClass> xLogicClass = m_pClassModule->GetElement(NFrame::Scene::ThisName());
+	//if (xLogicClass)
+	//{
+	//	const std::vector<std::string>& strIdList = xLogicClass->GetIDList();
 
-		for (int i = 0; i < strIdList.size(); ++i)
-		{
-			const std::string& strId = strIdList[i];
+	//	for (int i = 0; i < strIdList.size(); ++i)
+	//	{
+	//		const std::string& strId = strIdList[i];
 
-			int sceneId = lexical_cast<int>(strIdList[i]);
-			std::string navigationResPath = m_pElementModule->GetPropertyManager(strId)->GetPropertyString(NFrame::Scene::NavigationResPath());
-			LoadNavigation(sceneId, navigationResPath);
+	//		int sceneId = lexical_cast<int>(strIdList[i]);
+	//		std::string navigationResPath = m_pElementModule->GetPropertyManager(strId)->GetPropertyString(NFrame::Scene::NavigationResPath());
+	//		LoadNavigation(sceneId, navigationResPath);
 
-			//const std::string& strId = strIdList[i];
-			//NFINT64 sceneId = elementModule->GetPropertyManager(strId)->GetPropertyInt(NFrame::Scene::SceneID);// lexical_cast<std::string, INT16>());
-			//std::string navigationResPath = elementModule->GetPropertyManager(strId)->GetPropertyString(NFrame::Scene::NavigationResPath());
-			//loadNavigation(sceneId, navigationResPath);
-			//std::ostringstream strLog;
-			//strLog << "strId: (" << strId.c_str() << ") is destroyed!\n";
-			//m_pLogModule->LogInfo(NULL_OBJECT, strLog, __FUNCTION__, __LINE__);
-			/*elementModule->
-			int sceneID = lexical_cast<int>(strIdList[i]);*/
-		}
-	}
+	//		//const std::string& strId = strIdList[i];
+	//		//NFINT64 sceneId = elementModule->GetPropertyManager(strId)->GetPropertyInt(NFrame::Scene::SceneID);// lexical_cast<std::string, INT16>());
+	//		//std::string navigationResPath = elementModule->GetPropertyManager(strId)->GetPropertyString(NFrame::Scene::NavigationResPath());
+	//		//loadNavigation(sceneId, navigationResPath);
+	//		//std::ostringstream strLog;
+	//		//strLog << "strId: (" << strId.c_str() << ") is destroyed!\n";
+	//		//m_pLogModule->LogInfo(NULL_OBJECT, strLog, __FUNCTION__, __LINE__);
+	//		/*elementModule->
+	//		int sceneID = lexical_cast<int>(strIdList[i]);*/
+	//	}
+	//}
+	LoadNavigation(1, "srv_demo.navmesh");
     return true;
 }
 

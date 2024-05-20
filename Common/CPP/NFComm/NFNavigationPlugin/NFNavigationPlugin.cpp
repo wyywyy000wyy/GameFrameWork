@@ -59,11 +59,11 @@ const std::string NFNavigationPlugin::GetPluginName()
 void NFNavigationPlugin::Install()
 {
     REGISTER_MODULE(pPluginManager, NFINavigationModule, NFNavigationModule)
-    REGISTER_MODULE(pPluginManager, NFINavigationDataModule, NFNavigationDataModule)
+    //REGISTER_MODULE(pPluginManager, NFINavigationDataModule, NFNavigationDataModule)
 }
 
 void NFNavigationPlugin::Uninstall()
 {
-    UNREGISTER_MODULE(pPluginManager, NFINavigationDataModule, NFNavigationDataModule)
+    //UNREGISTER_MODULE(pPluginManager, NFINavigationDataModule, NFNavigationDataModule)
     UNREGISTER_MODULE(pPluginManager, NFINavigationModule, NFNavigationModule)
 }

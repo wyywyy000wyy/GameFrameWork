@@ -1,0 +1,507 @@
+Determining if the function fcntl exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7a5de/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_7a5de.dir/build.make CMakeFiles/cmTC_7a5de.dir/build
+Building C object CMakeFiles/cmTC_7a5de.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=fcntl -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_7a5de.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_7a5de.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_7a5de.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_7a5de
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7a5de.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=fcntl -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_7a5de.dir/CheckFunctionExistsEx.c.o -o cmTC_7a5de 
+
+
+
+Determining if the function getaddrinfo exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_508a2/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_508a2.dir/build.make CMakeFiles/cmTC_508a2.dir/build
+Building C object CMakeFiles/cmTC_508a2.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=getaddrinfo -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_508a2.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_508a2.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_508a2.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_508a2
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_508a2.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=getaddrinfo -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_508a2.dir/CheckFunctionExistsEx.c.o -o cmTC_508a2 
+
+
+
+Determining if the function getnameinfo exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_69ebb/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_69ebb.dir/build.make CMakeFiles/cmTC_69ebb.dir/build
+Building C object CMakeFiles/cmTC_69ebb.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=getnameinfo -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_69ebb.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_69ebb.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_69ebb.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_69ebb
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_69ebb.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=getnameinfo -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_69ebb.dir/CheckFunctionExistsEx.c.o -o cmTC_69ebb 
+
+
+
+Determining if the function gettimeofday exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b3265/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_b3265.dir/build.make CMakeFiles/cmTC_b3265.dir/build
+Building C object CMakeFiles/cmTC_b3265.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=gettimeofday -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_b3265.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_b3265.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_b3265.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_b3265
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b3265.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=gettimeofday -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_b3265.dir/CheckFunctionExistsEx.c.o -o cmTC_b3265 
+
+
+
+Determining if the function getprotobynumber exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f0ce0/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_f0ce0.dir/build.make CMakeFiles/cmTC_f0ce0.dir/build
+Building C object CMakeFiles/cmTC_f0ce0.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=getprotobynumber -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_f0ce0.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_f0ce0.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_f0ce0.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_f0ce0
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f0ce0.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=getprotobynumber -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_f0ce0.dir/CheckFunctionExistsEx.c.o -o cmTC_f0ce0 
+
+
+
+Determining if the function getservbyname exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b5d72/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_b5d72.dir/build.make CMakeFiles/cmTC_b5d72.dir/build
+Building C object CMakeFiles/cmTC_b5d72.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=getservbyname -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_b5d72.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_b5d72.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_b5d72.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_b5d72
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b5d72.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=getservbyname -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_b5d72.dir/CheckFunctionExistsEx.c.o -o cmTC_b5d72 
+
+
+
+Determining if the function inet_ntop exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_f5fcb/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_f5fcb.dir/build.make CMakeFiles/cmTC_f5fcb.dir/build
+Building C object CMakeFiles/cmTC_f5fcb.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=inet_ntop -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_f5fcb.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_f5fcb.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_f5fcb.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_f5fcb
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f5fcb.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=inet_ntop -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_f5fcb.dir/CheckFunctionExistsEx.c.o -o cmTC_f5fcb 
+
+
+
+Determining if the function inet_pton exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c9182/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_c9182.dir/build.make CMakeFiles/cmTC_c9182.dir/build
+Building C object CMakeFiles/cmTC_c9182.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=inet_pton -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_c9182.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_c9182.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_c9182.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_c9182
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c9182.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=inet_pton -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_c9182.dir/CheckFunctionExistsEx.c.o -o cmTC_c9182 
+
+
+
+Determining if the function kqueue exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_6259b/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_6259b.dir/build.make CMakeFiles/cmTC_6259b.dir/build
+Building C object CMakeFiles/cmTC_6259b.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=kqueue -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_6259b.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_6259b.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_6259b.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_6259b
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6259b.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=kqueue -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_6259b.dir/CheckFunctionExistsEx.c.o -o cmTC_6259b 
+
+
+
+Determining if the function mmap exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_70378/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_70378.dir/build.make CMakeFiles/cmTC_70378.dir/build
+Building C object CMakeFiles/cmTC_70378.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=mmap -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_70378.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_70378.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_70378.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_70378
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_70378.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=mmap -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_70378.dir/CheckFunctionExistsEx.c.o -o cmTC_70378 
+
+
+
+Determining if the function pipe exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_15c25/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_15c25.dir/build.make CMakeFiles/cmTC_15c25.dir/build
+Building C object CMakeFiles/cmTC_15c25.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=pipe -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_15c25.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_15c25.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_15c25.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_15c25
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_15c25.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=pipe -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_15c25.dir/CheckFunctionExistsEx.c.o -o cmTC_15c25 
+
+
+
+Determining if the function poll exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_48d05/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_48d05.dir/build.make CMakeFiles/cmTC_48d05.dir/build
+Building C object CMakeFiles/cmTC_48d05.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=poll -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_48d05.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_48d05.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_48d05.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_48d05
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_48d05.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=poll -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_48d05.dir/CheckFunctionExistsEx.c.o -o cmTC_48d05 
+
+
+
+Determining if the function sendfile exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_83a13/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_83a13.dir/build.make CMakeFiles/cmTC_83a13.dir/build
+Building C object CMakeFiles/cmTC_83a13.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=sendfile -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_83a13.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_83a13.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_83a13.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_83a13
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_83a13.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=sendfile -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_83a13.dir/CheckFunctionExistsEx.c.o -o cmTC_83a13 
+
+
+
+Determining if the function sigaction exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_97ddc/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_97ddc.dir/build.make CMakeFiles/cmTC_97ddc.dir/build
+Building C object CMakeFiles/cmTC_97ddc.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=sigaction -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_97ddc.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_97ddc.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_97ddc.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_97ddc
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_97ddc.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=sigaction -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_97ddc.dir/CheckFunctionExistsEx.c.o -o cmTC_97ddc 
+
+
+
+Determining if the function signal exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b54c4/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_b54c4.dir/build.make CMakeFiles/cmTC_b54c4.dir/build
+Building C object CMakeFiles/cmTC_b54c4.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=signal -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_b54c4.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_b54c4.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_b54c4.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_b54c4
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b54c4.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=signal -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_b54c4.dir/CheckFunctionExistsEx.c.o -o cmTC_b54c4 
+
+
+
+Determining if the function strlcpy exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_875ae/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_875ae.dir/build.make CMakeFiles/cmTC_875ae.dir/build
+Building C object CMakeFiles/cmTC_875ae.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=strlcpy -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_875ae.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_875ae.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_875ae.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c:7:3: warning: incompatible redeclaration of library function 'strlcpy' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strlcpy
+                              ^
+/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c:7:3: note: 'strlcpy' is a builtin with type 'unsigned long (char *, const char *, unsigned long)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strlcpy
+                              ^
+1 warning generated.
+Linking C executable cmTC_875ae
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_875ae.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=strlcpy -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_875ae.dir/CheckFunctionExistsEx.c.o -o cmTC_875ae 
+
+
+
+Determining if the function strsep exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ccfea/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_ccfea.dir/build.make CMakeFiles/cmTC_ccfea.dir/build
+Building C object CMakeFiles/cmTC_ccfea.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=strsep -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_ccfea.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_ccfea.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_ccfea.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_ccfea
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ccfea.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=strsep -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_ccfea.dir/CheckFunctionExistsEx.c.o -o cmTC_ccfea 
+
+
+
+Determining if the function strtok_r exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2c85c/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_2c85c.dir/build.make CMakeFiles/cmTC_2c85c.dir/build
+Building C object CMakeFiles/cmTC_2c85c.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=strtok_r -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_2c85c.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_2c85c.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_2c85c.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_2c85c
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2c85c.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=strtok_r -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_2c85c.dir/CheckFunctionExistsEx.c.o -o cmTC_2c85c 
+
+
+
+Determining if the function strtoll exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b5784/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_b5784.dir/build.make CMakeFiles/cmTC_b5784.dir/build
+Building C object CMakeFiles/cmTC_b5784.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=strtoll -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_b5784.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_b5784.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_b5784.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c:7:3: warning: incompatible redeclaration of library function 'strtoll' [-Wincompatible-library-redeclaration]
+  CHECK_FUNCTION_EXISTS(void);
+  ^
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strtoll
+                              ^
+/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c:7:3: note: 'strtoll' is a builtin with type 'long long (const char *, char **, int)'
+<command line>:1:31: note: expanded from here
+#define CHECK_FUNCTION_EXISTS strtoll
+                              ^
+1 warning generated.
+Linking C executable cmTC_b5784
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b5784.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=strtoll -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_b5784.dir/CheckFunctionExistsEx.c.o -o cmTC_b5784 
+
+
+
+Determining if the function vasprintf exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b2120/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_b2120.dir/build.make CMakeFiles/cmTC_b2120.dir/build
+Building C object CMakeFiles/cmTC_b2120.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=vasprintf -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_b2120.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_b2120.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_b2120.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c:17:25: warning: format string missing [-Wformat]
+  CHECK_FUNCTION_EXISTS();
+  ~~~~~~~~~~~~~~~~~~~~~ ^
+1 warning generated.
+Linking C executable cmTC_b2120
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b2120.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=vasprintf -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_b2120.dir/CheckFunctionExistsEx.c.o -o cmTC_b2120 
+
+
+
+Determining if the function sysctl exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_bdd15/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_bdd15.dir/build.make CMakeFiles/cmTC_bdd15.dir/build
+Building C object CMakeFiles/cmTC_bdd15.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=sysctl -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_bdd15.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_bdd15.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_bdd15.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_bdd15
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bdd15.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=sysctl -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_bdd15.dir/CheckFunctionExistsEx.c.o -o cmTC_bdd15 
+
+
+
+Determining if the function arc4random exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_13e85/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_13e85.dir/build.make CMakeFiles/cmTC_13e85.dir/build
+Building C object CMakeFiles/cmTC_13e85.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=arc4random -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_13e85.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_13e85.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_13e85.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_13e85
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13e85.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=arc4random -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_13e85.dir/CheckFunctionExistsEx.c.o -o cmTC_13e85 
+
+
+
+Determining if the function arc4random_buf exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_ba34f/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_ba34f.dir/build.make CMakeFiles/cmTC_ba34f.dir/build
+Building C object CMakeFiles/cmTC_ba34f.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=arc4random_buf -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_ba34f.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_ba34f.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_ba34f.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_ba34f
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ba34f.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=arc4random_buf -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_ba34f.dir/CheckFunctionExistsEx.c.o -o cmTC_ba34f 
+
+
+
+Determining if the function arc4random_addrandom exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_28c46/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_28c46.dir/build.make CMakeFiles/cmTC_28c46.dir/build
+Building C object CMakeFiles/cmTC_28c46.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=arc4random_addrandom -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_28c46.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_28c46.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_28c46.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_28c46
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_28c46.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=arc4random_addrandom -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_28c46.dir/CheckFunctionExistsEx.c.o -o cmTC_28c46 
+
+
+
+Determining if the function getegid exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c0ad2/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_c0ad2.dir/build.make CMakeFiles/cmTC_c0ad2.dir/build
+Building C object CMakeFiles/cmTC_c0ad2.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=getegid -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_c0ad2.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_c0ad2.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_c0ad2.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_c0ad2
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c0ad2.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=getegid -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_c0ad2.dir/CheckFunctionExistsEx.c.o -o cmTC_c0ad2 
+
+
+
+Determining if the function geteuid exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_72f94/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_72f94.dir/build.make CMakeFiles/cmTC_72f94.dir/build
+Building C object CMakeFiles/cmTC_72f94.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=geteuid -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_72f94.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_72f94.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_72f94.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_72f94
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_72f94.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=geteuid -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_72f94.dir/CheckFunctionExistsEx.c.o -o cmTC_72f94 
+
+
+
+Determining if the function getifaddrs exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_6fe9c/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_6fe9c.dir/build.make CMakeFiles/cmTC_6fe9c.dir/build
+Building C object CMakeFiles/cmTC_6fe9c.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=getifaddrs -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_6fe9c.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_6fe9c.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_6fe9c.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_6fe9c
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6fe9c.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=getifaddrs -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_6fe9c.dir/CheckFunctionExistsEx.c.o -o cmTC_6fe9c 
+
+
+
+Determining if the function issetugid exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d1969/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_d1969.dir/build.make CMakeFiles/cmTC_d1969.dir/build
+Building C object CMakeFiles/cmTC_d1969.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=issetugid -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_d1969.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_d1969.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_d1969.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_d1969
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d1969.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=issetugid -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_d1969.dir/CheckFunctionExistsEx.c.o -o cmTC_d1969 
+
+
+
+Determining if the function mach_absolute_time exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_8892c/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_8892c.dir/build.make CMakeFiles/cmTC_8892c.dir/build
+Building C object CMakeFiles/cmTC_8892c.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=mach_absolute_time -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_8892c.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_8892c.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_8892c.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_8892c
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8892c.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=mach_absolute_time -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_8892c.dir/CheckFunctionExistsEx.c.o -o cmTC_8892c 
+
+
+
+Determining if the function nanosleep exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b23b1/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_b23b1.dir/build.make CMakeFiles/cmTC_b23b1.dir/build
+Building C object CMakeFiles/cmTC_b23b1.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=nanosleep -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_b23b1.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_b23b1.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_b23b1.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_b23b1
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b23b1.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=nanosleep -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_b23b1.dir/CheckFunctionExistsEx.c.o -o cmTC_b23b1 
+
+
+
+Determining if the function usleep exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1e8b8/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_1e8b8.dir/build.make CMakeFiles/cmTC_1e8b8.dir/build
+Building C object CMakeFiles/cmTC_1e8b8.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=usleep -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_1e8b8.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_1e8b8.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_1e8b8.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_1e8b8
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1e8b8.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=usleep -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_1e8b8.dir/CheckFunctionExistsEx.c.o -o cmTC_1e8b8 
+
+
+
+Determining if the function putenv exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b08e2/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_b08e2.dir/build.make CMakeFiles/cmTC_b08e2.dir/build
+Building C object CMakeFiles/cmTC_b08e2.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=putenv -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_b08e2.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_b08e2.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_b08e2.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_b08e2
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b08e2.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=putenv -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_b08e2.dir/CheckFunctionExistsEx.c.o -o cmTC_b08e2 
+
+
+
+Determining if the function setenv exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d6e92/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_d6e92.dir/build.make CMakeFiles/cmTC_d6e92.dir/build
+Building C object CMakeFiles/cmTC_d6e92.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=setenv -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_d6e92.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_d6e92.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_d6e92.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_d6e92
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d6e92.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=setenv -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_d6e92.dir/CheckFunctionExistsEx.c.o -o cmTC_d6e92 
+
+
+
+Determining if the function setrlimit exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_33505/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_33505.dir/build.make CMakeFiles/cmTC_33505.dir/build
+Building C object CMakeFiles/cmTC_33505.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=setrlimit -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_33505.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_33505.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_33505.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_33505
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_33505.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=setrlimit -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_33505.dir/CheckFunctionExistsEx.c.o -o cmTC_33505 
+
+
+
+Determining if the function umask exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_fff3e/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_fff3e.dir/build.make CMakeFiles/cmTC_fff3e.dir/build
+Building C object CMakeFiles/cmTC_fff3e.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=umask -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_fff3e.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_fff3e.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_fff3e.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_fff3e
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fff3e.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=umask -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_fff3e.dir/CheckFunctionExistsEx.c.o -o cmTC_fff3e 
+
+
+
+Determining if the function unsetenv exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1e47f/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_1e47f.dir/build.make CMakeFiles/cmTC_1e47f.dir/build
+Building C object CMakeFiles/cmTC_1e47f.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=unsetenv -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_1e47f.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_1e47f.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_1e47f.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_1e47f
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1e47f.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=unsetenv -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_1e47f.dir/CheckFunctionExistsEx.c.o -o cmTC_1e47f 
+
+
+
+Determining if the function select exists passed with the following output:
+Change Dir: '/Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/build/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /Applications/CMake.app/Contents/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5122d/fast
+/Applications/Xcode.app/Contents/Developer/usr/bin/make  -f CMakeFiles/cmTC_5122d.dir/build.make CMakeFiles/cmTC_5122d.dir/build
+Building C object CMakeFiles/cmTC_5122d.dir/CheckFunctionExistsEx.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=select -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -MD -MT CMakeFiles/cmTC_5122d.dir/CheckFunctionExistsEx.c.o -MF CMakeFiles/cmTC_5122d.dir/CheckFunctionExistsEx.c.o.d -o CMakeFiles/cmTC_5122d.dir/CheckFunctionExistsEx.c.o -c /Users/yiyiwang/develop/GameFrameWork/Common/CPP/Dependencies/libevent/cmake/CheckFunctionExistsEx.c
+Linking C executable cmTC_5122d
+/Applications/CMake.app/Contents/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5122d.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Woverride-init -Wwrite-strings -Wno-unused-function -Wno-error=deprecated-declarations -Qunused-arguments -DCHECK_FUNCTION_EXISTS=select -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_5122d.dir/CheckFunctionExistsEx.c.o -o cmTC_5122d 
+
+
+
