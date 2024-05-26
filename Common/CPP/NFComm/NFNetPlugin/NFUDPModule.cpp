@@ -41,7 +41,11 @@ static void udp_cb(intptr_t sock, short int which, void *arg)
 	std::cout << std::this_thread::get_id() << " received:" << data.length() << std::endl;
 
 	/* Recv the data, store the address of the sender in server_sin */
+#ifdef _WIN32
+	if (recvfrom(sock, buf, sizeof(buf) - 1, 0, (struct sockaddr*)&client_addr, &size) == -1)
+#else
 	if (recvfrom(sock, buf, sizeof(buf) - 1, 0, (struct sockaddr *) &client_addr, (socklen_t *)&size) == -1)
+#endif
 	{
 		perror("recvfrom()");
 		//event_loopbreak();

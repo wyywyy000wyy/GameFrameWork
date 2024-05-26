@@ -22,6 +22,7 @@ if (UNIX)
 	)
 
 	target_link_libraries(NFMessageDefine -static-libstdc++)
+elseif(WIN32)
 else()
 
 	target_link_libraries(NFMessageDefine libprotobuf)
