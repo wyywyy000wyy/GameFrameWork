@@ -23,6 +23,7 @@ if CLIENT:
         "NFMessageDefine", 
         "NFNetPlugin", 
         "NFLuaScriptPlugin", 
+        "GamePlugin", 
         ]
 else:   
     plugins = [
@@ -38,6 +39,7 @@ else:
         "NFNavigationPlugin", 
         # "NFNoSqlPlugin", 
         "NFLuaScriptPlugin", 
+        "GamePlugin", 
         ]
 
 
@@ -111,9 +113,9 @@ def add_plugin(plugin_name):
 if CLIENT:
     cmake_command = ["cmake", "..", "-DBUILD_CLIENT=TRUE", "-DPLUGINS=" + ";".join(plugins)]
 else:
-    cmake_command = ["cmake", "..", "-DBUILD_CLIENT=FALSE", "-DPLUGINS=" + ";".join(plugins), "-G Xcode"]
+    cmake_command = ["cmake", "..", "-DBUILD_CLIENT=FALSE", "-DPLUGINS=" + ";".join(plugins)]
 
-process = subprocess.Popen(cmake_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE,)
+process = subprocess.Popen(cmake_command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE,)
 output, error = process.communicate()
 
 

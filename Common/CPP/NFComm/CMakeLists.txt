@@ -8,7 +8,7 @@ add_subdirectory(NFMessageDefine)
 add_subdirectory(NFNetPlugin)
 add_subdirectory(NFSecurityPlugin)
 add_subdirectory(NFNavigationPlugin)
-add_subdirectory(NFNoSqlPlugin)
+# add_subdirectory(NFNoSqlPlugin)
 # add_subdirectory(NFTestPlugin)
 add_plugin(NFLuaScriptPlugin)
 

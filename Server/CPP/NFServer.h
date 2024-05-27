@@ -38,6 +38,7 @@
 #include "NFComm/NFNetPlugin/NFNetPlugin.h"
 #include "NFComm/NFNoSqlPlugin/NFNoSqlPlugin.h"
 #include "NFComm/NFSecurityPlugin/NFSecurityPlugin.h"
+#include "NFComm/GamePlugin/GamePlugin.h"
 
 
 #if NF_PLATFORM == NF_PLATFORM_WIN
@@ -52,7 +53,7 @@
 #pragma comment( lib, "NFLuaScriptPlugin.lib" )
 //#pragma comment( lib, "NFNavigationPlugin.lib" )
 //#pragma comment( lib, "NFNetPlugin.lib" )
-#pragma comment( lib, "NFNoSqlPlugin.lib" )
+// #pragma comment( lib, "NFNoSqlPlugin.lib" )
 #pragma comment( lib, "NFSecurityPlugin.lib" )
 #pragma comment( lib, "NFPluginLoader.lib" )
 
@@ -80,6 +81,7 @@ void BasicPluginLoader(NFIPluginManager* pPluginManager)
 	// CREATE_PLUGIN(pPluginManager, NFNoSqlPlugin)
 	CREATE_PLUGIN(pPluginManager, NFSecurityPlugin)
 	//CREATE_PLUGIN(pPluginManager, NFTestPlugin)
+	CREATE_PLUGIN(pPluginManager, GamePlugin)
 
 #if NF_PLATFORM == NF_PLATFORM_APPLE || NF_PLATFORM == NF_PLATFORM_WIN
 #ifdef NF_DEBUG_MODE
@@ -89,6 +91,7 @@ void BasicPluginLoader(NFIPluginManager* pPluginManager)
 #endif
 
 #endif
+
 }
 
 void MidWareLoader(NFIPluginManager* pPluginManager)
