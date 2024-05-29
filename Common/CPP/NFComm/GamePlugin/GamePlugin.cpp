@@ -24,6 +24,7 @@
 */
 
 #include "GamePlugin.h"
+#include <entt/entity/registry.hpp>
 
 #ifdef NF_DYNAMIC_PLUGIN
 
@@ -52,8 +53,24 @@ const std::string GamePlugin::GetPluginName()
 	return GET_CLASS_NAME(GamePlugin);
 }
 
+class testPosition
+{	
+public:
+	float x;
+	float y;
+	float z;
+};
+
 void GamePlugin::Install()
 {
+	entt::registry registry;
+
+	auto entity = registry.create();
+
+	registry.emplace<testPosition>(entity, 1.0f, 2.0f, 3.0f);
+
+	std::cout << "ECS ?" << registry.valid(entity) << " " << registry.get<testPosition>(entity).x << std::endl;
+
 	/*
 	REGISTER_TEST_MODULE(pPluginManager, NFIKernelModule, NFKernelTestModule)
 	REGISTER_TEST_MODULE(pPluginManager, NFIEventModule, NFEventTestModule)
