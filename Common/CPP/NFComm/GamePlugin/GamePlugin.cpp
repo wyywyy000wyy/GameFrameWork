@@ -59,7 +59,16 @@ public:
 	float x;
 	float y;
 	float z;
+	testPosition(float x, float y, float z) : x(x), y(y), z(z) {}
+	virtual int getTestValue() { return 6; }
 };
+
+class testPosition2 : public testPosition
+{
+public:
+	virtual int getTestValue() { return 7; }
+};
+
 
 void GamePlugin::Install()
 {
@@ -69,6 +78,16 @@ void GamePlugin::Install()
 
 	registry.emplace<testPosition>(entity, 1.0f, 2.0f, 3.0f);
 
+	//testPosition tt;
+
+	//registry.emplace(tt);
+
+	std::cout << "ECS ?" << registry.valid(entity) << " " << registry.get<testPosition>(entity).x << std::endl;
+	registry.patch<testPosition>(entity, [](testPosition& pos) {
+		pos.x = 2.0f;
+		pos.y = 3.0f;
+		pos.z = 4.0f;
+	});
 	std::cout << "ECS ?" << registry.valid(entity) << " " << registry.get<testPosition>(entity).x << std::endl;
 
 	/*

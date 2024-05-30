@@ -186,14 +186,16 @@ macro(add_subdirectory_common dir)
     endif()
 endmacro(add_subdirectory_common)
 
-
+set(G_PLUGINS ${PLUGINS})
 
 include_directories(${CommonCPPDir} ${CMAKE_SOURCE_DIR}/Common/CPP/Dependencies/vcpkg/installed/x64-windows-static/include)
 
 add_subdirectory(${CommonCPPDir}/Dependencies)
 foreach(plugin ${PLUGINS})
 	add_subdirectory_common(${plugin})
-	endforeach(plugin ${PLUGINS})
+endforeach(plugin ${PLUGINS})
+
+
 if(BUILD_CLIENT)
 	
     add_subdirectory(Client)
