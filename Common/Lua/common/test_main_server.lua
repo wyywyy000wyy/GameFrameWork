@@ -9,7 +9,21 @@ local guoguo = PlayerType("player_guoguo", 55)
 
 LOG("lua test ~~~~~~~~~~~~~~~~~", guoguo);
 
+LOG("__lua test ~~~~~~~~~~~~~~~~~", NFLuaScriptModule.NFLuaScriptModuleIns);
 
+NFLuaScriptModule.NFLuaScriptModuleIns:testFunc()
+
+local reta = NFLuaScriptModule.NFLuaScriptModuleIns:TestFuntionA(1,2)
+LOG("lua test ~~~~~~~~~~~~~~~~~", reta);
+NFLuaScriptModule.NFLuaScriptModuleIns.TestFuntionAWrapper_ = function(a, b)
+    return a + b * 5
+end
+local reta = NFLuaScriptModule.NFLuaScriptModuleIns:TestFuntionA(1,2)
+LOG("lua test ~~~~~~~~~~~~~~~~~", reta); 
+
+NFLuaScriptModule.NFLuaScriptModuleIns.TestFuntionAWrapper_ = nil
+local reta = NFLuaScriptModule.NFLuaScriptModuleIns:TestFuntionA(1,2)
+LOG("lua test ~~~~~~~~~~~~~~~~~", reta);   
 -- task
 -- :persistent_save("Player", 1, guoguo)
 -- :persistent_load("Player", 1)

@@ -9,6 +9,6 @@ class GameMapObject
 class GameMap
 {
 
-}
+};
 
 #endif
