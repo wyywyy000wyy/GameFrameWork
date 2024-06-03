@@ -232,6 +232,13 @@ protected:
 
 	void* GetLuaContext() { return &mLuaContext; };
 
+
+	//int TestFuntionA(int a, int b);
+	LUA_MODULE_FUNC_DEFINE2(TestFuntionA, int, int, a, int, b);
+
+	void testFunc();
+
+	virtual void OnRegisterLua() override;
 protected:
     bool Register();
 	std::string FindFuncName(const LuaIntf::LuaRef& luaTable, const LuaIntf::LuaRef& luaFunc);

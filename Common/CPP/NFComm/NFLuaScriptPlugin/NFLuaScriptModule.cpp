@@ -42,6 +42,8 @@
 #define EMMY_CORE_EXPORT    extern
 #endif
 
+#define LUA_MODULE_CLASS NFLuaScriptModule
+
 //extern "C"
 //{
 //	extern int luaopen_emmy_core1(lua_State* L);
@@ -1050,6 +1052,27 @@ struct LocalRegisterLuaFunction
 {
 	NFLuaScriptModule* p;
 };
+
+
+LUA_MODULE_FUNC_IMGL2(TestFuntionA, int, int, a, int, b)
+{
+	return a + b;
+}
+
+
+void NFLuaScriptModule::testFunc()
+{
+	std::cout << TestFuntionA(1, 7) << std::endl;
+}
+
+void NFLuaScriptModule::OnRegisterLua()
+{
+	LuaIntf::LuaBinding(mLuaContext).beginClass<NFLuaScriptModule>("NFLuaScriptModule")
+		.addStaticVariableRef("NFLuaScriptModuleIns", this)
+		LUA_MODULE_REGISTER(TestFuntionA)
+		.addFunction("testFunc", &NFLuaScriptModule::testFunc)
+		.endClass();
+}
 
 bool NFLuaScriptModule::Register()
 {
