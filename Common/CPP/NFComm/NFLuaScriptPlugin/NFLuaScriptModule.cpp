@@ -1065,13 +1065,81 @@ void NFLuaScriptModule::testFunc()
 	std::cout << TestFuntionA(1, 7) << std::endl;
 }
 
+class TestClassB
+{
+public:
+	int mValue;
+	int GetmValue()
+	{
+		return mValue;
+	}
+	void SetmValue(int value)
+	{
+		mValue = value;
+	}
+
+	LuaIntf::CppBindClass< TestClassB, LuaIntf::LuaBinding> bind_mValue(LuaIntf::CppBindClass< TestClassB, LuaIntf::LuaBinding>& binding)
+	{
+		return binding.addProperty("mValue", &TestClassB::GetmValue, &TestClassB::SetmValue);
+	}
+
+	int mValue2;
+	int GetmValue2()
+	{
+		return mValue2;
+	}
+	void SetmValue2(int value)
+	{
+		mValue2 = value;
+	}
+
+	LuaIntf::CppBindClass< TestClassB, LuaIntf::LuaBinding> bind_mValue2(LuaIntf::CppBindClass< TestClassB, LuaIntf::LuaBinding>& binding)
+	{
+		return binding.addProperty("mValue2", &TestClassB::GetmValue2, &TestClassB::SetmValue2);
+	}
+
+};
+
+class TestClassBMacro
+{
+#define LUA_CLASS TestClassBMacro
+#define LUA_PS \
+	LD(int, mValue)\
+	LD(int, mValue2)
+
+public:
+	int GetTestValue() { return 666; }
+
+#define LD LD1
+	LP1
+#define LD LD2
+	LP2
+#undef LD
+#undef LUA_CLASS
+};
+
+
+
+
 void NFLuaScriptModule::OnRegisterLua()
 {
+	TestClassBMacro testClassB2;
+	testClassB2.mValue = 10;
+	std::cout << testClassB2.GetmValue() << std::endl;
+
 	LuaIntf::LuaBinding(mLuaContext).beginClass<NFLuaScriptModule>("NFLuaScriptModule")
 		.addStaticVariableRef("NFLuaScriptModuleIns", this)
 		LUA_MODULE_REGISTER(TestFuntionA)
 		.addFunction("testFunc", &NFLuaScriptModule::testFunc)
 		.endClass();
+
+
+
+	//LUA_CLASS_REGISTER(TestClassBMacro)
+
+	LUA_CLASS_REGISTER_BEGIN(TestClassBMacro)
+		.addFunction("GetTestValue", &TestClassBMacro::GetTestValue)
+	LUA_CLASS_REGISTER_END
 }
 
 bool NFLuaScriptModule::Register()
