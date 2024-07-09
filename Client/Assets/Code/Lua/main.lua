@@ -16,8 +16,8 @@ require_folder("data", true)
 
 require_folder("base/ui")
 
-require_folder("framework")
-PM:load_plugin("task_manager")
+-- require_folder("framework")
+-- PM:load_plugin("task_manager")
 
 function main()
     collectgarbage("setpause", 100)

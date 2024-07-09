@@ -18,9 +18,10 @@ public class GameFrameWorkClientLib : MonoBehaviour
 #else
     [DllImport("GameFrameWorkClientLib", CallingConvention = CallingConvention.Cdecl)]
 #endif
-    public static extern int nfclient_lib_init(string strArgvList, System.IntPtr L);
+    //public static extern int nfclient_lib_init(string strArgvList, System.IntPtr L);
+    public static extern int nfclient_lib_init( System.IntPtr L);
 
-    #if (UNITY_IPHONE || UNITY_TVOS || UNITY_WEBGL || UNITY_SWITCH) && !UNITY_EDITOR
+#if (UNITY_IPHONE || UNITY_TVOS || UNITY_WEBGL || UNITY_SWITCH) && !UNITY_EDITOR
         [DllImport("__Internal", CallingConvention = CallingConvention.Cdecl)]
 #else
     [DllImport("GameFrameWorkClientLib", CallingConvention = CallingConvention.Cdecl)]

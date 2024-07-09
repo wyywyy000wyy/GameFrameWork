@@ -101,6 +101,7 @@ public class LuaFilePicker
     {
         List<string> files = new List<string>();
 
+
         string folderPath = "";
 
         foreach (var path in Defines.LuaFileSearchPath)
@@ -125,6 +126,8 @@ public class LuaFilePicker
         }
         int a = 1;
         a = 2;
+        files.Add("test");
+
         return files;
     }   
 

@@ -42,7 +42,8 @@ extern "C" {
 	extern NFPluginServer* pPluginServer;
 	extern void nfclient_lib_clear();
 
-	extern void nfclient_lib_init(const char* strArgvList, lua_State* L);
+	//extern void nfclient_lib_init(const char* strArgvList, lua_State* L);
+	extern void nfclient_lib_init(lua_State* L);
 
 	extern void nfclient_lib_loop();
 	extern void nfclient_hot_reload();
@@ -62,7 +63,8 @@ int main(int argc, char* argv[])
 		strArgvList += argv[i];
 	}
 
-	nfclient_lib_init("", NULL);
+	//nfclient_lib_init("", NULL);
+	nfclient_lib_init(NULL);
 
 
 	int dt = 0;

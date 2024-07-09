@@ -6,6 +6,7 @@ local GetFilePath = T.LuaFilePicker.GetFilePath
 local FileWriteTime = T.LuaFilePicker.FileWriteTime
 local GetFolderFiles = T.LuaFilePicker.GetFolderFiles
 
+NFFileSystemModule = T.LuaFilePicker
 
 function file_system.exsit_file(path)
     return IsFileExist(path)

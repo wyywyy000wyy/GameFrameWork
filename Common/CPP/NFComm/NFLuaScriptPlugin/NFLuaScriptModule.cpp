@@ -87,11 +87,15 @@ bool NFLuaScriptModule::Awake()
 	//luaopen_emmy_core1(mLuaContext.state());
 	luaopen_cjson(mLuaContext.state());
     Register();
-
+	if (g_pLuaState)
+	{
+		pPluginManager->SetConfigPath("D:\\develop\\Project\\GameFrameWork\\Client\\Assets\\Code\\Lua\\");
+	}
 	std::string luaRootPath = pPluginManager->GetConfigPath();//-- +"NFDataCfg/Lua/";
 	LuaIntf::LuaBinding(mLuaContext).addFunction("luaRootPath", [luaRootPath]() {
 		return luaRootPath;
 		});
+
 	std::string strRootFile = luaRootPath + "common/NFScriptSystem.lua";
 	//if (!m_pFileSystemModule->IsFileExist(strRootFile))
 	//{
