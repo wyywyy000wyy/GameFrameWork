@@ -1,5 +1,6 @@
 -- package.path = '../NFDataCfg/Lua/?.lua;../NFDataCfg/Lua/json/?.lua;../NFDataCfg/Lua/cfg/?.lua;../NFDataCfg/Lua/game/scenario/?.lua;../NFDataCfg/Lua/game/?.lua;../NFDataCfg/Lua/world/?.lua;../NFDataCfg/Lua/proxy/?.lua;../NFDataCfg/ScriptModule/master/?.lua;../NFDataCfg/ScriptModule/login/?.lua;'
-package.path = '?.lua;../../../Code/Lua/?.lua'
+LOG("aaaaa2", package.path)
+package.path = package.path .. ";" .. '?.lua;../../../Code/Lua/?.lua'
 
 local function _dump_value(v, depth,map)
     depth = depth or 1
@@ -43,23 +44,24 @@ local function contact_parm(...)
     return s
 end
 
-function LOG(...)
+
+LOG = LOG or function (...)
     if not _PUBLISH then
         script_module:log_info(  contact_parm(...).."\r\n")--.. debug.traceback("",2))
     end
 end
 
-function LOGF(format, ...)
+LOGF = LOGF or function(format, ...)
     if not _PUBLISH then
         script_module:log_info(  string.format(format, ...).."\r\n")--.. debug.traceback("",2))
     end
 end
 
-function ELOG(...)
+ELOG = ELOG or function (...)
     script_module:log_error(  contact_parm(...) ..  debug.traceback())
 end
 
-function DLOG(...)
+DLOG = DLOG or function (...)
     if not _PUBLISH then
         script_module:log_info(  contact_parm(...).."\r\n")--.. debug.traceback("",2))
     end
@@ -162,7 +164,7 @@ function module_init(...)
 
 end
 
-function module_after_init(...)
+function _module_after_init(...)
     require("define")
 	LOG("lua module after init", SERVER);
     require("common/framework/cmain")
@@ -177,6 +179,10 @@ function module_after_init(...)
         PM:load(require("modules/module_manifest_client"))
         require("test_main_client")
     end
+end
+
+function module_after_init(...)
+    SAFE_CALL(_module_after_init, ...)
 end
 
 function module_ready_execute(...)

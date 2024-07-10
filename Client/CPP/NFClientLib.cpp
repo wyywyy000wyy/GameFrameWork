@@ -45,10 +45,11 @@ extern "C" {
 		}
 	}
 
-	__declspec(dllexport) void nfclient_lib_init(char* strArgvList, lua_State *L)
+	__declspec(dllexport) void nfclient_lib_init(/*char* strArgvList, */lua_State *L)
 	{
 		std::cout << "nfclient_lib_init:" << std::endl;
 		g_pLuaState = L;
+		char* strArgvList = "";
 		g_pLuaRootPath = strArgvList;
 		nfclient_lib_clear();
 		pPluginServer = NF_NEW NFPluginServer(strArgvList);

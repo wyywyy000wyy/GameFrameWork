@@ -88,12 +88,14 @@ elseif(UNIX)
 	)
 else()
 	# link_directories(C:/Boost//lib/)
-	link_directories(/Users/yiyiwang/develop/boost_1_84_0/stage/lib)
+	link_directories(D:/develop/Library/boost_1_84_0/stage/lib)
 	link_directories(C:/Boost//lib/)
 	# link_directories(/Users/yiyiwang/develop/boost_1_84_0/stage/lib)
 	include_directories(
 		# C:/Boost/include/boost-1_84/
 		/Users/yiyiwang/develop/boost_1_84_0
+
+		D:/develop/Library/boost_1_84_0
 		C:/Boost/include/boost-1_84/
 		# /Users/yiyiwang/develop/boost_1_84_0
 		${CommonCPPDir}

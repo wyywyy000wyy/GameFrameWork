@@ -39,8 +39,9 @@ public class Main : MonoBehaviour
         });
         currentLuaEnv.AddBuildin("pb", XLua.LuaDLL.Lua.LoadLuaProfobuf);
         luaopen_cmsgpack_safe(currentLuaEnv.L);
-        currentLuaEnv.DoString("require '" + Defines.LuaEntryFileName + "'");
-        GameFrameWorkClientLib.nfclient_lib_init("", currentLuaEnv.L);
+        currentLuaEnv.DoString("require '" + "pre_main" + "'");
+        //currentLuaEnv.DoString("require '" + Defines.LuaEntryFileName + "'");
+        GameFrameWorkClientLib.nfclient_lib_init( currentLuaEnv.L);
     }
 
 #if UNITY_EDITOR
