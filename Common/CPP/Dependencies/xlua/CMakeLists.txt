@@ -216,38 +216,22 @@ else ( )
 endif ( )
 
 
-# if (USE_EMMY_LUA_DEBUG)
 
-set(emmy_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
-add_definitions(-DEMMY_LUA_53)
-add_definitions(-DEMMY_USE_LUA_SOURCE)
-add_definitions(-DEMMY_CORE_VERSION="1.0.16")
-add_subdirectory(third-party/libuv)
-add_subdirectory(emmy_debugger)
-if(WIN32)
-    add_subdirectory(shared)
-    add_subdirectory(emmy_tool)
-    add_subdirectory(third-party/EasyHook)
-    add_subdirectory(emmy_hook)
-endif(WIN32)
+# add_subdirectory(third-party/libuv)
+# if(WIN32)
+#     add_subdirectory(shared)
+#     add_subdirectory(third-party/EasyHook)
+# endif(WIN32)
 
 
-add_dependencies(xlua emmy_debugger)
-option(EMMY_USE_LUA_SOURCE "Build with lua source" ON)
 target_include_directories(xlua PUBLIC 
-    ${CMAKE_CURRENT_SOURCE_DIR}/emmy_core/include
-    PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/emmy_core/src
     ${CMAKE_CURRENT_SOURCE_DIR}/lua-5.3.5/src
 )
 
-target_sources(xlua PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}/include/emmy_core/emmy_core.h
-    PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/emmy_core/src/emmy_core.cpp
-)
-# endif(USE_EMMY_LUA_DEBUG)
 
-
+add_subdirectory(EmmyDebugger/build_script/xlua_emmy_core)
+add_dependencies(xlua emmy_core)
+target_link_libraries(xlua PRIVATE emmy_core)
 
 if ( WIN32 AND NOT CYGWIN )
     target_compile_definitions (xlua PRIVATE LUA_BUILD_AS_DLL)
@@ -278,13 +262,11 @@ if ( WIN32 AND NOT CYGWIN )
             ${CMAKE_SOURCE_DIR}/${LUAJIT_SRC_PATH}/lua51.lib
             ws2_32
             ${THIRDPART_LIB} 
-            emmy_debugger
         )
     else ()
         target_link_libraries(xlua
             ws2_32
             ${THIRDPART_LIB} 
-            emmy_debugger
         )
     endif()
 else ( )
@@ -293,13 +275,11 @@ else ( )
 			${CMAKE_SOURCE_DIR}/${LUAJIT_SRC_PATH}/libluajit.a
 			m
             ${THIRDPART_LIB} 
-            emmy_debugger
 		)
     else ()
         target_link_libraries(xlua
             m
             ${THIRDPART_LIB} 
-            emmy_debugger
         )
     endif()
 endif ( )

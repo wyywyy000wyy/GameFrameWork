@@ -22,6 +22,7 @@
 #include "emmy_debugger/transporter.h"
 #include "emmy_debugger/api/lua_api.h"
 #include "emmy_debugger/emmy_debugger_manager.h"
+#include "nlohmann/json.hpp"
 
 enum class LogType
 {

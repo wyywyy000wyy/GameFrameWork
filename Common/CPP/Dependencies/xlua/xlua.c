@@ -1247,10 +1247,10 @@ LUA_API void luaopen_xlua(lua_State *L) {
 
 	luaopen_cjson(L);
 }
-
-extern int luaopen_emmy_core(struct lua_State* L);
-
-int luaopen_emmy_core1(lua_State* L) {
-	return luaopen_emmy_core(L);
-}
+//
+//extern int luaopen_emmy_core(struct lua_State* L);
+//
+//int luaopen_emmy_core1(lua_State* L) {
+//	return luaopen_emmy_core(L);
+//}
 
