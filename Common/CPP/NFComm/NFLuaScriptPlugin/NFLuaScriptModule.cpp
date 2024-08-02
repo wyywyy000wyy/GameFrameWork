@@ -44,15 +44,16 @@
 
 #define LUA_MODULE_CLASS NFLuaScriptModule
 
-//extern "C"
-//{
-//	extern int luaopen_emmy_core1(lua_State* L);
-//}
-//extern int luaopen_emmy_core1(lua_State* L);
+extern "C"
+{
+	extern int luaopen_emmy_core(lua_State* L);
+}
+extern int luaopen_emmy_core(lua_State* L);
 
 extern "C"
 {
 	extern lua_State *g_pLuaState;
+	extern char* g_pLuaRootPath;
 
 	extern int luaopen_cmsgpack_safe(lua_State* L);
 	extern int luaopen_cjson(lua_State* L);
@@ -84,17 +85,19 @@ bool NFLuaScriptModule::Awake()
 	NFLuaPBModule* p = (NFLuaPBModule*)(m_pLuaPBModule);
 	p->SetLuaState(mLuaContext.state());
 	luaopen_cmsgpack_safe(mLuaContext.state());
-	//luaopen_emmy_core1(mLuaContext.state());
+	luaopen_emmy_core(mLuaContext.state());
 	luaopen_cjson(mLuaContext.state());
     Register();
-	if (g_pLuaState)
+	if (g_pLuaState && g_pLuaRootPath)
 	{
-		pPluginManager->SetConfigPath("D:\\develop\\Project\\GameFrameWork\\Client\\Assets\\Code\\Lua\\");
+		pPluginManager->SetConfigPath(g_pLuaRootPath);
 	}
 	std::string luaRootPath = pPluginManager->GetConfigPath();//-- +"NFDataCfg/Lua/";
 	LuaIntf::LuaBinding(mLuaContext).addFunction("luaRootPath", [luaRootPath]() {
 		return luaRootPath;
-		});
+		}
+
+	);
 
 	std::string strRootFile = luaRootPath + "common/NFScriptSystem.lua";
 	//if (!m_pFileSystemModule->IsFileExist(strRootFile))
