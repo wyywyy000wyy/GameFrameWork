@@ -23,9 +23,14 @@ local prequire = g_require
 hot_require = hot_require or{}
 
 local search_paths = {
-    "common/",
-    "",
+    luaRootPath() .. "common/",
+    luaRootPath() ,
 }
+
+local LOG_REQUIRE = function(...)
+    -- LOG(...)
+end
+
 
 local function get_folder(path)
     if not path then
@@ -72,16 +77,21 @@ end)
 
 
 
-function require_file:dirty()
+function require_file:dirty(can_empty)
     local file_count = self:get_files_count()
+    if file_count == 0 and not can_empty then
+        ELOG("GGGGGGGG....... require failed", self.modname)
+        return true
+    end
     if file_count ~= self.file_count then
         return true
     end
     for _, path in ipairs(self.files) do
+        LOG_REQUIRE("dirty ", path, file_system.exsit_file(path))
         if file_system.exsit_file(path) then
             local require_path = get_file_path(path) --string.sub(path, 1, -5))
             local file_time = file_system.get_file_time(path)
-            -- LOG("file_time____", path, file_time, self.time)
+            LOG_REQUIRE("file_time____", path, file_time, self.time)
             if file_time > self.time then
                 return true
             end
@@ -101,14 +111,15 @@ function require_file:get_files_count()
 end
 
 
-function require_file:require()
-    -- LOG("require_a?", self.modname, "dirty", self:dirty(), "time", self.time, "file_count", self.file_count, "files", self.files[1], "search_folder", self.search_folder)
-    if not self:dirty() then
+function require_file:require(can_empty)
+    LOG_REQUIRE("require_a?", self.modname, "dirty", self:dirty(can_empty), "time", self.time, "file_count", self.file_count, "files", self.files[1], "search_folder", self.search_folder)
+    if not self:dirty(can_empty) then
         return self._ret
     end
     self.file_count = 0
     local first = self.time == 0
     local ret = nil
+    local r
     for i, path in ipairs(self.files) do
         if file_system.exsit_file(path) then
             -- if not require_path then
@@ -126,14 +137,17 @@ function require_file:require()
             --     rp1 = string.sub(rp1, 1, -5)
             -- end
 
+            LOG_REQUIRE("GGGGGGGG....... hot reload file:" .. path)
             ret = dofile(path)
-            -- LOG("GGGGGGGG....... hot reload file:" .. path)
             self.search_folder[i] = get_folder(require_path)
-
+            r = true
             -- LOG("require_file", self.modname, "path", path, "require_path", require_path, "folder", self.search_folder[i])
         else
             self.search_folder[i] = nil
         end
+    end
+    if not r and not can_empty then
+        ELOG("GGGGGGGG....... require failed", self.modname)
     end
     self._ret = ret
     return ret
@@ -152,7 +166,7 @@ lrequire = function(modname)
     return require(modname_with_folder)
 end
 
-require = function(modname, is_folder)
+require = function(modname, can_empty)
     if starts_with(modname, "@") then
         modname = string.sub(modname, 2)
     end
@@ -165,7 +179,7 @@ require = function(modname, is_folder)
         init_map[modname] = require_info
         table.insert(init_list, require_info)
     end
-    return require_info:require()
+    return require_info:require(can_empty)
 end
 
 function require_folder(folder, recursive)
@@ -175,16 +189,16 @@ function require_folder(folder, recursive)
         local len = files.Count
         if false and files.Count then
             for i = 0, len - 1 do
-                -- LOG("path", len, i, filepath, files and files[i])
+                LOG_REQUIRE("path", len, i, filepath, files and files[i])
                 local filepath = filepath .. "/" .. files[i]
                 require(filepath, true)
             end
         else
             len = #files
             for i = 1, len do
-                -- LOG("path_2", len, i, filepath, files and files[i])
-                local filepath = filepath .. "/" .. files[i]
-                require(filepath, true)
+                local filepath2 = filepath .. "/" .. files[i]
+                LOG_REQUIRE("path_2", len, i, filepath2, folder, files and files[i])
+                require(folder .. "/" .. files[i], true)
             end
         end
         

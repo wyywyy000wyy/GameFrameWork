@@ -165,8 +165,9 @@ function module_init(...)
 end
 
 function _module_after_init(...)
-    require("define")
+    -- require("define")
 	LOG("lua module after init", SERVER);
+    require("common/framework/file_system")
     require("common/framework/cmain")
     if _CLIENT then
 		require("main")

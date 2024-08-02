@@ -1,3 +1,5 @@
+
+LOG("module_manager_START")
 local module_manager = class("module_manager", function(self)
     self._modules = {}
     self._update_modules = {}
@@ -63,7 +65,7 @@ function module_manager:load_module(name, is_service, args)
         PCALL(module, "init")
 
         local define_path = string.format("%sdefine_%s", module_root, name)
-        local define = require(define_path)
+        local define = require(define_path, true)
         if define then
             TM:_module_loaded(module, define)
         end

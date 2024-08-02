@@ -4,6 +4,8 @@
 
 require("framework/data/nf_object")
 require_folder("framework")
+require_folder("framework/core")
+-- require("common/framework/core/bit")
 PM:load_module("task_manager")
 PM:load(require("modules/module_manifest"))
 
