@@ -41,7 +41,10 @@ public class Main : MonoBehaviour
         luaopen_cmsgpack_safe(currentLuaEnv.L);
         currentLuaEnv.DoString("require '" + "pre_main" + "'");
         //currentLuaEnv.DoString("require '" + Defines.LuaEntryFileName + "'");
-        GameFrameWorkClientLib.nfclient_lib_init( currentLuaEnv.L);
+
+        string path = Application.dataPath + "/Code/Lua/";
+
+        GameFrameWorkClientLib.nfclient_lib_init( currentLuaEnv.L, path);
     }
 
 #if UNITY_EDITOR
