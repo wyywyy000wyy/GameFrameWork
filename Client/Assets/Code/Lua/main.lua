@@ -24,7 +24,7 @@ function main()
     collectgarbage("setstepmul", 500)
     math.randomseed(os.time())
 
-    PM:load(require("plugins/plugin_manifest"))
+    PM:load(require("modules/module_manifest"))
     require("base/test")
     -- g_game_state_manager:push_state(T.game_state_login())
 end
