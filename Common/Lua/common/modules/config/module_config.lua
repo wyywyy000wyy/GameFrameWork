@@ -1,11 +1,10 @@
 local module_config = module_def("module_config")
 
 function module_config:init()
-    resmng = {
-        load_config = function(name)
-            load_config(name)
-        end
-    }
+    resmng = resmng or {}
+    resmng.load_config = function(name)
+        load_config(name)
+    end
     require("config/config_require")
 
     load_config = function(name)

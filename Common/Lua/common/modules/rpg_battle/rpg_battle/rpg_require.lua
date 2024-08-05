@@ -1,3 +1,4 @@
+
 common_do_load("rpg_battle/rpg_pre_define")
 common_do_load("rpg_battle/rpg_define")
 common_do_load("rpg_battle/rpg_math")

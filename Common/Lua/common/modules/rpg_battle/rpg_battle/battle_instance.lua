@@ -13,7 +13,7 @@ local battle_instance = class2("battle_instance", function(self, battle_id, init
     self._skip = false -- 是否跳过战斗
     local conf = resmng.prop_rpg_battle_level[init_data.level_id]
 
-    self._anger_pause = conf and conf.Type == DungeonMode.RPG_ARENA
+    self._anger_pause = false --conf and conf.Type == DungeonMode.RPG_ARENA
 
     self._fixed_dt = init_data.fixed_dt
     self._fixed_time = 0

@@ -213,7 +213,7 @@ function rpg_init_mod.create_init_data(data)
     if data.inited then
         return  resmng.E_OK, data
     end
-    local conf = resmng.prop_rpg_battle_levelById(data.propid)
+    local conf = resmng.prop_rpg_battle_level[data.propid]
     if not conf then
         return resmng.E_FAIL, 'no conf'
     end

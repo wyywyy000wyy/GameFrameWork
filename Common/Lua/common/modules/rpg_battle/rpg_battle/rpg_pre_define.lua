@@ -10,6 +10,7 @@ rpg_config_define = {
     "define_rpg_battle_group",
 }
 rpg_config = {
+    "prop_effect_type",
     "prop_rpg_battle_map",
     "prop_rpg_battle_level",    
     "prop_rpg_battle_group",

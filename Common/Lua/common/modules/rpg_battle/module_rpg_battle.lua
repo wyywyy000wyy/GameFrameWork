@@ -15,5 +15,19 @@ function module_rpg_battle:init()
         end
     }
 
+    is_server = function()
+        return SERVER
+    end
+
+    unpack = table.unpack
+
+    BattleResult = {
+        NONE = 0,
+        FAIL = 1,   -- 失败
+        WIN = 2,    -- 胜利
+        DRAW = 3,   -- 平局
+    }
+    
+
     common_do_load("rpg_battle/rpg_require")
 end
