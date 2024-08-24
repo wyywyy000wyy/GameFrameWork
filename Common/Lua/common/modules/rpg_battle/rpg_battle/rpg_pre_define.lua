@@ -1,5 +1,6 @@
 
 rpg_config_define = {
+    "define_hero_basic",
     "define_rpg_battle_map",
     "define_rpg_battle_level",    
     "define_rpg_battle_group",
@@ -10,6 +11,7 @@ rpg_config_define = {
     "define_rpg_battle_group",
 }
 rpg_config = {
+    "prop_hero_basic",
     "prop_effect_type",
     "prop_rpg_battle_map",
     "prop_rpg_battle_level",    

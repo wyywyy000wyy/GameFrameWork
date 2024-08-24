@@ -1,8 +1,9 @@
 local module_rpg_battle = module_def("module_rpg_battle")
 
 function module_rpg_battle:init()
-
+    GN = GN or {}
     BASIC_SKILL_MAX_LV = 11
+    class2 = class
 
     common_do_load = function(path)
         LOG("common_do_load: " .. path)

@@ -209,7 +209,7 @@ function hexagonal_grid.debug:init_delegate()
     if not DrawHexagonalGridGo then
         return
     end
-    local scene = models.rpg_battle_model.cur_scene
+    local scene = self._ins.scene
     local DrawHexagonalGrid = DrawHexagonalGridGo:GetComponent("DrawHexagonalGrid")
     if scene then
         local pos = scene:b2w_point(E.Vector3(0, 0, 0))

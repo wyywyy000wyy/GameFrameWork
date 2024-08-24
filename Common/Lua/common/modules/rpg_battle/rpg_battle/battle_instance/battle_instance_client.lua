@@ -1,5 +1,7 @@
 local battle_instance_client = class2("battle_instance_client", T.battle_instance, function(self, battle_id, init_data)
     T.battle_instance._ctor(self, battle_id, init_data)
+    local cur_level_prop = resmng.prop_rpg_battle_level[init_data.level_id]
+    self.scene = T.rpg_battle_scene(cur_level_prop.Map)
 end)
 
 
@@ -27,10 +29,15 @@ function battle_instance_client.on_ReqRpgCreate(id, data)
 end
 
 function battle_instance_client:start()
-    local cur_scene = models.rpg_battle_model.cur_scene
+    self.on_update = function()
+        self:update(E.Time.deltaTime * 1000)
+    end
+    self.CS = CS.LuaBehaviour.Create({ Update = self.on_update }, "battle_instance_client") 
+    
+    local cur_scene = self.cur_scene
     if cur_scene and cur_scene._map_prop and cur_scene._map_prop.Music then
-        models.audio_model.post_event(cur_scene._map_prop.Music)
-        models.audio_model.post_event(cur_scene._map_prop.EnvMusic)
+        PM.module_audio:post_event(cur_scene._map_prop.Music)
+        PM.module_audio:post_event(cur_scene._map_prop.EnvMusic)
     end
 
 
@@ -47,10 +54,10 @@ function battle_instance_client:start()
     local rpg_debug_mod = T.rpg_debug_mod(self)
     self:add_mod(rpg_debug_mod)
     
-    if RPG_DEBUG_VIEW_MOD then
-        local debug_view_mod = T.rpg_debug_view_mod(self)
-        self:add_mod(debug_view_mod)
-    end
+    -- if RPG_DEBUG_VIEW_MOD then
+    --     local debug_view_mod = T.rpg_debug_view_mod(self)
+    --     self:add_mod(debug_view_mod)
+    -- end
     
     local battle_mod = T.battle_mod(self)
     self:add_mod(battle_mod)
@@ -105,7 +112,7 @@ function battle_instance_client:on_battle_end(event_data)
     battle_end_cor = coroutine.start(
             function()
                 coroutine.wait_sec(RPG_WIN_WAIT_SEC)
-                models.rpg_battle_model.set_battle_data(self._bid,self:get_result_data(true))
+                -- models.rpg_battle_model.set_battle_data(self._bid,self:get_result_data(true))
 
                 local result = self:get_result_data(true)
                 -- result.result_str = nil
@@ -118,13 +125,13 @@ function battle_instance_client:on_battle_end(event_data)
                     return self._battle_end_callback(result)
                 end
 
-                -- 根据结算消息，弹结算面板
-                Rpc:reqRpgResult(result, function(data)
-                    -- models.rpg_battle_model.net_disconnect()
-                    models.rpg_battle_model.request_battle_result(data)
-                end,function()
-                    models.rpg_battle_model.net_disconnect()
-                end)
+                -- -- 根据结算消息，弹结算面板
+                -- Rpc:reqRpgResult(result, function(data)
+                --     -- models.rpg_battle_model.net_disconnect()
+                --     models.rpg_battle_model.request_battle_result(data)
+                -- end,function()
+                --     models.rpg_battle_model.net_disconnect()
+                -- end)
             end
     )
     
@@ -137,13 +144,17 @@ end
 
 function battle_instance_client:stop()
     -- 没有结算
+    if self.CS then
+        CS.LuaBehaviour.Delete(self.CS)
+        self.CS = nil
+    end
     if not self._battle_mod._bfin then
         local result = {}
         result.result_type = BattleResult.NONE     
         result.id = self._bid
         Rpc:reqRpgResult(result)
     end
-    models.audio_model.post_event("Stop_Amb_Expedition")
+    PM.module_audio:post_event("Stop_Amb_Expedition")
     self._base.stop(self)  
     local result = self:get_result_data(true)  
     models.rpg_battle_model.set_battle_data(self._bid,result)

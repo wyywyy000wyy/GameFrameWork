@@ -1,7 +1,7 @@
 local rpg_debug_view_entity = class2("rpg_debug_view_entity", T.dungeon_game_unit, function(self, eid, battle_ins)
     self._ins = battle_ins
     self._ety = battle_ins._battle_mod:get_ety(eid)
-    self._rpg_battle_scene = models.rpg_battle_model.cur_scene
+    self._rpg_battle_scene = self._ins.scene
     T.dungeon_game_unit._ctor(self, eid, self:get_logic_pos() , 0, 1)
     self.cast_skills = {}
 
@@ -81,7 +81,7 @@ function rpg_debug_view_entity:end_skill(skill_oid)
     local cast_skill = cast_skills and cast_skills[skill_oid]
     if cast_skill then
         for _, eff in pairs(cast_skill.effs) do
-            lua_distribute(DIS_TYPE.HIDE_BATTLE_INDICATOR, eff[1], eff[2])
+            post_event(DIS_TYPE.HIDE_BATTLE_INDICATOR, eff[1], eff[2])
         end
         cast_skill.effs = {}
         cast_skills[skill_oid] = nil
@@ -116,7 +116,7 @@ function rpg_debug_view_entity:on_skill_effect(event)
         key,
         param,
     })
-    lua_distribute(DIS_TYPE.BATTLE_INDICATOR, key, param)
+    post_event(DIS_TYPE.BATTLE_INDICATOR, key, param)
 end
 
 function rpg_debug_view_entity:on_destroy()

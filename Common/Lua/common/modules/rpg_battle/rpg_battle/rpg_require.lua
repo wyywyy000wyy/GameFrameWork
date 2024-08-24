@@ -65,6 +65,7 @@ common_do_load("rpg_battle/mod/rpg_debug_mod")
 common_do_load("rpg_battle/mod/rpg_debug_view_mod")
 common_do_load("rpg_battle/mod/controller_mod")
 common_do_load("rpg_battle/mod/battle_mod")
+common_do_load("rpg_battle/mod/turn_based_battle_mod")
 common_do_load("rpg_battle/mod/physics_mod")
 common_do_load("rpg_battle/mod/statistic_mod")
 common_do_load("rpg_battle/mod/record_mod")
@@ -76,5 +77,9 @@ common_do_load("rpg_battle/battle_instance")
 common_do_load("rpg_battle/battle_instance/battle_instance_calc")
 common_do_load("rpg_battle/battle_instance/battle_instance_verify")
 common_do_load("rpg_battle/battle_instance/battle_instance_editor")
+
+common_do_load("rpg_battle/battle_instance_turned")
+common_do_load("rpg_battle/battle_instance/battle_instance_turned_calc")
+
 
 common_do_load("rpg_battle/rpg_test")

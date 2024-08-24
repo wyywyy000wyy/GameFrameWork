@@ -11,18 +11,22 @@ local max = math.max
 function NONE_LOG()
 end
 
-RPG_LOG = INFO
-RPG_DEBUG = INFO
+RPG_LOG = function(format, ...)
+    INFO(string.format(format, ...))
+end
+RPG_DEBUG = function(format, ...)
+    INFO(string.format(format, ...))
+end
 RPG_ERR = ERROR
 RPG_DEBUG_MOD = false
 RPG_DEBUG_VIEW_MOD = false
 RPG_DEBUG_CHECK = false
 RPG_DEBUG_WRAPPER = false
 
-RPG_LOG = NONE_LOG
-RPG_DEBUG = NONE_LOG
+-- RPG_LOG = NONE_LOG
+-- RPG_DEBUG = NONE_LOG
 -- RPG_ERR = NONE_LOG
-RPG_DEBUG_MOD = false
+RPG_DEBUG_MOD = true
 RPG_DEBUG_CHECK = false
 RPG_DEBUG_VIEW_MOD = true
 RPG_DEBUG_WRAPPER = true
@@ -629,6 +633,11 @@ RPG_POS_TYPE = {
     FPOS_3 = 103, --站位位置3
     FPOS_4 = 104, --站位位置4
     FPOS_5 = 105, --站位位置5
+    FPOS_6 = 106, --站位位置6
+    FPOS_7 = 107, --站位位置7
+    FPOS_8 = 108, --站位位置8
+    FPOS_9 = 109, --站位位置9
+    FPOS_COUNT = 9,
 
     NEAREST_CAN_SELECTED = 999, --最近可选单位
     -- POS = 105,

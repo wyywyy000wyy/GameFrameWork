@@ -4,7 +4,7 @@ local rpg_hero = class2("rpg_hero",T.rpg_entity, function(self, battle_instance,
     self._hero_id = init_data.hero_id--init_data.hero_id
     self._dt = 0
     self._fpos = init_data.fpos
-    self._fpos2 = math.fmod(init_data.fpos + 4, 5) + 1
+    self._fpos2 = math.fmod(init_data.fpos + RPG_POS_TYPE.FPOS_COUNT - 1, RPG_POS_TYPE.FPOS_COUNT) + 1
 
     local level_id = battle_instance._init_data.level_id
     local level_data = resmng.prop_rpg_battle_level[level_id]

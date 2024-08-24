@@ -15,5 +15,11 @@ function module_config:init()
         -- end
         -- return config
         require("config/" .. name)
+        if string.find(name ,"prop_") then
+            local func_name = name .. "ById"
+            resmng[func_name] = function(id)
+                return resmng[name][id]
+            end
+        end
     end
 end

@@ -772,7 +772,7 @@ rpg_effect.effects["DAMAGE"] = function(eff_env, target_orient, param, eff_id)
         end
     end
     if RPG_DEBUG_MOD then
-        RPG_LOG("[RPG] %s号位打了%s号位%s点伤害 技能效果=%s 伤害系数=%s 固定伤害=%s",ety._fpos, tp._fpos, damage, eff_id, damageFactor or 0, idamage)
+        -- RPG_LOG("[RPG] %s号位打了%s号位%s点伤害 技能效果=%s 伤害系数=%s 固定伤害=%s",ety._fpos, tp._fpos, damage, eff_id, damageFactor or 0, idamage)
     end
     return function()
         if composer then

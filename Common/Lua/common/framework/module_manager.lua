@@ -59,6 +59,7 @@ function module_manager:load_module(name, is_service, args)
         module.args = args or {}
         module.is_s = is_service
         self._modules[module_name] = module
+        self[module_name] = module
         if module_name == "task_manager" then
             self._tm = module
         end

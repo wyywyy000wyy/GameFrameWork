@@ -309,9 +309,9 @@ function battle_mod:update_anger_action(dt)
 end
 
 function battle_mod:excute_action(action_data)
-    local contructor = T.rpg_action[action_data.id]
-    local action = contructor(self._ins, action_data)
-    local ety = self._ety_map[action._eid]
+
+    local ety = self._ety_map    local contructor = T.rpg_action[action_data.id]
+    local action = contructor(self._ins, action_data)[action._eid]
     if not ety:can_do_action(action) then
         return
     end
@@ -462,21 +462,27 @@ battle_mod.pos_map[RPG_POS_TYPE.FARTHEST] = function(team, caster, eff_actor_pos
     return ret_ety
 end
 
-battle_mod.pos_map[RPG_POS_TYPE.FPOS_1] = function(team)--, caster, eff_actor_pos)
-    return team._hero_map[1]
+for i = 1, RPG_POS_TYPE.FPOS_COUNT do
+    battle_mod.pos_map[RPG_POS_TYPE.FPOS_1 + i - 1] = function(team)--, caster, eff_actor_pos)
+        return team._hero_map[i]
+    end
 end
-battle_mod.pos_map[RPG_POS_TYPE.FPOS_2] = function(team)--, caster, eff_actor_pos)
-    return team._hero_map[2]
-end
-battle_mod.pos_map[RPG_POS_TYPE.FPOS_3] = function(team)--, caster, eff_actor_pos)
-    return team._hero_map[3]
-end
-battle_mod.pos_map[RPG_POS_TYPE.FPOS_4] = function(team)--, caster, eff_actor_pos)
-    return team._hero_map[4]
-end
-battle_mod.pos_map[RPG_POS_TYPE.FPOS_5] = function(team)--, caster, eff_actor_pos)
-    return team._hero_map[5]
-end
+
+-- battle_mod.pos_map[RPG_POS_TYPE.FPOS_1] = function(team)--, caster, eff_actor_pos)
+--     return team._hero_map[1]
+-- end
+-- battle_mod.pos_map[RPG_POS_TYPE.FPOS_2] = function(team)--, caster, eff_actor_pos)
+--     return team._hero_map[2]
+-- end
+-- battle_mod.pos_map[RPG_POS_TYPE.FPOS_3] = function(team)--, caster, eff_actor_pos)
+--     return team._hero_map[3]
+-- end
+-- battle_mod.pos_map[RPG_POS_TYPE.FPOS_4] = function(team)--, caster, eff_actor_pos)
+--     return team._hero_map[4]
+-- end
+-- battle_mod.pos_map[RPG_POS_TYPE.FPOS_5] = function(team)--, caster, eff_actor_pos)
+--     return team._hero_map[5]
+-- end
 
 battle_mod.range_filter = battle_mod.range_filter or {
 }
