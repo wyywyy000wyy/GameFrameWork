@@ -65,4 +65,15 @@ function ui_manager:cur_show_layer()
     return self._cur_show_layer
 end
 
+function ui_manager:call_func(window_name, func_name, ...)
+    local window = self._windows[window_name]
+    if not window then
+        return
+    end
+    if not window[func_name] then
+        return
+    end
+    window[func_name](window, ...)
+end
+
 g_ui_manager = g_ui_manager or ui_manager()

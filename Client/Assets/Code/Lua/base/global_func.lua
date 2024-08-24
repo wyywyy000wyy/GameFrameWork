@@ -131,9 +131,13 @@ end
 -- logs
 function LOG(...)
     if not _PUBLISH then
-        E.Debug.Log(  contact_parm(...).."\r\n".. debug.traceback("",2))
+        local msg1 = contact_parm(...)
+        local msg =  debug.traceback("", 2)
+        E.Debug.Log( msg1 .. " " .. msg)
     end
 end
+
+INFO = LOG
 
 function LOGF(format, ...)
     if not _PUBLISH then
@@ -144,6 +148,8 @@ end
 function ELOG(...)
     E.Debug.LogError(  contact_parm(...) ..  debug.traceback())
 end
+
+ERROR = ELOG
 
 function DLOG(...)
     if not _PUBLISH then

@@ -60,8 +60,9 @@ local battle_data = {
                         skills = {
                             -- 2044101,
                             -- 2042101,
-                            2064101,
-                            20611
+                            -- 2064101,
+                            -- 20611
+                            52000
                         },
                         star = 1
                     }
@@ -70,9 +71,9 @@ local battle_data = {
             }, {
                 heros = {
                     {
-                        is_boss = true,
-                        scale = 1.3,
-                        hp_count = 5,
+                        -- is_boss = true,
+                        -- scale = 1.3,
+                        -- hp_count = 5,
                         attr = {
                             RPG_Anger = 0,
                             RPG_AngerHit = 1.0,
@@ -84,7 +85,7 @@ local battle_data = {
                             RPG_CritAnti = 0,
                             RPG_CritEnhance = 0,
                             RPG_Def = 19.316,
-                            RPG_Hp = 10.82,
+                            RPG_Hp = 1000,
                             RPG_Race = 2,
                             RPG_Sp = 4.0,
                             RPG_StarFactor = 1.0,
@@ -95,7 +96,10 @@ local battle_data = {
                         fpos = 6,
                         hero_id = 109,
                         lv = 5,
-                        skills = {1093101, 1092101, 1091100},
+                        skills = {
+                            -- 1093101, 1092101, 1091100
+                            52000
+                        },
                         star = 1
                     }
                 },
@@ -104,15 +108,19 @@ local battle_data = {
         }
     },
     env = {},
-    fixed_dt = 100,
+    fixed_dt = 1000,
     inited = true,
     level_id = 10209, --1003202,
     max_battle_time = 180000,
     rules = {}
 }
 
-local battle_ins = T.battle_instance_calc(battle_id, battle_data)
+local battle_ins = T.battle_instance_turned_calc(battle_id, battle_data)
 battle_ins._auto_skill = true
 battle_ins:start()
 
 LOG("RPG_LOG__ ", battle_ins._statistic_mod:log_str())
+
+-- local battle_ins = T.battle_instance_client(battle_id, battle_data)
+-- battle_ins._auto_skill = true
+-- battle_ins:start()

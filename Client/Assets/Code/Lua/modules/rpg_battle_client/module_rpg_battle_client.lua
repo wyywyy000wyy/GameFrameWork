@@ -1,5 +1,28 @@
 local module_rpg_battle_client = module_def("module_rpg_battle_client")
+rpg_require = function(path)
+    return require("modules/rpg_battle_client/rpg_battle/".. path)
+end
 
 function module_rpg_battle_client:init()
     LOG("module_rpg_battle_client:init")
+    -- rpg_require( "rpg_task")
+    -- rpg_require( "rpg_task_list")
+    -- rpg_require( "rpg_task_define")
+    common_do_load("rpg_battle/battle_instance/battle_instance_client")
+    common_do_load("rpg_battle/battle_instance/battle_instance_replay")
+
+    -- rpg_require("common.svr. battle_instance.battle_instance_client")
+    -- rpg_require("common.svr. battle_instance.battle_instance_replay")
+    -- rpg_require("common.svr. battle_instance.battle_instance_expedition_simulation")
+    rpg_require( "cs_coroutine")
+    rpg_require( "lua_tween")
+    rpg_require( "battle_player_mod")
+    rpg_require( "rpg_hp_bar")
+    rpg_require( "rpg_entity_avatar")
+    rpg_require( "rpg_hero_avatar")
+    rpg_require( "rpg_boss_avatar")
+    rpg_require( "rpg_pet_avatar")
+    rpg_require( "rpg_battle_scene")
+    rpg_require( "rpg_drag_action")
+    rpg_require( "rpg_drag_action_formation_hero")
 end

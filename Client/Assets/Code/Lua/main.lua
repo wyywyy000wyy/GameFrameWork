@@ -14,6 +14,11 @@ require("base/game_state/game_state_login", true)
 require_folder("data", true)
 -- require_folder("base/task")
 
+require("base/tools")
+
+require("base/task/task_c")
+require("base/task/task_manager")
+require("base/task/task_load_asset")
 require_folder("base/ui")
 
 -- require_folder("framework")

@@ -4,7 +4,7 @@ local Yieldk = CS.CoroutineHelper.Yieldk
 local resume = coroutine.resume
 coroutine.resume=function(co,...)
 	local ret={resume(co,...)}
-	if not ret[1] then U.Debug.LogError(debug.traceback(co,ret[2])) end
+	if not ret[1] then E.Debug.LogError(debug.traceback(co,ret[2])) end
 	return table.unpack(ret)
 end
 
