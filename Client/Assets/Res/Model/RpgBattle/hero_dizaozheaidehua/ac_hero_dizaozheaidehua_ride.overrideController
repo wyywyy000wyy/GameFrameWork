@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ac_hero_dizaozheaidehua_ride
+  m_Controller: {fileID: 9100000, guid: 3e690c7e0f76fa142bceb1561e8a2122, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 1827226128182048838, guid: 1d50824410a89ce46bd518cf1f1d88ba,
+      type: 3}
+    m_OverrideClip: {fileID: 1827226128182048838, guid: 6918316372c00514ab3f3eece03e61d3,
+      type: 3}
+  - m_OriginalClip: {fileID: 1827226128182048838, guid: 092ac65e59091ac469808d9ca5b71e95,
+      type: 3}
+    m_OverrideClip: {fileID: 0}
+  - m_OriginalClip: {fileID: 1827226128182048838, guid: 2729f3b286e7578498506cd3b5c5497c,
+      type: 3}
+    m_OverrideClip: {fileID: 1827226128182048838, guid: 7c5f36439997dfd45a19c71bac8933a8,
+      type: 3}
+  - m_OriginalClip: {fileID: 1827226128182048838, guid: 9a9fa2e180190c149b651cf225e84e8a,
+      type: 3}
+    m_OverrideClip: {fileID: 1827226128182048838, guid: 3a91bf9334e1fe345a6dabfa77f8d51d,
+      type: 3}
+  - m_OriginalClip: {fileID: 1827226128182048838, guid: c5871695a1fce7b48851ad359851a6e5,
+      type: 3}
+    m_OverrideClip: {fileID: 1827226128182048838, guid: e9ef8fb84d768e44a839b970a12603b5,
+      type: 3}

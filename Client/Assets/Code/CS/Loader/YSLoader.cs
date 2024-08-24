@@ -219,6 +219,11 @@ public class YSLoader : MonoBehaviour
         onComplete(task.Result);
     }
 
+    public static async void ReleaseInstance(string key, UnityEngine.GameObject asset)
+    {
+        var task = Addressables.ReleaseInstance(asset);
+    }
+
     //public static object LoadAssetAsync(string key, System.Action<UnityEngine.Object> onComplete)
     //{
     //    return Addressables.LoadAssetsAsync<UnityEngine.Texture2D>(key, (Texture2D tex)=> { onComplete(tex); });

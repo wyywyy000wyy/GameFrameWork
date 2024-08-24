@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: mat_model_hero_dizaozheaidehua_animator_room
+  m_Shader: {fileID: 4800000, guid: 96bc176ac611f9541b40f6bd63cfe97f, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: 531bca82022620c429150a3ee9e627be, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 2800000, guid: f15594110f3aff04982102ac32e69944, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Cull: 2
+    - _DirLightStrength: 1
+    - _IndirLightStrength: 0.6
+    - _OcclusionStrength: 0
+    - _RimOutsideRange: 0
+    - _RimRange: 0.691
+    - _RimSoft: 0.5
+    - _RimStrength: 0
+    - _RoleRimAttenution: 1.98
+    - _RoleRimPower: 1
+    - _RoleRimStrength: 3
+    - _Smoothness: 0.312
+    - _SpecularStrength: 5.88
+    m_Colors:
+    - _BaseColor: {r: 4, g: 4, b: 4, a: 1}
+    - _DownColr: {r: 0.11921501, g: 0.5377358, b: 0.52259016, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
+    - _LightClolor: {r: 1, g: 1, b: 1, a: 1}
+    - _LightOffset: {r: 0, g: 1.87, b: 0, a: 0}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _RoleRimColor: {r: 1, g: 0.35511047, b: 0.062745094, a: 1}
+    - _ShadowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _UpColor: {r: 1, g: 1, b: 1, a: 1}

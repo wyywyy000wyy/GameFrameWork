@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: RpgBattle
+  m_EditorClassIdentifier: 
+  m_GroupName: RpgBattle
+  m_Data:
+    m_SerializedData: []
+  m_GUID: d7c9c857f6ca2eb44ae1d954c8bde086
+  m_SerializeEntries:
+  - m_GUID: ce427a57056b9054d99e6f7e54ad6f00
+    m_Address: model_hero_dizaozheaidehua_animator
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 8529fd0f3b4952e41bc30dac87c25ae5, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 73379b17f585bde41b88a1c354da6260, type: 2}
+    - {fileID: 11400000, guid: 8119156720b250140a5503b61760e260, type: 2}
