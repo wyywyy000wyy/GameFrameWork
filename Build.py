@@ -3,7 +3,7 @@ import os
 import ctypes
 import sys
 
-CLIENT = False   
+CLIENT = True   
 arguments = sys.argv
 for arg in arguments:
     if arg == "CLIENT":
