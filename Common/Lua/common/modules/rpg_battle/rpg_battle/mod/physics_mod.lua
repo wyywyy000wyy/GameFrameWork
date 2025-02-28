@@ -15,16 +15,18 @@ local physics_mod = class2("physics_mod", T.mod_base, function(self, battle_inst
     -- self._map_length = 40 * 1000
 
     local level_id = battle_instance._init_data.level_id
-    local level_data = resmng.prop_rpg_battle_level[level_id]
-    local map_data = resmng.prop_rpg_battle_map[level_data.Map] 
+    local level_data = resmng.prop_rpg_battle_levelById(level_id)
+    local map_data = resmng.prop_rpg_battle_mapById(level_data.Map);
     if battle_instance._init_data.map_id then
-        map_data = resmng.prop_rpg_battle_map[battle_instance._init_data.map_id]
+        map_data = resmng.prop_rpg_battle_mapById(battle_instance._init_data.map_id);
     end
 
     local mapSize = map_data.MapSize
 
+    -- local width = 50 * 1000--(mapSize and mapSize[1] or 11) * 1000
+    local length = 100 * 1000--(mapSize and mapSize[2] or 14) * 1000
     local width = (mapSize and mapSize[1] or 11) * 1000
-    local length = (mapSize and mapSize[2] or 14) * 1000
+    -- local length = (mapSize and mapSize[2] or 14) * 1000
     self._grid = T.hexagonal_grid(width, length)
     self._obj_pos = {}
 end)

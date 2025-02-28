@@ -3,8 +3,8 @@ local rpg_pool_len = 0
 local mod = math.fmod
 
 local rpg_random = class2("rpg_random", function(self, seed)
-    self._seed = seed
-    self._jump = rpg_random_pool[mod(seed, rpg_pool_len) + 1]
+    self._seed = mod(seed, rpg_pool_len) + 1
+    self._jump = rpg_random_pool[self._seed]
     self._idx = self._jump
 end)
 
@@ -13,14 +13,16 @@ function rpg_random:_rand()
     local idx = self._idx
     local jump = self._jump
     if idx == jump then
-        jump = rpg_random_pool[jump]
+        local tjump = mod(self._seed + jump, rpg_pool_len) + 1
+        jump = rpg_random_pool[tjump]
         self._jump = jump
         self._idx = mod(jump , 2) + 1
+
     else
         self._idx = mod(idx + 1, rpg_pool_len) + 1
     end
-
-    return rpg_random_pool[jump] * 100 + rpg_random_pool[idx] 
+    local idx2 = mod(idx + self._seed, rpg_pool_len) + 1 
+    return rpg_random_pool[idx2] * rpg_pool_len + rpg_random_pool[idx] 
 end
 
 function rpg_random:range(max)
@@ -30,7 +32,8 @@ end
 
 function rpg_random:range2(min, max)
     local t = self:_rand()
-    return min + mod(t, max - min)
+    local tv =mod(t, max - min)
+    return min + tv
 end
 
 function rpg_random:sus(percent)
@@ -52,10 +55,8 @@ function rpg_random.rand_pool_editor(max_count)
         p[i]=p[n]
         p[n]=t
     end
-
-    --.LogerWYY2("rand_pool_editor", p)
+    -- Logger.LogerWYY2("rand_pool_editor", p)
 end
-
 
 rpg_random_pool = {
     261,

@@ -290,10 +290,15 @@ end
 -- {a=b} => {a}
 function table.keys(t)
     local res = {}
-    for k, v in pairs(t) do
+    for k, v in pairs(t or {}) do
         table.insert(res, k)
     end
     return res
+end
+
+function table.appendM(t1, t2)
+    for _, v in pairs(t2 or {}) do t1[#t1 + 1] = v end
+    return t1
 end
 
 function table.values(t)

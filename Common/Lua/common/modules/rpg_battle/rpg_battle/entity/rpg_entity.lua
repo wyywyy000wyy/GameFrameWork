@@ -155,7 +155,14 @@ function rpg_entity:can_add_group(group_id, level)
 
 end
 
-function rpg_entity:can_add_buff(buff_id)
+function rpg_entity:can_add_buff(buff_id, buff)
+    if buff_id == RPG_ETY_INNER_BUFF.FORCE_ID and buff then
+        local target_orient = buff._target_orient
+        local target = self._ins._battle_mod:get_ety(target_orient._eid)
+        if not target or target._tid == 1 then
+            return false
+        end
+    end 
     local prop_rpg_battle_buff = resmng.prop_rpg_battle_buff[buff_id]
     local group_id = prop_rpg_battle_buff.Group
     local buff_or_list = self._group_source[group_id]
@@ -531,6 +538,9 @@ function rpg_entity:search_skill(skill_id)
             return s
         end
     end
+    if not self._override_skills_map then
+        return
+    end
     for _, s in pairs(self._override_skills_map) do
         if s:is_skill(skill_id) then
             return s
@@ -726,7 +736,7 @@ function rpg_entity:remove_share_damage(buff)
 end
 
 function rpg_entity:add_buff(buff)
-    if not self:can_add_buff(buff._id) then
+    if not self:can_add_buff(buff._id, buff) then
         return false
     end
 
@@ -890,6 +900,10 @@ function rpg_entity:can_selected()
     return self._state ~= RPG_ENTITY_STATE.DEAD
 end
 
+function rpg_entity:on_born()
+    self._ins:post_event(self:born_event())
+end
+
 function rpg_entity:on_dead(actor)
     if self._state == RPG_ENTITY_STATE.DEAD then
         return
@@ -922,6 +936,7 @@ function rpg_entity:on_dead(actor)
         id = RPG_EVENT_TYPE.DEAD, 
         event_time = battle_ins:get_btime(), 
         oid = actor._oid,
+        tid = self._tid,
         eid = self._eid})
 end
 

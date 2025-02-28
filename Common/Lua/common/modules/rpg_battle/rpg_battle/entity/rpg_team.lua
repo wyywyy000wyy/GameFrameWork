@@ -29,9 +29,21 @@ function rpg_team:create_hero(hero_data)
     if hero_data.attr.RPG_Hp <= 0 then
         return
     end
-    local hero = T.rpg_hero(self._ins, self, hero_data)
-    self._hero_map[hero_data.fpos] = hero
+
+    local class = T.rpg_hero
+    if hero_data.fpos == 0 then
+        class = T.td_front_line
+    end
+
+    local hero = class(self._ins, self, hero_data)
+    if hero_data.fpos then
+        self._hero_map[hero_data.fpos] = hero
+    end
     table.insert(self._ety_list, hero)
+    if self.init_completed then
+        self._ins._battle_mod:add_ety(hero)
+        hero:on_born()
+    end
 end
 
 function rpg_team:init()
@@ -42,6 +54,7 @@ function rpg_team:init()
     if self._pet then
         battle_mod:add_ety(self._pet, true)
     end
+    self.init_completed = true
 end
 
 function rpg_team:start()

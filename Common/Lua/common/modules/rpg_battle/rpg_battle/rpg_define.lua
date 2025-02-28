@@ -26,10 +26,10 @@ RPG_DEBUG_WRAPPER = false
 -- RPG_LOG = NONE_LOG
 -- RPG_DEBUG = NONE_LOG
 -- RPG_ERR = NONE_LOG
-RPG_DEBUG_MOD = true
+RPG_DEBUG_MOD = false
 RPG_DEBUG_CHECK = false
-RPG_DEBUG_VIEW_MOD = true
-RPG_DEBUG_WRAPPER = true
+RPG_DEBUG_VIEW_MOD = false
+RPG_DEBUG_WRAPPER = false
 
 RPG_DEFAULT_LEVEL_ID = 10209
 
@@ -53,6 +53,10 @@ RPG_EFFECT_ACTOR_FORBID = {
     SKILL = {"ATTR"},
     BUFF = {},
     BULLET = {"ATTR"},
+}
+RPG_EVENT_TRIGGER_TYPE = {
+    BATTLE_START = 1,
+    KILL = 2,
 }
 
 ----基类加新函数 子类不会新加 有BUG 得改wyy
@@ -235,7 +239,11 @@ RPG_EVENT_TYPE = {
     SKILL_ANGER = 16, -- 技能回怒
     BATTLE_PAUSE = 17,
     DEBUG_EVENT = 18,
-    BATTLE_EVENT_END = 19,
+    TD_SELECT_EVENT_START = 19,
+    TD_SELECT_EVENT = 20,
+    TD_GLOBAL_EFFECT = 21,
+    CUSTOM = 22,
+    BATTLE_EVENT_END = 23,
     EVENT_DEFAULT = 9999,
 
     ---战斗action
@@ -244,13 +252,16 @@ RPG_EVENT_TYPE = {
     ACTION_MOVE = 10001,
     ACTION_SKILL = 10002,
     ACTION_SKILL_ANGER = 10003,
-    BATTLE_ACTION_END = 10003,
+    ACTION_AI_MOVE = 10004,
+    BATTLE_ACTION_END = 10004,
 
 }
 
 RPG_ETY_TYPE = {
     HERO = 1,
     PET = 2,
+    MDOOR = 3,   -------扩散门
+    SWEAPON = 4,    ---------超级武器
 }
 
 RPG_HERO_TYPE = {
@@ -628,16 +639,12 @@ RPG_POS_TYPE = {
     ACTOR = 6, --effect_actor 位置，要是子弹打出的效果，就是子弹的位置， 要是buff效果，就是buff携带者的位置， 要是技能效果，就是技能释放者的位置
     EVENT_TARGET = 7,  ------------事件的目标
     EVENT_CASTER = 8, -------------事件的发起者
+    FPOS_DEFENSIVE_LINE = 100, --防御线
     FPOS_1 = 101, --站位位置1
     FPOS_2 = 102, --站位位置2
     FPOS_3 = 103, --站位位置3
     FPOS_4 = 104, --站位位置4
     FPOS_5 = 105, --站位位置5
-    FPOS_6 = 106, --站位位置6
-    FPOS_7 = 107, --站位位置7
-    FPOS_8 = 108, --站位位置8
-    FPOS_9 = 109, --站位位置9
-    FPOS_COUNT = 9,
 
     NEAREST_CAN_SELECTED = 999, --最近可选单位
     -- POS = 105,
@@ -657,10 +664,11 @@ RPG_RANGE_TYPE = {
 
 RPG_BULLET_TYPE = {
     TARGET = 1, --指向性攻击无弹道 {1, {速度}, 结束效果}
-    LINE = 2, -- 直线 {2, {速度，[{形状, 形状参数}]}, 击中效果, 结束效果}
+    LINE = 2, -- 直线 {2, {速度，[{形状, 形状参数}], 最大击中数, 距离}, 击中效果, 结束效果}
     PARABOLA = 3, --抛物线 {3, {水平速度, 抛物线高度}， 结束效果}
     CHAIN = 4, --链式攻击 {4, {弹射速度, 次数}，击中效果}
     AMPLIFY = 5, --范围放大 {5, {范围参数}, 放大时间, 初始比例}, nil, 击中效果}
+    MULTI_LINE = 6, --多线 {6, {速度，[{形状, 形状参数}]}, 击中效果, 结束效果, {数量,角度}}
     -- CIRCLE = 6, --圆形放大
     -- SECTOR = 7, --扇形放大
 }
@@ -703,9 +711,11 @@ end
 
 _RPG_FIXED_UPDATE_SEQ = {
     "battle_fixed_update",
+    "td_born_update",
     "anger_skill",
     "controller_fixed_update",
-    "battle_post_update"
+    "battle_post_update",
+    "battle_player_update",
 }
 
 _RPG_FIXED_UPDATE_MAP = {}

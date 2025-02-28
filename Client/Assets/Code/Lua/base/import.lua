@@ -92,4 +92,7 @@ T.LuaFilePicker = CS.LuaFilePicker
 T.Packet = CS.Packet
 T.WarNet = CS.WarNet
 
+T.LuaHelper = CS.Hugula.Utils.LuaHelper
+
+
 _G.E = E

@@ -28,11 +28,18 @@ local battle_mod = class2("battle_mod", T.mod_base,function(self, battle_instanc
     self._rlist = {} --真实时间update
     self._rmap = {}
     self._rand = T.rpg_random(battle_instance._bid)
+
+
 end)
 
 function battle_mod:new_eid()
     self._eid_idx = self._eid_idx + 1
     return self._eid_idx
+end
+
+function battle_mod:do_global_eff(event)
+    local eff_id = event.eff
+    self._global_eff_actor:do_effect_ids({eff_id})
 end
 
 --模块数据初始化，战斗数据构造完成之后调用
@@ -44,9 +51,14 @@ function battle_mod:init()
         self._team_list[i] = T.rpg_team(i, self._ins, team_data)
     end
 
+
+
     for i, team in ipairs(self._team_list) do
         team:init()
     end
+
+    self._global_ety = T.rpg_entity(self._ins,self._team_list[1])
+    self._global_eff_actor = T.rpg_eff_actor_global(self._ins, self._global_ety)
 
     -- 各个模块根据战斗数据做初始化
     self._init_completed = true
@@ -109,7 +121,7 @@ function battle_mod:start()
         ety:start()
     end
     for _, ety in ipairs(self._ety_list) do
-        self._ins:post_event(ety:born_event())
+        ety:on_born()
     end
 
     self._fixed_update = function(dt)
@@ -128,6 +140,9 @@ function battle_mod:register_listener()
     for i = RPG_EVENT_TYPE.BATTLE_ACTION_BEGIN , RPG_EVENT_TYPE.BATTLE_ACTION_END do
         self._ins:add_event_listener2(i, self, "excute_action") -- 伤害
     end
+
+    self._ins:add_event_listener2(RPG_EVENT_TYPE.TD_GLOBAL_EFFECT, self, "do_global_eff") -- 伤害
+
 end
 
 function battle_mod:fixed_update(dt)
@@ -309,9 +324,9 @@ function battle_mod:update_anger_action(dt)
 end
 
 function battle_mod:excute_action(action_data)
-
-    local ety = self._ety_map    local contructor = T.rpg_action[action_data.id]
-    local action = contructor(self._ins, action_data)[action._eid]
+    local contructor = T.rpg_action[action_data.id]
+    local action = contructor(self._ins, action_data)
+    local ety = self._ety_map[action._eid]
     if not ety:can_do_action(action) then
         return
     end
@@ -388,8 +403,13 @@ battle_mod.pos_map[RPG_POS_TYPE.NEAREST_CAN_SELECTED] = function(team, caster, e
         if not ety:can_selected() or ety == caster or exclude_etys and exclude_etys[ety._eid] then
             goto CONTINUE
         end
-        local td = rpg_dis(x, y, ety._x, ety._y)
-        td = td - ety._p.RPG_Radius -- - radius
+        local td = nil 
+        if ety._front then
+            td = ety:dis(x, y)
+        else
+            td = rpg_dis(x, y, ety._x, ety._y)
+            td = td - ety._p.RPG_Radius -- - radius
+        end
         if not dis or td < dis then
             dis = td
             nearest_ety = ety
@@ -462,27 +482,21 @@ battle_mod.pos_map[RPG_POS_TYPE.FARTHEST] = function(team, caster, eff_actor_pos
     return ret_ety
 end
 
-for i = 1, RPG_POS_TYPE.FPOS_COUNT do
-    battle_mod.pos_map[RPG_POS_TYPE.FPOS_1 + i - 1] = function(team)--, caster, eff_actor_pos)
-        return team._hero_map[i]
-    end
+battle_mod.pos_map[RPG_POS_TYPE.FPOS_1] = function(team)--, caster, eff_actor_pos)
+    return team._hero_map[1]
 end
-
--- battle_mod.pos_map[RPG_POS_TYPE.FPOS_1] = function(team)--, caster, eff_actor_pos)
---     return team._hero_map[1]
--- end
--- battle_mod.pos_map[RPG_POS_TYPE.FPOS_2] = function(team)--, caster, eff_actor_pos)
---     return team._hero_map[2]
--- end
--- battle_mod.pos_map[RPG_POS_TYPE.FPOS_3] = function(team)--, caster, eff_actor_pos)
---     return team._hero_map[3]
--- end
--- battle_mod.pos_map[RPG_POS_TYPE.FPOS_4] = function(team)--, caster, eff_actor_pos)
---     return team._hero_map[4]
--- end
--- battle_mod.pos_map[RPG_POS_TYPE.FPOS_5] = function(team)--, caster, eff_actor_pos)
---     return team._hero_map[5]
--- end
+battle_mod.pos_map[RPG_POS_TYPE.FPOS_2] = function(team)--, caster, eff_actor_pos)
+    return team._hero_map[2]
+end
+battle_mod.pos_map[RPG_POS_TYPE.FPOS_3] = function(team)--, caster, eff_actor_pos)
+    return team._hero_map[3]
+end
+battle_mod.pos_map[RPG_POS_TYPE.FPOS_4] = function(team)--, caster, eff_actor_pos)
+    return team._hero_map[4]
+end
+battle_mod.pos_map[RPG_POS_TYPE.FPOS_5] = function(team)--, caster, eff_actor_pos)
+    return team._hero_map[5]
+end
 
 battle_mod.range_filter = battle_mod.range_filter or {
 }
@@ -620,7 +634,7 @@ function battle_mod:_search_target(caster, pos_type, pos, eff_actor, exclude_ety
     ------------处理skill_effect_acotr, 其他 处理成actor的位置 而不是施法者位置，因为在此之前没有RPG_POS_TYPE.ACTOR类型
     target = pos_map[pos](team, caster, actor_pos)
     if exclude_etys and target and exclude_etys[target._eid] or 
-    retarget_nearest and(not target or not target:can_selected() and not select_dead) 
+    retarget_nearest and(not target or target.can_selected and not target:can_selected() and not select_dead) 
     then
         target = pos_map[RPG_POS_TYPE.NEAREST_CAN_SELECTED](team, caster, actor_pos, exclude_etys)
     end
@@ -650,7 +664,7 @@ function battle_mod:search_target(target_search_cfg, caster, eff_actor, exclude_
         if start_type then
             start_target = self: _search_target(caster, start_type, start_pos, eff_actor, exclude_etys, true,nil,lock_targets)
         else
-            start_target = end_target
+            start_target = caster
         end
 
     end
@@ -788,7 +802,8 @@ end
 
 function battle_mod:check_timeout()
     local btime = self._ins:get_btime()
-    if btime >= self._ins._init_data.max_battle_time then
+    -- if btime >= 5 * 1000 then-- self._ins._init_data.max_battle_time then
+    if  btime >= self._ins._init_data.max_battle_time then
         self:finish(BattleResult.WIN)
         return true
     end
@@ -807,14 +822,21 @@ function battle_mod:check_rule()
         return
     end
     all_dead = true
-    for _, hero in pairs(self._team_list[RPG_TEAM_ID.TEAM_2]._hero_map) do
+    for _, hero in ipairs(self._team_list[RPG_TEAM_ID.TEAM_2]._ety_list) do
         if not hero:is_dead2() then
             all_dead = false;
             break
         end
     end
     if all_dead then
-        self:finish(BattleResult.FAIL)
+        local td_born_mod = self._ins._td_born_mod
+        if td_born_mod then
+            if td_born_mod:is_finish() then
+                self:finish(BattleResult.FAIL)
+            end
+        else
+            self:finish(BattleResult.FAIL)
+        end
         return
     end
 end

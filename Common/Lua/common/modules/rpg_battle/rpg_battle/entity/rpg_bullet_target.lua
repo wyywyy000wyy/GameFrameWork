@@ -3,7 +3,7 @@ local rpg_bullet_target = class2("rpg_bullet_target", T.rpg_bullet, function(sel
     local caster = eff_env.ety
     self._caster_eid = caster._eid
     local spos_x = caster._x
-    local spos_y = caster._x
+    local spos_y = caster._y
 
     local speed = self._param[1]
     local config_time = self._param[2]
@@ -33,6 +33,7 @@ local rpg_bullet_target = class2("rpg_bullet_target", T.rpg_bullet, function(sel
         id = RPG_EVENT_TYPE.BULLET, event_time = self._ins:get_btime(), oid = self._oid,
         soid = self._eff_env.root_actor._oid,
         pid = self._pid, eid = self._caster_eid,
+        target = target_orient._eid,
         spos_x = spos_x, spos_y = spos_y,
         tpos_x = target_orient._x, tpos_y = target_orient._y,
         time = time
@@ -48,10 +49,21 @@ end
 function rpg_bullet_target:update()
     local ctime = self:get_time()
     if ctime >= self._et then
+        local target = self._ins._battle_mod:get_ety(self._orient._eid)
+        self._orient._sx = nil
+        self._orient._sy = nil
+
+        if target then
+            self._orient._x = target._x
+            self._orient._y = target._y
+        end
         self:do_effect(self._effect, self._orient)
 
         self._ins:post_event({
             id = RPG_EVENT_TYPE.BULLET_END, event_time = self._ins:get_btime(),
+            eff = self._eff_env.p_env.__eff_id,
+            x = self._orient._x, y = self._orient._y,
+            target = self._orient._eid,
             oid = self._oid, pid = self._pid, eid = self._caster_eid })
 
         return true --finish

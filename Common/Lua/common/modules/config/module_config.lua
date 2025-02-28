@@ -5,6 +5,9 @@ function module_config:init()
     resmng.load_config = function(name)
         load_config(name)
     end
+    resmng.get_conf = function(name, conf_id)
+        return resmng[name][conf_id]
+    end
     require("config/config_require")
 
     load_config = function(name)

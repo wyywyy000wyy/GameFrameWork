@@ -83,9 +83,9 @@ function action_move:update()
 end
 
 function action_move:on_exit(next_action)
-    if not self._finish and next_action and next_action._cls_name ~= self._cls_name then
+    -- if not self._finish and next_action and next_action._cls_name ~= self._cls_name then
         self._ins:post_event({ id = RPG_EVENT_TYPE.MOVE, event_time = self._time, eid = self._eid, tx = self._ety._x, ty = self._ety._y, sp = 0})
-    end
+    -- end
     if self._ety._tid == 1 or true then
         local grid = self._ins._physics_mod._grid
         --Logger.LogerWYY2(self._ety._eid.."action_move_on_exit", self._eid, self._ety._gx, self._ety._gy, self._ety._x, self._ety._y, grid:is_empty(self._ety._gx, self._ety._gy))

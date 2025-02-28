@@ -18,3 +18,4 @@ function service_persistent:persistent_save(action, table, key, data)
     self._impl:save_data(table, key, data)
     action:finish()
 end
+

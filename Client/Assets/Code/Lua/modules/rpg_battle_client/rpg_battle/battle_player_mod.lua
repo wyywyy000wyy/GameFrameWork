@@ -5,6 +5,7 @@ local callback_combiner = rpg_require("callback_combiner")
 local table_insert = table.insert
 local table_remove = table.remove
 local pairs = pairs
+local mgr_effect = rpg_require("mgr_effect")
 
 RPG_PLAY_MODE = {
     expedition_simulation = 1, -- 关卡主界面模拟战斗
@@ -24,9 +25,12 @@ local battle_player_mod = class2("battle_player_mod", T.mod_base, function(self,
     self.ety_avatar = {}
     self.ety_dead_avatar = {}
     self.play_mode = play_mode -- 战斗播放模式 RPG_PLAY_MODE
+    self.rcur_time = 0 -- 战斗时间，从实例化开始，每帧递增
     self.cur_time = 0 -- 战斗时间，从实例化开始，每帧递增
     self.play_time_line = {} -- 客户端战斗演播时间轴 key时间 value演播事件列表, key的值一定是一个递增的数字    
-
+    self.ety_height = {}
+    self.event_list = {} -- 事件列表
+    self.event_index = 1 -- 事件索引
     local player_data = battle_instance._init_data._player_data
     if player_data and player_data.pre_troop_type == resmng.PRE_EDIT_TROOP_TYPE.RPG_ARENA_ATK_TYPE then
         g_wait_show_pvp_vs = true
@@ -35,7 +39,7 @@ local battle_player_mod = class2("battle_player_mod", T.mod_base, function(self,
     end
 
     if play_mode ~= RPG_PLAY_MODE.expedition_simulation then
-        -- VMState:push_item("ui_rpg_battle_main", player_data)
+        -- g_ui_manager:push_item("ui_rpg_battle_main", player_data)
         g_ui_manager:push_window("ui_rpg_battle_main", player_data)
     end
 end)
@@ -272,6 +276,10 @@ function battle_player_mod:update(ms_dt)
 end
 
 function battle_player_mod:stop()
+    if self._edoor then
+        self._edoor:destroy()
+        self._edoor = nil
+    end
     if self._fade_in then
         self._fade_in = false
         -- camera_utils.mask_fade_out(0.1)  -- 相机遮罩淡出
@@ -412,8 +420,33 @@ battle_player_mod.event_handle[RPG_EVENT_TYPE.BATTLE_END] = function(self, event
     end
 end
 
+battle_player_mod.born_handle = battle_player_mod.born_handle or {}
+battle_player_mod.born_handle[RPG_ETY_TYPE.MDOOR] = function(self, event)
+    if self._edoor then
+        return
+    end
+    local pos = self._ins.scene:b2w_point(E.Vector3(RPG_I2F(event.x), 0, RPG_I2F(event.y)))
+    local dir = self._ins.scene:b2w_euler(E.Vector3(event.dir_x, 0, event.dir_y))   -- 出生点方向
+    local eff = mgr_effect.create_effect("ef_rpg_sc_ksm"):set_auto_destroy(false):scale(E.Vector3(RPG_I2F(event.width),1,1)):play(pos, dir)
+    self._edoor = eff
+end
+battle_player_mod.event_handle[RPG_EVENT_TYPE.CUSTOM] = function(self, event)
+    if event.door then
+        if not self._edoor then
+            return
+        end
+        if event.type == 1 then
+            self._edoor:scale(E.Vector3(RPG_I2F(event.width),1,1)) 
+        end
+    end
+end
 -- 英雄出生/新的召唤物
 battle_player_mod.event_handle[RPG_EVENT_TYPE.BORN] = function(self, event)
+    local born_handle = battle_player_mod.born_handle[event.ety_type]
+    if born_handle then
+        born_handle(self, event)
+        return
+    end
     -- 加载资源，生成实例化场景对象    
     local pre_avatar = self.ety_dead_avatar[event.eid]
     if pre_avatar then   ----------复活
@@ -422,6 +455,25 @@ battle_player_mod.event_handle[RPG_EVENT_TYPE.BORN] = function(self, event)
         pre_avatar:relive()
         self.ety_dead_avatar[event.eid] = nil
     end
+    if self.ety_avatar[event.eid] then
+        return
+    end
+    local pos = self._ins.scene:b2w_point(E.Vector3(RPG_I2F(event.x), 0, RPG_I2F(event.y)))
+    local dir = self._ins.scene:b2w_euler(E.Vector3(event.dir_x, 0, event.dir_y))   -- 出生点方向
+    local hero_avatar = T.rpg_hero_avatar(event.eid, event.hero_id, event.lv, event.fpos, pos, dir)
+    hero_avatar:set_battle_instance(self._ins)
+    hero_avatar:load_res(function()
+        hero_avatar:set_attr(RPG_I2F(event.attr.RPG_Hp), RPG_I2F(event.attr.RPG_HpMax), RPG_I2F(event.attr.RPG_Anger), RPG_I2F(event.attr.RPG_AngerMax), true)
+        -- 如果当前战斗附加了debug模块，则将实例化的avatar注册到debug模块中，方便调试
+        if self._ins._debug_view_mod ~= nil then
+            self._ins._debug_view_mod:register_debug_target(hero_avatar._obj, hero_avatar._id, event.tid == 1)
+        end
+    end, true)
+    self.ety_avatar[event.eid] = hero_avatar
+    self.ety_height[event.eid] = hero_avatar._height
+end
+battle_player_mod.event_handle[RPG_EVENT_TYPE.TD_SELECT_EVENT_START] = function(self, event)
+    g_ui_manager:call_func("ui_rpg_battle_main", "select_buff", event.effs)
 end
 
 -- 技能开始
@@ -671,8 +723,15 @@ battle_player_mod.event_handle[RPG_EVENT_TYPE.MOVE] = function(self, event)
     --Logger.Log(" RPG_EVENT_TYPE.MOVE", event.rtime)
     local avatar = self.ety_avatar[event.eid]
     if avatar then
+        local cur_point = nil
+        if event.sx and event.sy then
+            cur_point = self._ins.scene:b2w_point(E.Vector3(RPG_I2F(event.sx), 0, RPG_I2F(event.sy)))
+        end
         local target_point = self._ins.scene:b2w_point(E.Vector3(RPG_I2F(event.tx), 0, RPG_I2F(event.ty)))
-        avatar:set_move_target(event.sp, target_point)
+        -- if event.eid == 1007 then
+        --     Logger.LogerWYY2("event___move", target_point, event.sp)
+        -- end
+        avatar:set_move_target(event.sp, target_point, cur_point, event.agent)
     end
 end
 
@@ -708,6 +767,16 @@ battle_player_mod.event_handle[RPG_EVENT_TYPE.BULLET_END] = function(self, event
         return
     end
     avatar:remove_bullet(event.oid)
+    local eff_cfg = resmng.prop_rpg_battle_effect[event.eff]
+    if eff_cfg and eff_cfg.VFXHit then
+        local height = 0
+        if event.target then
+            height = self.ety_height[event.target] or 0
+        end
+        local target_point = self._ins.scene:b2w_point(E.Vector3(RPG_I2F(event.x), 0, RPG_I2F(event.y)))
+        -- mgr_effect.play_hit_effect(eff_cfg.VFXHit, target_point)
+        mgr_effect.create_effect(eff_cfg.VFXHit):play(target_point,nil,height)
+    end
 end
 
 -- battle_player_mod.event_handle[RPG_EVENT_TYPE.PROP_CHANGE] = function(self, event)
@@ -743,7 +812,7 @@ battle_player_mod.event_handle[RPG_EVENT_TYPE.PROPS_CHANGED] = function(self, ev
 
 
     if event.props.RPG_DIR then
-        battle_player_mod.update_dir(self, event)
+        -- battle_player_mod.update_dir(self, event)
     end
 
     avatar:async_props(event.props)

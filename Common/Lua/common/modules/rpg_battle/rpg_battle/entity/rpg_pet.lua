@@ -6,10 +6,10 @@ local rpg_pet = class2("rpg_pet",T.rpg_entity, function(self, battle_instance,te
     self._lv = init_data.lv
 
     local level_id = battle_instance._init_data.level_id
-    local level_data = resmng.prop_rpg_battle_level[level_id]
-    local map_data = resmng.prop_rpg_battle_map[level_data.Map];
+    local level_data = resmng.prop_rpg_battle_levelById(level_id)
+    local map_data = resmng.prop_rpg_battle_mapById(level_data.Map);
     if battle_instance._init_data.map_id then
-        map_data = resmng.prop_rpg_battle_map[battle_instance._init_data.map_id]
+        map_data = resmng.prop_rpg_battle_mapById(battle_instance._init_data.map_id);
     end
     
     local cpos = map_data.PetPos[team._id]

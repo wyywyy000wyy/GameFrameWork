@@ -14,7 +14,7 @@ end
 
 function rpg_hero_avatar:get_model_path()
     local _path = self._hero_prop.RpgModel
-    return _path
+    return "model_hero_dizaozheaidehua_animator"
 end
 
 function rpg_hero_avatar:get_model_scale()

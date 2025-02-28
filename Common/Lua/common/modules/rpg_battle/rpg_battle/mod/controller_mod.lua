@@ -1,7 +1,12 @@
+
+
+-- local ORCAScene = CS.ORCAScene
+
 local controller_mod = class2("controller_mod", T.mod_base,function(self, battle_instance)
     T.mod_base._ctor(self, battle_instance)
 
     self._ai_etys = {}
+
 end)
 
 --模块数据初始化，战斗数据构造完成之后调用
@@ -66,13 +71,29 @@ function controller_mod:do_skill(eid, skill_id)
 end
 
 function controller_mod:on_ety_born(born_event)
+    if born_event.ety_type == RPG_ETY_TYPE.MDOOR then
+        return
+    end
+
     local ety = self._ins._battle_mod:get_ety(born_event.eid)
     local ai_ety = nil 
-    if born_event.ety_type == RPG_ETY_TYPE.PET then
-        ai_ety = T.rpg_controller_pet(self._ins, ety)
+
+    if self._ins._is_td_battle then
+        if born_event.tid == 1 then
+            ai_ety = T.td_controller_defend(self._ins, ety, self._scene)
+        else
+            ai_ety = T.td_controller_monster(self._ins, ety, self._scene)
+            -- ai_ety = T.rpg_controller_grid(self._ins, ety)
+        end
     else
         ai_ety = T.rpg_controller_grid(self._ins, ety)
     end
+
+    -- if born_event.ety_type == RPG_ETY_TYPE.PET then
+    --     ai_ety = T.rpg_controller_pet(self._ins, ety)
+    -- else
+    --     ai_ety = T.rpg_controller_grid(self._ins, ety)
+    -- end
     ai_ety:init()
     table.insert(self._ai_etys ,ai_ety)
 end
@@ -86,12 +107,41 @@ function controller_mod:init_finish()
 end
 
 function controller_mod:start()
+    local battle_instance = self._ins
+    local level_id = battle_instance._init_data.level_id
+    local level_data = resmng.prop_rpg_battle_levelById(level_id)
+    local map_data = resmng.prop_rpg_battle_mapById(level_data.Map);
+    if battle_instance._init_data.map_id then
+        map_data = resmng.prop_rpg_battle_mapById(battle_instance._init_data.map_id);
+    end
+
+    local mapSize = map_data.MapSize
+
+    -- local width = 50 * 1000--(mapSize and mapSize[1] or 11) * 1000
+    local length = 3 --(mapSize and mapSize[2] or 14) * 1000
+    local width = 10-- (mapSize and mapSize[1] or 11) 
+    -- local length = (mapSize and mapSize[2] or 14) * 1000
+    self._grid = T.hexagonal_grid(width, length)
+    self._obj_pos = {}
+
+    local g_scene = E.GameObject("ORCAScene")
+    T.LuaHelper.AddComponent(g_scene, typeof(CS.ORCAScene))
+    local scene = g_scene:GetComponent(typeof(CS.ORCAScene))
+    scene.width = 500 --width 
+    scene.length = 11
+    scene.thickness = 3
+    self._scene = scene
+    scene:GenerateScene()
+
     self._ins:add_fixed_update(function() 
         self:fixed_update()
     end,"controller_fixed_update")
 end
 
 function controller_mod:fixed_update()
+    if self._scene then
+        self._scene:DoUpdate(RPG_I2F(self._ins._fixed_dt))
+    end
     -- INFO("[RPG]%s controller_mod_fixed_update ", self._ins:log_str())
     for _, ai in ipairs(self._ai_etys) do
         ai:update()
@@ -99,4 +149,8 @@ function controller_mod:fixed_update()
 end
 
 function controller_mod:stop()
+    if self._scene then
+        E.GameObject.Destroy(self._scene.gameObject)
+        self._scene = NIL
+    end
 end

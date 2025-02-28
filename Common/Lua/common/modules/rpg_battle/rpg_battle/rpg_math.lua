@@ -7,6 +7,7 @@ local floor = math.floor
 local min = math.min
 local max = math.max
 local cos = math.cos
+local sin = math.sin
 
 function RPG_F2I(value)
     local intvalue = floor(value * 1000)
@@ -158,6 +159,10 @@ end
 
 function angle_to_cos(angle)
     return cos(angle * 0.017453292519)
+end
+
+function angle_to_sin(angle)
+    return sin(angle * 0.017453292519)
 end
 
 local d2g = 0.017453292519

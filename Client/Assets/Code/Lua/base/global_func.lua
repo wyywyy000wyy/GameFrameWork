@@ -137,7 +137,7 @@ function LOG(...)
     end
 end
 
-INFO = LOG
+-- INFO = LOG
 
 function LOGF(format, ...)
     if not _PUBLISH then
@@ -158,13 +158,14 @@ function DLOG(...)
 end
 
 function INFO(...)
-    if not _PUBLISH then
-        if _UNITY_EDITOR then
-            E.Debug.Log(_beautify_log(  contact_parm(...), "#ffff00"))
-        else
-            E.Debug.Log(  contact_parm(...))
-        end
-    end
+    -- if not _PUBLISH then
+    --     if _UNITY_EDITOR then
+    --         E.Debug.Log(_beautify_log(  contact_parm(...), "#ffff00") .. debug.traceback("", 2))
+    --     else
+    --         E.Debug.Log(  contact_parm(...))
+    --     end
+    -- end
+    LOG(...)
 end
 
 function dbg(...)

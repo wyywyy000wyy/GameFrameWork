@@ -250,14 +250,20 @@ function rpg_entity_avatar:async_props(props)
 end
 
 -- 设置移动目标点
-function rpg_entity_avatar:set_move_target(speed, target_point)
+function rpg_entity_avatar:set_move_target(speed, target_point, cur_point, agent)
+    if cur_point and self._trans then
+        self._trans.position = Vector3(cur_point.x, self._trans.position.y, cur_point.z) 
+    end
     if speed == 0 then  -- 移动结束时候，逻辑会同步一次位置，这个时候速度会设置成0
-        self:set_state(RPG_ENTITY_STATE.IDLE)
+        -- self:set_state(RPG_ENTITY_STATE.IDLE)
+        if self._trans  then
+        self._trans.position = Vector3(target_point.x, self._trans.position.y, target_point.z) 
+        end
         -- self:play_anim(state_anim_name.idle)  -- 默认动画
     else
         self:set_state(RPG_ENTITY_STATE.MOVE)
         -- self:play_anim(state_anim_name.move)  -- 播放移动动画
-
+        self._ai_agent = agent
         self._data.speed = speed
         self._data.move_target = target_point
     end
@@ -491,11 +497,17 @@ function rpg_entity_avatar:play_anim(anim, force)
     if self._cur_anim ~= anim and (self._cur_anim == state_anim_name.dead and not force) then
         return
     end
+    if self._cur_anim2 == anim then
+        return
+    end
     if self._ismoving then
         anim = state_anim_name.move
     end
     self._cur_anim = anim
+    if self._anim then
+        self._cur_anim2 = anim
     self._anim:Play(anim)
+    end
 end
 
 -- 演播技能时间轴
@@ -551,6 +563,20 @@ function rpg_entity_avatar:skill_time_line_update(ms_dt)
     end
 end
 
+function rpg_entity_avatar:update_dir__(moveDir)
+    -- local cur_dir = self._trans.forward.normalized
+    -- local nmove_dir = moveDir.normalized
+
+    -- local angle = Vector3.Angle(cur_dir, nmove_dir)
+    -- if math.abs(angle) > 0 then
+    --     Logger.LogerWYY2("event___update_dir__", angle, moveDir)
+    -- end
+    -- if self._eid == 1002 then
+    --     Logger.LogerWYY2("event___update_dir__", moveDir)
+    -- end
+    self._trans.forward = moveDir
+end
+
 function rpg_entity_avatar:update(ms_dt)
     if self._time_scale == 0 then
         return
@@ -569,9 +595,26 @@ function rpg_entity_avatar:update(ms_dt)
     if self._data.state == RPG_ENTITY_STATE.MOVE then
         -- 移动
         local target_pos = self._data.move_target
-        local tran_pos = self._trans.position
-        if not target_pos then
-            return
+        local tran_pos = self._trans and self._trans.position
+        if self._ai_agent then
+            if not self._trans then
+                goto UPDATE_
+            end
+            local agent = self._ai_agent
+            local x, y = agent.pos.x, agent.pos.z
+            local target_pos = self._ins.scene:b2w_point(E.Vector3(x, 0, y)) 
+            self:play_anim(state_anim_name.move, true)  -- 播放移动动画
+
+            local dir =  agent.velocity--target_pos - self._trans.position -- self._ai_agent.velocity
+            if math.abs(dir.x) > 0.0001 or math.abs(dir.z) then
+                local dir2 =  self._ins.scene:b2w_rot(E.Vector3(dir.x,0,dir.z))
+                self:update_dir__(E.Vector3(dir2.x,0,dir2.z))
+            end
+            self._trans.position = target_pos
+            goto UPDATE_
+        end
+        if not target_pos or not tran_pos then
+            goto UPDATE_
         end
 
         local moveDir = target_pos - tran_pos
@@ -587,11 +630,15 @@ function rpg_entity_avatar:update(ms_dt)
             self._trans.position = target_pos
             self:set_state(RPG_ENTITY_STATE.IDLE)
         end
-    elseif self._pet_id then
-        local tran_pos = self._trans.position
-        local target_pos = self._ins.scene:b2w_point(E.Vector3(0, 0, 0)) 
-        local moveDir = target_pos - tran_pos
-        self._trans.forward = moveDir
+    end
+
+    ::UPDATE_::
+
+    if self._ai_agent and self._trans then
+        local agent = self._ai_agent
+        local x, y = agent.pos.x, agent.pos.z
+        local target_pos2 = self._ins.scene:b2w_point(E.Vector3(x, 0, y)) 
+        self._trans.position = target_pos2
     end
 
     -- 清理无效特效

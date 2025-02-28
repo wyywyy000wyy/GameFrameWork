@@ -8,8 +8,8 @@ function rpg_controller:init()
 end
 
 function rpg_controller:auto_cast_anger()
-    local ety = self._ety_proxy
-    return ety._tid ~= RPG_TEAM_ID.TEAM_1 or self._ins._auto_skill
+    -- local ety = self._ety_proxy
+    return true --ety._tid ~= RPG_TEAM_ID.TEAM_1 or self._ins._auto_skill
 end
 
 function rpg_controller:get_skill_to_cast(exclude_map_etys)

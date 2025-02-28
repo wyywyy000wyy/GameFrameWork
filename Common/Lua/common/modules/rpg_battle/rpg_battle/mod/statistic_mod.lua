@@ -26,7 +26,9 @@ function statistic_mod:log_str()
             remain_hp = remain_hp + hp
             if RPG_DEBUG then
                 local ety_info = self._ety_infos[ety._eid]
+                if ety_info then
                 hp_str = hp_str .. string.format("team:%s\t fpos:%s\t eid:%s\t hp=%.2f\t dmg=%.2f\t hurt=%.2f\t heal=%.2f\n", ety._tid, ety._fpos, ety._eid, RPG_I2F(p.RPG_Hp), RPG_I2F(ety_info.damage), RPG_I2F(ety_info.hurt), RPG_I2F(ety_info.heal))
+                end
                 -- table.insert(strs, )
             end
         end
@@ -102,6 +104,9 @@ function statistic_mod:ety_born(born_event)
     -- if born_event.ety_type ~= RPG_ETY_TYPE.HERO then
     --     return
     -- end
+    if born_event.ety_type ~= RPG_ETY_TYPE.HERO or born_event.type == RPG_ETY_TYPE.PET then
+        return
+    end
 
     self._ety_infos[born_event.eid] =
     { hero_id = born_event.hero_id, pet_id = born_event.pet_id, hero_lv = born_event.lv, hero_star = born_event.star, tid = born_event.tid, damage = 0, hurt = 0, heal = 0, shield = 0 }

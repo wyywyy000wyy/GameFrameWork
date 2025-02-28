@@ -104,7 +104,7 @@ end
 
 function rpg_debug_view_mod:on_move(event)
     local ety = self._etys[event.eid]
-    local scene =models and models.rpg_battle_model and  self._ins.scene
+    local scene =models and models.rpg_battle_model and  models.rpg_battle_model.cur_scene
     if not ety or not scene then
         return
     end

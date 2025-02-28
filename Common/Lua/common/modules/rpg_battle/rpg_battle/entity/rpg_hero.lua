@@ -3,19 +3,26 @@ local rpg_hero = class2("rpg_hero",T.rpg_entity, function(self, battle_instance,
     self._team = team
     self._hero_id = init_data.hero_id--init_data.hero_id
     self._dt = 0
-    self._fpos = init_data.fpos
-    self._fpos2 = math.fmod(init_data.fpos + RPG_POS_TYPE.FPOS_COUNT - 1, RPG_POS_TYPE.FPOS_COUNT) + 1
+    local pos = init_data.pos
+    self._fpos = init_data.fpos or -1
+    self._fpos2 = init_data.fpos and (math.fmod(init_data.fpos + 4, 5) + 1)
 
     local level_id = battle_instance._init_data.level_id
-    local level_data = resmng.prop_rpg_battle_level[level_id]
-    local map_data = resmng.prop_rpg_battle_map[level_data.Map]
+    local level_data = resmng.prop_rpg_battle_levelById(level_id)
+    local map_data = resmng.prop_rpg_battle_mapById(level_data.Map);
     if battle_instance._init_data.map_id then
-        map_data = resmng.prop_rpg_battle_map[battle_instance._init_data.map_id]
+        map_data = resmng.prop_rpg_battle_mapById(battle_instance._init_data.map_id);
     end
     
-    local cpos = map_data.BornPos[self._fpos]
-    self._x = RPG_F2I(cpos[1])
-    self._y = RPG_F2I(cpos[2])
+    
+    if pos then
+        self._x = (pos[1])
+        self._y = (pos[2])
+    else
+        local cpos = map_data.BornPos[self._fpos]
+        self._x = RPG_F2I(cpos[1])
+        self._y = RPG_F2I(cpos[2])
+    end
 
     self._gx , self._gy = rpg_b2g(self._x, self._y)
     -- if self._tid == 2 then
@@ -24,7 +31,7 @@ local rpg_hero = class2("rpg_hero",T.rpg_entity, function(self, battle_instance,
     -- end
     self._x, self._y = rpg_g2b(self._gx, self._gy)
 
-    local dir = map_data.BornDir[self._fpos]
+    local dir = pos and {-1,0,0} or map_data.BornDir[self._fpos]
     self._dir_x, self._dir_y = rpg_normalize(RPG_F2I(dir[1]), RPG_F2I(dir[3]))
 
     self._buffs = {}

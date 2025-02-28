@@ -671,6 +671,11 @@ rpg_effect.effects["DAMAGE"] = function(eff_env, target_orient, param, eff_id)
     local ins = eff_env.ins
     local battle_mod = ins._battle_mod
     local target = battle_mod:get_ety(target_orient._eid)
+    if not target then
+        local a = 1
+        a = 2
+        return
+    end
     local actor = eff_env.actor
     local ety = eff_env.ety
     local ep = ety._p
@@ -772,7 +777,7 @@ rpg_effect.effects["DAMAGE"] = function(eff_env, target_orient, param, eff_id)
         end
     end
     if RPG_DEBUG_MOD then
-        -- RPG_LOG("[RPG] %s号位打了%s号位%s点伤害 技能效果=%s 伤害系数=%s 固定伤害=%s",ety._fpos, tp._fpos, damage, eff_id, damageFactor or 0, idamage)
+        RPG_LOG("[RPG] %s号位打了%s号位%s点伤害 技能效果=%s 伤害系数=%s 固定伤害=%s",ety._fpos, tp._fpos, damage, eff_id, damageFactor or 0, idamage)
     end
     return function()
         if composer then
@@ -797,10 +802,89 @@ end
 local bullet_type_map = T.rpg_bullet.type_map
 rpg_effect.effects["BULLET"] = function(eff_env, target_orient, param)
     local bullet_type = param[1]
+    -- if bullet_type == RPG_BULLET_TYPE.LINE then
+    --     bullet_type = RPG_BULLET_TYPE.MULTI_LINE
+    --     param[5] = {3,30}
+    -- end
+
     local constructor = bullet_type_map[bullet_type]
     if constructor  then
         constructor(eff_env, target_orient, param)    
     end    
+end
+
+rpg_effect.effects["S_WEAPON"] = function(eff_env, target_orient, param)
+    local battle_mod = eff_env.ins._battle_mod
+    local weapon_list = battle_mod._weapon_list 
+    if not weapon_list then
+        weapon_list = {}
+        battle_mod._weapon_list = weapon_list
+    end
+    if #weapon_list > 3 then
+        return
+    end
+
+    local weapon_id = param[1]
+
+    local weapon = T.rpg_super_weapon(eff_env.ins, weapon_id, #weapon_list + 1)
+    table_insert(weapon_list, weapon)
+    battle_mod:add_ety(weapon)
+    weapon:on_born()
+end
+
+--[[
+扩散门
+{
+    multy , --倍数
+    angle, --角度
+    {}，--范围参数
+}
+]]
+rpg_effect.effects["M_DOOR"] = function(eff_env, target_orient, param)
+    local battle_mod = eff_env.ins._battle_mod
+    if battle_mod._door then
+        return
+    end
+    battle_mod._door = T.rpg_multiply_door(eff_env, target_orient, param)
+end
+
+--[[
+扩散门增强
+{
+    ttype, --类型   1.加宽 2.加倍数
+    value, --值
+}
+]]
+
+rpg_effect.effects["M_DOOR_ENHANCE"] = function(eff_env, target_orient, param)
+    local battle_mod = eff_env.ins._battle_mod
+    local door = battle_mod._door
+    if not door then
+        return
+    end
+
+    local ins = eff_env.ins
+    -- local target = ins._battle_mod:get_ety(target_orient._eid)
+    -- local actor = eff_env.actor
+    -- local ety = eff_env.ety
+    -- local ep = ety._p
+    -- local tp = target._p
+    local ttype = param[1] --rpg_get_value(param, 1, ep, tp, actor)
+    local value = param[2] --rpg_get_value(param, 2, ep, tp, actor)
+
+    if ttype == 1 then
+        door._mw = door._mw  + (value)
+        door._w = door._bw  * ( RPG_I2F(door._mw))
+    elseif ttype == 2 then
+        door._multy = door._multy + value
+    end
+
+    ins:post_event({
+        id = RPG_EVENT_TYPE.CUSTOM,
+        door = true,
+        type = ttype,
+        width = door._w,
+    })
 end
 
 --[[
@@ -877,7 +961,7 @@ rpg_effect.effects["RELIVE"] = function(eff_env, target_orient, param)
         -- target._is_reliving = false
         -- target:set_state(RPG_ENTITY_STATE.IDLE, true)
         target:alter_prop("RPG_Hp", tp.RPG_HpMax * hp_inherit_percent, actor)
-        ins:post_event(target:born_event())
+        target:on_born()
     end
 
     local relive_func2 = function()

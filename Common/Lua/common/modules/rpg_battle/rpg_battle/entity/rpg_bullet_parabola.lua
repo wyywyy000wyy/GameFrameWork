@@ -37,6 +37,8 @@ function rpg_bullet_parabola:update()
 
         self._ins:post_event({
             id = RPG_EVENT_TYPE.BULLET_END, event_time = self._ins:get_btime(),
+            eff = self._eff_env.p_env.__eff_id,
+            x = self._orient._x, y = self._orient._y,
             oid = self._oid, pid = self._pid, eid = self._caster_eid })
 
         return true --finish

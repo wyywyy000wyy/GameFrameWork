@@ -35,8 +35,8 @@ function rpg_debug_mod:on_damage_event(event)
     elseif self._oid_to_buff_id[event.oid] then
         damage_source = "buff_" .. self._oid_to_buff_id[event.oid]
     end
-    RPG_DEBUG("[RPG] %s <color='#00FF00'>%s</color> 打了 <color='#00FFFF'>%s</color>   <color='#FFFF00'>%s</color>点伤害, oid=%s, damage_source=%s",
-    self._ins:log_str() , event.eid, event.target, RPG_I2F(event.damage), event.oid, damage_source)
+    RPG_DEBUG("[RPG]%s event_skill damage eid=%s, oid=%s, target=%s damage=%s damage_source=%s",
+    self._ins:log_str() , event.eid, event.oid, event.target, event.damage, damage_source)
 end
 
 function rpg_debug_mod:on_action(event)
@@ -70,7 +70,7 @@ function rpg_debug_mod:on_event(event)
 end
 
 function rpg_debug_mod:register_listener()
-    if not RPG_DEBUG_MOD then
+    if not RPG_DEBUG_MOD or true then
         return
     end
     self._ins:add_event_listener2(RPG_EVENT_TYPE.DAMAGE, self, "on_damage_event") -- 伤害

@@ -3,6 +3,7 @@ common_do_load("rpg_battle/rpg_pre_define")
 common_do_load("rpg_battle/rpg_define")
 common_do_load("rpg_battle/rpg_math")
 common_do_load("rpg_battle/battle/rpg_effect_interface")
+common_do_load("rpg_battle/troop_util")
 
 
 common_do_load("rpg_battle/algorithm/rpg_a_star")
@@ -30,6 +31,7 @@ common_do_load("rpg_battle/entity/rpg_bullet_line")
 common_do_load("rpg_battle/entity/rpg_bullet_parabola")
 common_do_load("rpg_battle/entity/rpg_bullet_chain")
 common_do_load("rpg_battle/entity/rpg_bullet_amplify")
+common_do_load("rpg_battle/entity/rpg_bullet_multi_line")
 -- common_do_load("rpg_battle/entity/rpg_bullet_circle")
 -- common_do_load("rpg_battle/entity/rpg_bullet_sector")
 
@@ -49,15 +51,21 @@ common_do_load("rpg_battle/action/rpg_action")
 common_do_load("rpg_battle/action/action_skill")
 common_do_load("rpg_battle/action/action_skill_anger")
 common_do_load("rpg_battle/action/action_move")
+common_do_load("rpg_battle/action/action_ai_move")
 
 common_do_load("rpg_battle/entity/rpg_entity")
 common_do_load("rpg_battle/entity/rpg_hero")
 common_do_load("rpg_battle/entity/rpg_pet")
 common_do_load("rpg_battle/entity/rpg_team")
+common_do_load("rpg_battle/entity/td_front_line")
+common_do_load("rpg_battle/entity/rpg_multiply_door")
+common_do_load("rpg_battle/entity/rpg_super_weapon")
 
 
 common_do_load("rpg_battle/controller/rpg_controller")
 common_do_load("rpg_battle/controller/rpg_controller_grid")
+common_do_load("rpg_battle/controller/td_controller_monster")
+common_do_load("rpg_battle/controller/td_controller_defend")
 common_do_load("rpg_battle/controller/rpg_controller_pet")
 
 common_do_load("rpg_battle/mod/mod_base")
@@ -70,6 +78,7 @@ common_do_load("rpg_battle/mod/physics_mod")
 common_do_load("rpg_battle/mod/statistic_mod")
 common_do_load("rpg_battle/mod/record_mod")
 common_do_load("rpg_battle/mod/rpg_init_mod")
+common_do_load("rpg_battle/mod/td_born_mod")
 
 common_do_load("rpg_battle/view/rpg_debug_view_entity")
 

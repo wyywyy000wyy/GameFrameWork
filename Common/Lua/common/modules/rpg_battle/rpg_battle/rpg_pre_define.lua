@@ -9,10 +9,12 @@ rpg_config_define = {
     "define_rpg_battle_skill",
     "define_rpg_battle_monster",
     "define_rpg_battle_group",
+    "define_rpg_event",
+    "define_rpg_event_pool",
 }
 rpg_config = {
-    "prop_hero_basic",
     "prop_effect_type",
+    "prop_hero_basic",
     "prop_rpg_battle_map",
     "prop_rpg_battle_level",    
     "prop_rpg_battle_group",
@@ -21,7 +23,11 @@ rpg_config = {
     "prop_rpg_battle_skill",
     "prop_rpg_battle_monster",
     "prop_rpg_battle_group",
+    "prop_rpg_event",
+    "prop_rpg_event_pool",
 }
+
+resmng.OBJ_TYPE = {}
 
 function client_load_define()
     for _, config_name in ipairs(rpg_config_define) do

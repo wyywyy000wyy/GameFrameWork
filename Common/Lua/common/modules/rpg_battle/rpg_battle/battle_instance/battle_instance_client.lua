@@ -58,6 +58,14 @@ function battle_instance_client:start()
     --     local debug_view_mod = T.rpg_debug_view_mod(self)
     --     self:add_mod(debug_view_mod)
     -- end
+
+    local conf = resmng.prop_rpg_battle_level[self._init_data.level_id]
+    if conf.Type == 1001 then
+        local td_born_mod = T.td_born_mod(self)
+        self._td_born_mod = td_born_mod
+        self:add_mod(td_born_mod)
+        self._is_td_battle = true
+    end
     
     local battle_mod = T.battle_mod(self)
     self:add_mod(battle_mod)
